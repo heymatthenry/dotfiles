@@ -6,6 +6,6 @@ Currently these config files cover
 * vim
 * zsh
 
-To get startes, just run:
+To get started, just run:
     sh install.sh
 This will install symlinks in your home directory to the files here.
