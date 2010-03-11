@@ -1,10 +1,10 @@
 ## greenideas's dotfiles
 
 Currently these config files cover
-* Super-basic git config
-* IRB (for best results, gem install wirble)
-* vim
-* zsh
+*  Super-basic git config
+*  IRB (for best results, gem install wirble)
+*  vim
+*  zsh
 
 To get started, just run:
     sh install.sh
