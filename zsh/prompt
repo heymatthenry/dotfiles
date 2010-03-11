@@ -1,0 +1,7 @@
+# load prompt functions
+# setopt promptsubst
+# unsetopt transient_rprompt # leave the pwd 
+
+precmd () {
+   #set_prompt
+}

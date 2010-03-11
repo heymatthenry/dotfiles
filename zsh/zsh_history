@@ -1,0 +1,1087 @@
+ls tools/builder
+ls tools/builder/componentbuild
+ls tools/builder
+ls build
+cp -r . ~/Code/mui-tweet/muilib
+ls
+cd ~/Code/mui-tweet
+ls
+cd muilib
+ls
+ls package
+rm -rf package
+ls
+cd build
+ls
+ls mui
+ls
+cd ..
+ls
+cd ..
+rm -rf muilib
+ls
+cp -r ~/Yahoo/mui/build/mui/ ./src
+ls
+ls src/assets
+ls
+git init .
+git init
+git add .
+git commit -m "initial commit"
+mate .
+ls
+ls src
+cat src/mui-debug.js
+mkdir styles
+mkdir scripts
+Yahoo/android-sdk-mac/tools/android
+cd Yahoo
+ls
+dev
+cd MUI-source
+svn up
+ls
+svn up
+ls
+ls
+dev
+dev
+ssh psyduck.mobile.sp2.yahoo.com
+dev
+cd ~/Yahoo
+ls
+cd MUI-source
+ls
+dev
+cd ~/Yahoo/MUI-source
+ls
+mate .
+dev
+dev
+mate Renderer/OneSearch/ClassHero.class.inc
+mate Renderer/OneSearch/ClassHero.class.inc Javascript/Hero/OneSearch.js.inc
+~/Yahoo/android-sdk-mac/tools/android
+mate Javascript/Hero/Main.js.inc
+grep -ir "input[type=search]" Javascript/Hero/
+mate Javascript/Hero/InputAssist.js.inc
+mate Javascript/A/DefaultInput.js.inc
+ls
+grep -ir "input[type=search]" Javascript/
+mate Javascript/A/DefaultInputs.js.inc
+grep -ir "isAndroid" Javascript
+mate Javascript/A/mui.js.inc
+mate ~/Sites/fieldtest.html
+grep -ir "clearText" Renderer/
+mate Renderer/OneSearch/ClassHero.class.inc
+mate Renderer/OneSearch/ClassA.class.inc
+grep -ir "function getSearchString" Renderer/
+grep -ir "function getSearchString" .
+mate Base/OneSearch.class.inc
+ls
+cd ..
+ls
+ln -s /Volumes/felllonethen/dev/brand/trunk/yahoo/ brand
+ls
+ls brand/
+ls brand/web
+ls brand/web/resources
+ls brand/web/resources/images
+ls brand/web/resources/images/Hero
+ls brand/web/resources/images/Hero/ui
+ls brand/web/resources/images/Hero/ui/base
+ls -l brand/web/resources/images/Hero/ui/base/onesearch/search_left.png
+ls -l brand/web/resources/images/Hero/ui/base/onesearch/
+ls -l brand/web/resources/images/Hero/ui/base/onesearch/
+dev
+cd ~/Yahoo
+mkdir entertainment_wc
+cd entertainment_wc
+mate .
+ls
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+curl http://api.news.yahoo.com/open/v1/category/entertainment/story?appId=mobile&region=us&lang=en&jurisdiction=us
+curl "http://api.news.yahoo.com/open/v1/category/entertainment/story?appId=mobile&region=us&lang=en&jurisdiction=us"
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+~/Yahoo/android-sdk-mac/tools/android
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+curl "http://tradesmall.corp.yahoo.com:8080/open/v1/category/entertainment"
+curl "http://api.news.yahoo.com/open/v1/category/entertainment"
+curl "http://api.news.yahoo.com/v1/category/entertainment"
+curl "http://api.news.yahoo.com/open/v1/CategoryList?id=business"
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb
+ruby init.rb --csv
+ls
+cat results.csv
+rm results.csv
+ruby init.rb
+cp init.rb article_wc
+ls
+chmod +x article_wc
+./article_wc
+./article_wc
+mv article_wc article_wc.rb
+ruby article_wc.rb
+ruby article_wc.rb
+ls
+ruby article_wc.rb --csv
+ls
+cat results.csv
+ruby article_wc.rb
+ssh psyduck.mobile.sp2.yahoo.com
+ssh psyduck.mobile.sp2.yahoo.com
+mate ~/Yahoo/MUI-source/Renderer/OneSearch/ClassHero.class.inc
+ls
+git init
+git add article_wc.rb
+git commit -m "initial commit"
+rm results.csv
+rm init.rb
+ls
+chmod -x article_wc.rb
+git commit -am "chmod -x"
+ruby article_wc.rb
+killall Installer
+killall Installer
+dev
+cd Yahoo
+mkdir tv_scraper
+git init
+git commit -am "initial commit"
+ls
+rm -rf .git
+cd tv_scraper
+git init
+git commit -am "initial commit"
+git add scraper.rb
+git commit -am "initial commit"
+git commit -am "mechanize instead of anemone"
+irb
+git commit -am "added lots of parsing & spidering functionality, + data source"
+git add data.txt
+git commit -am "+ data source"
+ls
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ls
+irb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+irb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+irb
+irb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+irb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+git commit -am "got basic scraping stuff in"
+git checkout google
+git checkout -b "google"
+irb
+irb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+git commit -am "switched search to google"
+git checkout -b "master"
+git checkout "master"
+ruby scraper.rb
+ruby scraper.rb
+cat data.txt
+cat data.txt
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+irb
+ruby scraper.rb
+ruby scraper.rb
+irb
+irb
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+touch good_data.txt
+touch good_results.txt
+touch bad_results.txt
+ruby scraper.rb
+ls
+cat good_results.txt
+cat bad_results.txt
+cat bad_results.txt
+ruby scraper.rb
+ruby scraper.rb
+cat bad_results.txt
+cat good_results.txt
+ls
+rm bad_results.txt good_*
+ls
+ruby scraper.rb
+ls
+cat good_results.txt
+ruby scraper.rb
+cat good_results.txt
+ls
+rm bad_results.txt
+rm good_results.txt
+ruby scraper.rb
+cat bad_results.txt
+cat good_results.txt
+ruby scraper.rb
+ruby scraper.rb
+cat good_results.txt
+ruby scraper.rb
+cat good_results.txt
+cat good_results.txt
+ruby scraper.rb
+cat good_results.txt
+rm -f good_results.txt bad_results.txt
+ls
+ls
+ruby scraper.rb
+ruby scraper.rb
+cat good_results.txt
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+cat good_results.txt
+ruby scraper.rb
+cat good_results.txt
+rm -f good_results.txt bad_results.txt
+cat good_results.txt
+ruby scraper.rb
+cat good_results.txt
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+cat good_results.txt
+ruby scraper.rb
+ruby scraper.rb
+cat good_results.txt
+rm -f good_results.txt bad_results.txt
+ls
+ruby scraper.rb
+cat good_results.txt
+cat bad_results.txt
+git status
+git status
+git add names*
+git add .gitignore
+git status
+git commit -am "completed first iteration"
+irb
+ruby scraper.rb
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+ls
+cat bad_results.txt
+cat good_results.txt
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+cat good_results.txt
+cat good_results.txt |grep halfmen
+cat good_results.txt |grep "halfmen"
+cat good_results.txt |grep "half men"
+wc -l good_results.txt
+wc -l bad_results.txt
+cat bad_results.txt
+irb
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+cat good_results.txt
+wc -l good_results.txt
+cat bad_results.txt
+rm -f good_results.txt bad_results.txt
+cat bad_results.txt
+ruby scraper.rb
+ruby scraper.rb
+ruby scraper.rb
+cat bad_results.txt
+wc -l good_results.txt
+wc -l bad_results.txt
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+cd Yahoo/tv_scraper
+ls
+cat bad_results.txt
+tail -f bad_results.txt
+wc -l good_results.txt
+wc -l bad_results.txt
+cat bad_results.txt
+cat bad_results.txt
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+cat bad_results.txt
+irb
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+rm -f good_results.txt bad_results.txt
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+git commit -am "improved results"
+cat bad_results.txt
+wc -l bad_results.txt
+wc -l good_results.txt
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+ruby scraper.rb
+rm -f good_results.txt bad_results.txt
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+irb
+cat bad_results.txt
+wc -l bad_results.txt
+wc -l good_results.txt
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+wc -l bad_results.txt
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+cat good_results.txt|grep "10 things"
+cat good_results.txt|grep -i "10 things"
+cat good_results.txt|grep -i "10 things"
+tail -f good_results.txt|grep -i "10 things"
+cat good_results.txt|grep -i "things i hate"
+cat bad_results.txt
+rm -f good_results.txt bad_results.txt
+cat good_results.txt|grep -i "things i hate"
+irb
+ruby scraper.rb
+cat good_results.txt|grep -i "things i hate"
+wc -l good_results.txt
+cat good_results.txt|grep -i "warehouse"
+cat bad_results.txt
+cat good_results.txt|grep -i "warehouse"
+cat bad_results.txt
+wc -l bad_results.txt
+wc -l good_results.txt
+ruby scraper.rb
+wc -l good_results.txt
+cat bad_results.txt
+wc -l bad_results.txt
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+wc -l good_results.txt
+cat good_results.txt
+wc -l bad_results.txt
+git commit -am "best results so far"
+ls
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+ruby scraper.rb
+cp scraper.rb goog_scraper.rb
+cat bad_results.txt
+cat bad_results.txt
+irb
+rm -f good_results.txt bad_results.txt
+cat bad_results.txt
+ruby scraper.rb
+ls
+git commit -am "give back unmunged names in bad list"
+cat bad_results.txt
+git checkout google
+ls
+git checkout master
+ls
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+ls
+cat bad_results.txt
+ruby goog_scraper.rb
+ruby goog_scraper.rb
+ruby goog_scraper.rb
+ruby goog_scraper.rb
+cat bad_results.txt
+ruby goog_scraper.rb
+ruby goog_scraper.rb
+ruby goog_scraper.rb
+ruby goog_scraper.rb
+ruby goog_scraper.rb
+ruby goog_scraper.rb
+ruby goog_scraper.rb
+ruby goog_scraper.rb
+ruby goog_scraper.rb
+cat good_results.txt
+ruby goog_scraper.rb
+ruby goog_scraper.rb
+ruby goog_scraper.rb
+ruby goog_scraper.rb
+wc -l goo
+wc -l good_results.txt
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+cat bad_results.txt
+wc -l good_results.txt
+rm -f good_results.txt bad_results.txt
+ruby scraper.rb
+wc -l good_results.txt
+cp bad_results.txt bad_results.txt.bak
+ruby goog_scraper.rb
+wc -l goo
+wc -l good_results.txt
+mate .
+ls
+rm -f names*
+ls
+ruby scraper.rb
+ruby scraper.rb
+cat good_results.txt
+wc -l good_results.txt
+git status
+git add .
+git commit -am "big data cleanup"
+irb
+ruby merge.rb
+ls
+cat output.txt
+ruby merge.rb
+cat output.txt
+cat good_results.txt
+irb
+ls
+rm output.txt
+ruby merge.rb
+cat output.txt
+ruby merge.rb
+ruby merge.rb
+cat output.txt
+rm output.txt
+ls
+ruby merge.rb
+cat output.txt
+wc -l output.txt
+/Users/matth/Downloads/RemoveSymantecMacFiles/RemoveSymantecMacFiles.command ; exit;
+mate ~/Yahoo/MUI-source/Base/Table.class.inc
+ssh psyduc.mobile.sp2.yahoo.com
+ssh psyduck.mobile.sp2.yahoo.com
+exit
+ls /System/Library/Frameworks/Foundation.framework
+ls /System/Library/Frameworks/Foundation.framework/Versions
+ls /System/Library/Frameworks/Foundation.framework/Versions/C/
+ls /System/Library/Frameworks/Foundation.framework/Headers
+ls /System/Library/Frameworks/Foundation.framework/Headers/
+cat /System/Library/Frameworks/Foundation.framework/Headers/Orthography.h
+cat /System/Library/Frameworks/Foundation.framework/Headers/NSOrthography.h
+ls /System/Library/Frameworks/Foundation.framework/Headers/
+ls
+cd Code/ObjC
+ls
+gcc +Foundation number.m
+gcc -Foundation number.m
+gcc --Foundation number.m
+gcc -framework Foundation number.m
+ls
+./a.out
+gcc number.m
+gcc -framework Foundation number.m
+ls
+gcc -framework Foundation number.m
+./a.out
+gcc -framework Foundation number.m
+gcc -framework Foundation number.m
+gcc -framework Foundation number.m
+gcc -framework Foundation number.m
+gcc -framework Foundation number.m
+cd ~/Code/ObjC
+mate number.m
+mate scratch.m
+ls
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+ls
+./a.out
+gcc -framework Foundation scratch.m
+./a.out
+./a.out
+gcc -framework Foundation scratch.m
+./a.out
+mate ~/Code/ObjC/scratch.m
+gcc -framework Foundation scratch.m
+cd ~/Code/ObjC
+ls
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+ls
+gcc -framework Foundation scratch.m
+./a.out
+./a.out
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+./a.out
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+./a.out
+gcc -framework Foundation scratch.m
+gcc -framework Foundation scratch.m
+./a.out
+mv scratch.m songs.m
+Yahoo/android-sdk-mac/tools/android
+dev
+cd
+Yahoo/MUI-source
+mate Renderer/PageNavigator/ClassHero.class.inc
+ls
+mate Base/Textarea.class.inc
+mate Base/TextInput.class.inc
+mate Renderer/Textarea/ClassANew.class.inc
+mate Renderer/Textarea/ClassA.class.inc
+gem update
+sudo gem update
+gem update system
+gem update --system
+gem -v
+rails -v
+gem update rails
+ls
+cd ..
+ls
+ls webgw
+ls webgw/trunk/moai/web/bp/share/pear/Moai/Web/Bp/Model/Textarea.class.inc
+mate webgw/trunk/moai/web/bp/share/pear/Moai/Web/Bp/Model/Textarea.class.inc
+ls webgw/trunk/moai/
+ls webgw/trunk/moai/web
+ls webgw/trunk/moai/web/base/share/pear
+ls webgw/trunk/moai/web/bp/share/pear/Moai/Web/Bp/View/
+ls webgw/trunk/moai/web/bp/share/pear/Moai/Web/Bp/
+ls webgw/trunk/moai/web/bp/share/pear/Moai/Web/Bp/Model
+ls webgw/trunk/moai/web/bp/share/pear/Moai/Web/Bp/
+ls webgw/trunk/moai/web/bp/share/pear/Moai/Web/Bp/Model
+ls webgw/trunk/moai/
+ls webgw/trunk/moai/web/
+ls webgw/trunk/moai/web/base
+ls webgw/trunk/moai/web/base/share/pear
+ls webgw/trunk/moai/web/base/share/pear/Moai
+ls webgw/trunk/moai/web/base/share/pear/Moai/Web
+ls webgw/trunk/moai/web/base/share/pear/Moai/Web/Base
+ls webgw/trunk/moai/
+ls webgw/trunk/moai/lib/bp/
+ls webgw/trunk/moai/
+ls webgw/trunk/moai/lib
+ls
+ls webgw
+ls -a
+ls l webgw
+ls -l webgw
+ln -s /Volumes/felllonethen/dev/moai moai
+ls moai/trunk/lib/bp/core/share/pear/Moai/Bp/Base/
+cd moai/trunk/lib/bp/core/share/pear/Moai/Bp/Base/
+mate TextInput.class.inc Textarea.class.inc
+mate ../Parser/MessageTemplate.class.inc
+ls
+ls
+mate ~/Yahoo/MUI-source/Base/Textarea.class.inc
+mate ~/Yahoo/MUI-source/Base/TextInput.class.inc
+mate ~/Yahoo/MUI-source/Base/Textarea.class.inc
+mate ~/Yahoo/MUI-source/Renderer/Textarea
+mate ~/Yahoo/MUI-source/Base/TextInput.class.inc
+mate ~/Yahoo/MUI-source/Renderer/OneSearch/ClassHero.class.inc
+cd
+Yahoo/android-sdk-mac/tools/android
+ls
+ls
+ls /Applications/Notational\ Velocity.app
+ls /Applications/Notational\ Velocity.app/Contents
+ls /Applications/Notational\ Velocity.app/Contents/Resources
+ls ~/Documents
+locate Notational
+locate "Notational Data"
+mate ~/Dropbox/Notational\ Data/
+cd
+ls
+cd Code
+ls
+rm -rf rails3test
+rails rails3blog
+cd rails3blog
+gem install bundler
+bundle install
+rake db:create
+rails server
+mate .
+rails generate controller home
+cd ~/Code/rails3blog
+rails server
+mv public/index.html public/index.html.orig
+rails generate controller home index
+cd ..
+ls
+rm -rf rails3blog
+rails railsTweet
+cd railsTweet
+bundle install
+mate .
+git init
+git add .
+git commit -m "first commit"
+git status
+git add .gitignore
+git commit -m "add gitignore"
+rake db:create
+rails generate model User username:string password:string
+rake db:migrate
+rails generate resource User username:string password:string
+git checkout master
+git reset HEAD
+git status
+git rest
+git reset
+git reset -p
+git reset --hard
+git status
+rails generate resource User username:string password:string
+rake db:migrate VERSION=0
+rm db/migrate/20100302011810_create_users.rb
+rails generate resource User username:string password:string
+rake db:migrate
+git status
+git add .
+git commit -m "generate user resource"
+rails generate migration AddPasswordConfirmationToUser
+rake db:migrate
+rake db:migrate
+..
+cd railsTweet
+rails server
+mate ~/Yahoo/MUI-source/Renderer/OneSearch/ClassHero.class.inc
+ls db/migrate
+rake db:migrate version=1
+rake db:migrate version=20100302012123
+rake db:migrate VERSION=20100302012123
+rm db/migrate/20100302013506_add_password_confirmation_to_user.rb
+git status
+rails dbconsole
+rails console
+rake routes
+cd ~/Code
+ls
+mkdir chromeagent
+mate chromeagent
+cd chromeagent
+git init
+git add .
+git commit -am
+git commit -m "initial commit"
+ls
+cd ..
+rm -rf chromeagent
+mate railsTweet
+rake routes
+cd railsTweet
+rake routes
+cd ..
+rails test
+cd test
+rails generate scaffold User name:string password:string
+mate .gitignore
+mate .
+ls
+cd ..
+ls
+rails wurfl-rails
+mkdir wurfl-ruby
+cd wurfl-ruby
+mate .
+cp ~/Downloads/wurfl.xml .
+ls
+ls -l wurfl.xml
+irb
+irb -h
+irb -r nokogiri
+cd ~/Code/wurfl-ruby
+irb -r nokogiri
+cd ~/Code/wurfl-ruby
+ls
+mate .
+mate lil-wurfl.xml
+ls
+mate init.rb device.rb
+ls /usr/local
+which rails
+cd /usr/local/Cellar/RubyGems
+ls
+cd 1.8
+ls
+ls gems
+mate gems/rails-3.0.0.beta
+mate gems/railties-3.0.0.beta
+gem install mongomapper
+mongod
+cd ~/Code/wurfl-ruby
+git init
+git add .
+git commit -m "initial commit"
+git commit -am "set up relations"
+ssh 172.16.243.150
+ssh 172.16.243.150
+ssh 172.16.243.150
+ls
+cd
+ls
+defaults write com.vmware.fusion fluxCapacitor -bool YES
+ssh 172.16.243.150
+ln -s /Volumes/JeOS ~/JeOS
+ls
+emacs ~/.zsh/aliases
+cp -r .ssh JeOS
+ssh 172.16.243.150
+jeos
+source ~/.zshrc
+jeos
+ls
+ls
+cd JeOS
+ls
+ln -s ~/Code Code
+ls
+mkdir Code
+touch foo.txt
+ls
+mate foo.txt
+ls
+cat foo.txt
+rm Code
+ls
+ls -a
+cd ..
+ls
+ls Code
+ls Code
+ls Code/
+cd JeOS
+ls
+rm -f Code
+ls
+rm -f ./Code
+ls
+rm -rf Code
+ls
+rmdir Code
+rmdir -f Code
+ls -a
+ls
+ls
+cd
+,s
+cd JeOS
+ls
+cd
+cat .zshrc
+cat .bash_history
+jeos
+lks
+source .zshrc
+source ~/.zshrc
+jeos
+ls
+sudo vim /etc/hosts
+ping euclid
+curl 172.16.243.150
+curl 172.16.243.150:8098
+jeos
+curl 172.16.243.150:8098
+curl http://172.16.243.150:8098
+curl euclid
+ping euclid
+curl http://127.0.0.1:8098/raw/doc/index.html
+ls
+cd ..
+ls
+cp -r wurfl-ruby ~/JeOS/Code
+cp -r wurfl-rails ~/JeOS/Code
+ls wurfl-rails
+jeos
+jeos
+jeos
+jeos
+yes
+jeos
+source .zshrc
+source ~/.zshrc
+jeos
+jeos
+jeos
+ls
+jeos
+vim ~/.zsh/aliases
+source .zshrc
+jeos
+jeos
+ps aux |grep fuse
+ps aux |grep sshfs
+ps aux
+ps aux |grep ssh
+kill 51909 51549 51178
+kill 51909 51459 51178
+ps aux |grep ssh
+scp -r ~/.ssh matth@172.16.243.151:~
+jeos
+jeos
+ps aux |grep ssh
+scp -r ~/.scp matth@172.16.243.151
+scp -r ~/.ssh matth@172.16.243.151:~
+jeos
+jeos
+sudo vim /etc/hosts
+dev
+jeos
+jeos
+jeos
+ls JeOS
+cd JeOS
+ls
+ls JeOS/
+ls /Volumes
+cd JeOS
+ls
+;s
+ls
+cd Code
+ls
+cd
+ls
+cd Code
+ls
+cd wurfl-ruby
+ls
+cp wurfl.xml lil-wurfl.xml ~/JeOS/Code/riak-wurfl/app/models/
+dev
+mate ~/Yahoo/MUI-source/Renderer/OneSearch/ClassHero.class.inc
+dev
+~/Yahoo/android-sdk-mac/tools/android
+mate ~/Yahoo/MUI-source/Renderer/TitleBar/ClassHero.class.inc
+mate ~/Yahoo/MUI-source/Base/Table.class.inc
+jeos
+ls
+jeos
+dev
+mate ~/Yahoo/webgw/trunk/moai/web/mui/test/unittests/TextareaTest.php
+mate ~/Yahoo/webgw/trunk/moai/web/mui/test/unittests/ImageListTest.php
+cd ~/Yahoo/webgw/trunk/moai/web/mui/test/unittests/
+cat BlockTest.php
+cat PlacardSetTest.php
+cat Module
+cat ModuleTest.php
+: 1268157615:0;jeos
+: 1268161085:0;mate ~/JeOS/Code/apphound
+: 1268161331:0;jeos
+: 1268254816:0;mv ~/Downloads/MacVim-7_2-stable-1_2/mvim /usr/local/bin
+: 1268254829:0;which mvim
+: 1268254832:0;mvim
+: 1268256705:0;cd ~/src
+: 1268256706:0;ls
+: 1268256708:0;git clone git://github.com/jferris/config_files.git
+: 1268256717:0;cd config_files
+: 1268256717:0;ls
+: 1268256727:0;sh install.sh
+: 1268265497:0;mv ~/Downloads/javascript.vim ~/.vim/syntax
+: 1268265500:0;ls
+: 1268265510:0;pwd
+: 1268265732:0;ls
+: 1268265738:0;ls vim/plugin
+: 1268265794:0;mv vim/plugin/snippetsEmu.vim vim/plugin/snippetsEmu.vim.nop
+: 1268267103:0;ls
+: 1268267111:0;cd ..
+: 1268267112:0;ls
+: 1268267118:0;rm -rf config_files
+: 1268267124:0;cd
+: 1268267126:0;ls -a
+: 1268267141:0;rm .vim .vimrc
+: 1268267210:0;rm -rf .git/
+: 1268267229:0;mkdir -p .vim/colors
+: 1268267996:0;ls
+: 1268267998:0;ls -a
+: 1268268013:0;cat .vimrc
+: 1268268047:0;cp .vimrc .gvimrc
+: 1268268332:0;gvim .vimrc
+: 1268268337:0;mvim .gvimrc
+: 1268268377:0;touch .gvimrc
+: 1268268395:0;rm .gvimrc
+: 1268268728:0;ls
+: 1268268730:0;ls -a
+: 1268269757:0;mkdir ~/.vim/syntax
+: 1268269778:0;cp Downloads/javascript.vim ~/.vim/syntax
+: 1268270099:0;rm Downloads/javascript.vim
+: 1268270126:0;mkdir ~/.vim/indent
+: 1268270133:0;cp Downloads/javascript.vim ~/.vim/indent
+: 1268270139:0;ls .vim/indent
+: 1268272566:0;mkdir -p ~/.vim/ftplugin/html
+: 1268331706:0;mkdir ~/Code/dotfiles
+: 1268331771:0;cp -r .vim Code/dotfiles
+: 1268331794:0;mv Code/dotfiles/.vim Code/dotfiles/vim
+: 1268331812:0;cp .vimrc Code/dotfiles/vimrc
+: 1268331834:0;cp .gvimrc Code/dotfiles/gvimrc
+: 1268331839:0;ls Code/dotfiles
+: 1268331854:0;cd Code/dotfiles
+: 1268331857:0;git init
+: 1268331863:0;git add .
+: 1268331881:0;git commit -m "Add vim configs"
+: 1268332327:0;ls
+: 1268333020:0;cd
+: 1268333021:0;ls
+: 1268333024:0;ls -a
+: 1268333055:0;rm -rf .vimrc .gvimrc .vim
+: 1268333086:0;rm -rf .oh-my-zsh
+: 1268333111:0;cat .gitconfig
+: 1268333138:0;cp .gitconfig ~/Code/dotfiles
+: 1268333143:0;ls Code/dotfiles
+: 1268333146:0;ls -a
+: 1268333151:0;ls -a Code/dotfiles
+: 1268333180:0;mv ~/Code/dotfiles/.gitconfig ~/Code/dotfiles/gitconfig
+: 1268333190:0;rm .gitconfig
+: 1268333232:0;cat .irbrc
+: 1268333262:0;mv .irbrc ~/Code/dotfiles/irbrc
+: 1268333297:0;ls -a
+: 1268333311:0;rm -rf .matplotlib
+: 1268333316:0;rm -rf .macports
+: 1268333391:0;rm nokia6682mail.png
+: 1268333395:0;cat test.html
+: 1268333402:0;rm -f test.html
+: 1268333403:0;ls
+: 1268333406:0;ls -a
+: 1268333410:0;cat .AB64CF89
+: 1268333415:0;rm .AB64CF89
+: 1268333446:0;ls .m2
+: 1268333449:0;ls .m2/repository
+: 1268333459:0;rm -rf .m2
+: 1268333460:0;ls
+: 1268333462:0;ls -a
+: 1268333469:0;ls .wapi
+: 1268333475:0;rm -rf .wapi
+: 1268333516:0;cp -r .zsh ~/Code/dotfiles

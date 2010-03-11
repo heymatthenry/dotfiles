@@ -1,0 +1,33 @@
+# Utility aliases
+# alias mysql="/usr/local/mysql/bin/mysql"
+# alias mysqladmin="/usr/local/mysql/bin/mysqladmin"
+alias dev="ssh 192.168.45.129"
+alias ls="ls -GF"
+alias ll="ls -lGF"
+alias la="ls -aGF"
+alias cm="CD_Mate"
+alias vm="~/vm"
+alias dev="ssh felllonethen"
+alias jeos="ssh 172.16.243.151"
+alias yui="java -jar /Users/matt/Code/javascript/yuicompressor-2.4.1/build/yuicompressor-2.4.1.jar"
+alias log="open -a console log/development.log"
+alias emacs="open /Applications/Emacs.app"
+
+# Ruby/Rails aliases
+alias sc="script/console"
+alias sdb="script/dbconsole"
+alias ss="script/server"
+alias rc="rcov --rails test/unit/* test/functional/* && open coverage/index.html"
+
+# SVN aliases
+alias co="svn co"
+alias ci="svn ci"
+alias sa="svn add"
+alias st="svn status"
+alias saddall="svn st | awk '/\?/ {print $2}' | xargs svn add"
+
+# Project aliases
+alias hcom="cd ~/Work/hcom"
+alias job="cd ~/Work/hcom/jobboard2/trunk"
+alias sec="cd ~/Work/SEC/"
+alias goals="cd ~/Work/hcom/goals_and_objectives/trunk"
