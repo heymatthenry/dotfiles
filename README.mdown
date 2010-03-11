@@ -1,11 +1,14 @@
 ## greenideas's dotfiles
 
 Currently these config files cover
-*  Super-basic git config
-*  IRB (for best results, gem install wirble)
-*  vim
-*  zsh
+
+* Super-basic git config
+* IRB (for best results, gem install wirble)
+* vim
+* zsh
 
 To get started, just run:
-    sh install.sh
+
+		sh install.sh
+
 This will install symlinks in your home directory to the files here.
