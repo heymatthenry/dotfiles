@@ -15,6 +15,11 @@ alias sdb="script/dbconsole"
 alias ss="script/server"
 alias rc="rcov --rails test/unit/* test/functional/* && open coverage/index.html"
 
+# git aliases
+alias gc="git commit"
+alias ga="git add"
+alias gst="git status"
+
 # SVN aliases
 alias co="svn co"
 alias ci="svn ci"
