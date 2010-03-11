@@ -19,6 +19,8 @@ alias rc="rcov --rails test/unit/* test/functional/* && open coverage/index.html
 alias gc="git commit"
 alias ga="git add"
 alias gst="git status"
+alias push="git push"
+alias pull="git pull"
 
 # SVN aliases
 alias co="svn co"
