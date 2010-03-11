@@ -23,7 +23,3 @@ alias st="svn status"
 alias saddall="svn st | awk '/\?/ {print $2}' | xargs svn add"
 
 # Project aliases
-alias hcom="cd ~/Work/hcom"
-alias job="cd ~/Work/hcom/jobboard2/trunk"
-alias sec="cd ~/Work/SEC/"
-alias goals="cd ~/Work/hcom/goals_and_objectives/trunk"
