@@ -1,0 +1,6 @@
+*.elc
+elpa/*
+url/*
+custom.el
+auto-save-list
+#*

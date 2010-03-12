@@ -1,0 +1,100 @@
+;;; -*- coding: emacs-mule -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/matth/projects/MUI/Renderer/" . "LayoutItems/")
+ ("/Users/matth/projects/MUI/" . "Base/")
+ ("/Users/matth/projects/" . "MUI/")
+ ("/Users/matth/.emacs.d/elpa-to-submit/nxhtml/" . "related/")
+ ("/Users/matth/.emacs.d/elpa-to-submit/" . "nxhtml/")
+ ("/Users/matth/.emacs.d/" . "elpa-to-submit/")
+ ("/Users/matth/Sites/mwhenry.com/public_html/" . "blueprint/")
+ ("/Users/matth/Sites/mwhenry.com/" . "public_html/")
+ ("/Users/matth/Sites/" . "mwhenry.com/")
+ ("/Users/matth/Projects/Blueprint/sdk_1.1/Samples/Twitter Example/" . "Server/")
+ ("/Users/matth/Projects/Blueprint/sdk_1.1/Samples/" . "Twitter Example/")
+ ("/Users/matth/Projects/Blueprint/sdk_1.1/" . "Samples/")
+ ("/Users/matth/Projects/Blueprint/" . "sdk_1.1/")
+ ("/Users/matth/Projects/" . "Blueprint/")
+ ("/Users/matth/" . "Sites/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/matth/Sites/"
+ "/Users/matth/.emacs.d/elpa-to-submit/nxhtml/related/"
+ "/Users/matth/projects/MUI/Renderer/LayoutItems/"
+ "/Users/matth/.emacs.d/"
+ "/Users/matth/Sites/mwhenry.com/public_html/blueprint/"
+ "/Users/matth/.emacs.d/elpa-to-submit/nxhtml/"
+ "/Users/matth/Projects/Blueprint/sdk_1.1/Samples/Twitter Example/Server/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "hello.php"
+ "php-mode.el"
+ "ClassB.class.inc"
+ "init.el"
+ "placard-test.bp"
+ "index.bp"
+ "autostart.el"
+ "readme.txt"
+ "index.php"
+ "matt.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/matth/projects/MUI/Base/" (19063 22757) "._Header.class.inc" "UiCommand.class.inc" "Trigger.class.inc" "TitleBar.class.inc" "Title.class.inc" "Textarea.class.inc" "TextInput.class.inc" "TextInlineElement.class.inc" "TextElement.class.inc" "TextAd.class.inc" "TemplateItems.class.inc" "TemplateItem.class.inc" "Tabs.class.inc" "Table.class.inc" "TabContent.class.inc" "Tab.class.inc" "Switch.class.inc" "Submit.class.inc" "Stars.class.inc" "Span.class.inc" "SetCurrentLocation.class.inc" "Select1.class.inc" "Select.class.inc" "Secret.class.inc" "SearchBox.class.inc" "Reviews.class.inc" "Replaceable.class.inc" "Rating.class.inc" "Prev.class.inc" "PlacardSet.class.inc" "Placard.class.inc" "PageNavigator.class.inc" "PageHeader.class.inc" "PageFooter.class.inc" "Page.class.inc" "Options.class.inc" "OptionContainer.class.inc" "Option.class.inc" "OneSearch.class.inc" "Next.class.inc" "NavigationBar.class.inc" "NavLink.class.inc" "More.class.inc" "ModuleContainer.class.inc" "Module.class.inc" "Masthead.class.inc" "MapPoint.class.inc" "Map.class.inc" "LocationChooser.class.inc" "LocalSwitcher.class.inc" "List.class.inc" "LinkSet.class.inc" "LayoutItemsContainer.class.inc" "LayoutItems.class.inc" "LayoutItemContainer.class.inc" "LayoutElement.interface.inc" "Label.class.inc" "ItemContainer.class.inc" "Item.class.inc" "Input.class.inc" "InlineTrigger.class.inc" "InlineElementContainer.class.inc" "InlineElement.interface.inc" "ImageTrigger.class.inc" "ImageList.class.inc" "Image.class.inc" "Hr.class.inc" "Header.class.inc" "Group.class.inc" "Goto.class.inc" "FormEnd.class.inc" "FormElement.class.inc" "FormBegin.class.inc" "Focusable.interface.inc" "EmptyElement.class.inc" "Element.class.inc" "DisplayAd.class.inc" "CustomAd.class.inc" "ControlContainer.class.inc" "Control.interface.inc" "Content.class.inc" "Container.class.inc" "Case.class.inc" "Br.class.inc" "Block.class.inc" "Back.class.inc" "._Back.class.inc" "CVS/" "../" "./")
+
+ ("/Users/matth/.emacs.d/elpa-to-submit/nxhtml/related/" (19064 28032) "wikipedia-mode.el" "tt-mode.el" "snippet.el" "smarty-mode.el" "smarty-mode-vdebout.el" "rhino.js" "readme.txt" "php-mode.el" "php-imenu.el" "moz.el" "js2.el" "js2-new.el" "js2-mumamo.el" "js2-font-lock.el" "js2-font-lock-new.el" "javascript.el" "javascript-mozlab.el" "fold-dwim.el" "flymu.el" "flymake-php.el" "flymake-keys.el" "flymake-js.el" "flymake-helpers.el" "find-recursive.el" "find-recursive-orig.el" "env.js" "django.el" "css-mode.el" "csharp-mode.el" "cgi+.el" "blank.html" ".#php-mode.el" "#php-mode.el#" "../" "./")
+
+ ("/Users/matth/projects/MUI/Renderer/LayoutItems/" (19064 27688) "#ClassB.class.inc#" "._ClassB.class.inc" "ClassANew.class.inc" "ClassHero.class.inc" "ClassB.class.inc" "ClassA.class.inc" "CVS/" "../" "./")
+
+ ("/Users/matth/" (19064 27734) "Sites/" "Public/" "projects/" "Pictures/" "p/" "News/" "Music/" "Movies/" "Library/" "foo.txt" "Downloads/" "Documents/" "Desktop/" "Code/" "AppleADBKeyboard.backup.plist" ".zshrc" ".zshenv" ".zsh/" ".Xcode/" ".vimrc" ".vimperatorrc" ".vimperator/" ".viminfo" ".vim/" ".Trash/" ".subversion/" ".ssh/" ".recentf" ".macports/" ".MacOSX/" ".lesshst" ".irbrc" ".ido.last" ".eshell/" ".emacs.d/" ".DS_Store" ".cups/" ".CFUserTextEncoding" ".bash_profile.macports-saved_2009-07-23_at_15:42:16" ".bash_profile" ".bash_history" ".android/" "../" "./")
+
+ ("/Users/matth/.emacs.d/elpa-to-submit/nxhtml/" (19063 12853) "util/" "tests/" "related/" "readme.txt" "nxml-mode-20041004/" "nxhtml-maintenance.el" "nxhtml-loaddefs.el" "nxhtml/" "etc/" "autostart.el" ".nosearch" "../" "./")
+
+ ("/Users/matth/Sites/mwhenry.com/public_html/blueprint/" (19063 18004) "placard-test.bp" ".fuse_hidden0000001400000001" ".htaccess" "../" "./" "#index.bp#" "index.bp")
+
+ ("/Users/matth/projects/MUI/Renderer/" (19063 22758) "._Content.class.inc" "UiCommand/" "Trigger/" "TitleBar/" "Textarea/" "TextInput/" "TextAd/" "TemplateItems/" "TemplateItem/" "Tabs/" "Table/" "TabContent/" "Tab/" "Switch/" "Submit/" "Strong/" "Span/" "SetCurrentLocation/" "Send/" "Select1/" "Select/" "Secret/" "SearchBox/" "Replaceable/" "Rating/" "Prev/" "PlacardSet/" "Placard/" "PageNavigator/" "PageHeader/" "PageFooter/" "Page/" "Options/" "Option/" "OneSearch/" "Next/" "NavigationBar/" "NavLink/" "More/" "Module/" "Masthead/" "MapPoint/" "Map/" "LocationChooser/" "LocalSwitcher/" "List/" "LinkSet/" "LayoutItems/" "Label/" "Item/" "Input/" "InlineTrigger/" "ImageTrigger/" "ImageList/" "Image/" "Hr/" "Header/" "Group/" "Goto/" "FormEnd/" "FormBegin/" "Footer/" "Em/" "DisplayAd/" "CustomAd/" "Content/" "Case/" "Br/" "Block/" "Image.class.inc" "Content.class.inc" "Br.class.inc" "Back/" "CVS/" "../" "./")
+
+ ("/Users/matth/.emacs.d/" (19064 26364) "TODO" "starter-kit-ruby.el" "starter-kit-registers.el" "starter-kit-perl.el" "starter-kit-misc.el" "starter-kit-lisp.el" "starter-kit-js.el" "starter-kit-eshell.el" "starter-kit-elpa.el" "starter-kit-defuns.el" "starter-kit-bindings.el" "README.markdown" "places" "package.el" "loaddefs.el" "init.el" "elpa-to-submit/" "elpa/" "COPYING" "backups/" "auto-save-list/" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/matth/projects/MUI/" (19055 25638) "._Renderer.interface.inc" "._Context.class.inc" "Util/" "Renderer/" "Javascript/" "Handler/" "Css/" "Client/" "Renderer.interface.inc" "Context.class.inc" "Base/" "CVS/" "../" "./")
+
+ ("/Users/matth/projects/" (19063 25204) "MUI/" "UI/" "blueprint/" "moai/" "../" "./")
+
+ ("/Users/matth/.emacs.d/elpa-to-submit/nxhtml/nxhtml/" (19063 12077) "xhtml-help.el" "wtest.el" "tidy-xhtml.el" "tests.el" "test-cust.el" "test-c-m.el" "rngalt.el" "outline-magic.el" "old/" "nxml-where.el" "nxhtml.el" "nxhtml-strval.el" "nxhtml-mumamo.el" "nxhtml-menu.el" "nxhtml-js.el" "nxhtml-bug.el" "nxhtml-autoload.el" "nxhtml-anything-1.el" "inlimg.el" "html-wtoc.el" "html-wtoc/" "html-upl.el" "html-upl/" "html-toc.el" "html-toc/" "html-site.el" "html-quote.el" "html-pagetoc.el" "html-move.el" "html-imenu.el" "html-chklnk.el" "html-chklnk/" "doc/" "ChangeLog" ".htaccess" "../" "./")
+
+ ("/Users/matth/.emacs.d/elpa-to-submit/" (19063 12078) "zenburn.el" "yaml-mode.el" "twilight.el" "tt-mode.el" "textile-mode.el" "scpaste.el" "sass-mode.el" "ruby-electric.el" "ri.el" "pod-mode.el" "perl-find-library.el" "pcmpl-rake.el" "paredit.el" "oddmuse.el" "nxhtml/" "moz.el" "markdown-mode.el" "magit.el" "jabber/" "htmlize.el" "haml-mode.el" "find-file-in-project.el" "espresso.el" "eshell-vc.el" "cssh.el" "cperl-mode.el" "color-theme.el" "cheat.el" "blackboard.el" "../" "./")
+
+ ("/Users/matth/.emacs.d/elpa/" (19063 12078) ".gitignore" "../" "./")
+
+ ("/Users/matth/Sites/mwhenry.com/public_html/" (19046 21937) "hesketh/" "wp-admin/" "index.bak" "autocomp.php" "wp-register.php" "index.old" "wp-config-sample.php" "license.txt" "theform.php" "wp-load.php" "index.php" ".wysiwygPro_edit_index_html.php" "wp-app.php" "examples/" "MHenryCoverLetter.doc" "wp-feed.php" ".smileys/" "hcb/" "index.php.old" "index.php~" "wp-trackback.php" "wp-content/" "readme.html" "cgi-bin/" ".htaccess" "fantastico_fileslist.txt" "wp-blog-header.php" "wp-settings.php" "wp-rdf.php" "wp-includes/" "ajax.php" "wp-config.php" "xmlrpc.php" "index.shtml.old" "style.css" "wp-rss.php" "boot.php" "wp-rss2.php" "MHenryResume.pdf" "blog/" "wp-login.php" "wp-cron.php" "index.php.prefever" "blueprint/" "../" "wp-pass.php" "wp-atom.php" "fantversion.php" "error_log" "wp-links-opml.php" "./" "index.html.old" "resume/" "MHenryResume.doc" "wp-commentsrss2.php" "safety-unlace.php" "wp-mail.php" "wp-comments-post.php" "images/" "wsj/")
+
+ ("/Users/matth/Sites/mwhenry.com/" (19046 21753) "ruby/" ".contactemail" "functions.js" "fantastico_backups/" ".emacs" ".bash_profile" "www/" ".gem/" ".lang" ".fantasticodata/" ".dns" ".emacs.d/" ".bash_logout" ".gemrc" ".viminfo" ".lastlogin" "mail/" "public_html/" "etc/" ".bash_history" ".bashrc" "sample3-1.html" "../" ".cpanel/" ".gnupg/" "public_ftp/" "./" ".htpasswds/" ".mysql_history" "tmp/" ".typo_old/" "fever.zip" ".trash/")
+
+ ("/Users/matth/Sites/" (19061 52970) "mwhenry.com/" "info.php" "index.html" "images/" "hello.php" "hello.inc" "drupal/" ".localized" "../" "./")
+
+ ("/Users/" (19030 26) "Shared/" "matth/" "admin/" ".localized" "../" "./")
+
+ ("/Users/matth/Projects/Blueprint/sdk_1.1/Samples/Twitter Example/Server/" (18824 38590) "twitter.php" "index.php" "../" "./")
+
+ ("/Users/matth/Projects/Blueprint/sdk_1.1/Samples/Twitter Example/" (18824 38636) "Submission/" "Server/" "README.txt" "../" "./")
+
+ ("/Users/matth/Projects/Blueprint/sdk_1.1/Samples/Test/" (19047 22174) "submission/" "server/" "../" "./")
+
+ ("/Users/matth/Projects/Blueprint/sdk_1.1/Samples/" (19047 21186) "Twitter Example/" "Test/" "Hello World/" "../" "./")
+
+ ("/Users/matth/Projects/Blueprint/sdk_1.1/" (19047 36368) "Template/" "Schemas/" "Samples/" "ReleaseNotes.txt" "PHPLibrary/" "Drupal/" "../" "./")
+
+ ("/Users/matth/Projects/Blueprint/" (19046 18938) "sdk_1.1/" "../" "./")
+
+ ("/Users/matth/Projects/" (19046 18906) "Blueprint/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
+
