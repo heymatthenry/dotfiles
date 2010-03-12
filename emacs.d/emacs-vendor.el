@@ -32,11 +32,9 @@
 (require 'textile-mode)
 (add-to-list 'auto-mode-alist '("\\.textile\\'" . textile-mode))
 
-;; CSS
+;; Zen Coding
 (require 'zencoding-mode)
-;(require 'css-mode)
-(add-to-list 'auto-mode-alist '("\\.css$" . zencoding-mode))
-(add-to-list 'auto-mode-alist '("\\.html$" . zencoding-mode))
+(add-hook 'sgml-mode-hook 'zencoding-mode) ;; Auto-start on any markup modes
 
 ;; Javascript (espresso)
 (autoload 'espresso-mode "espresso" nil t)
@@ -76,7 +74,3 @@
 ;; Markdown
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.mdown$" . markdown-mode))
-
-;; XScheme
-(require 'xscheme)
-(add-to-list 'auto-mode-alist '("\\.scm$" . markdown-mode))
