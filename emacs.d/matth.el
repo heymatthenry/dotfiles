@@ -14,7 +14,7 @@
 (global-set-key [M-ret] 'fullscreen)
 
 ;; Theme
-(color-theme-vibrant-ink)
+(color-theme-merbivore)
 
 ;; unindent
 (defun unindent-block()
