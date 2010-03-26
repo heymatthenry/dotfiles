@@ -12,9 +12,10 @@
                                            nil
                                            'fullboth)))
 (global-set-key [M-ret] 'fullscreen)
+(set-face-attribute 'default nil :height 140)
 
 ;; Theme
-(color-theme-merbivore)
+(color-theme-vibrant-ink)
 
 ;; unindent
 (defun unindent-block()
@@ -22,9 +23,11 @@
   (setq deactivate-mark nil))
 
 (global-set-key [C-M-tab] 'unindent-block)
-;; init.el end
 
-;; Twitter
+;; goto-line
+(global-set-key (kbd "C-M-l") 'goto-line)
+
+;; twitter
 (autoload 'twitter-get-friends-timeline "twitter" nil t)
 (autoload 'twitter-status-edit "twitter" nil t)
 (global-set-key "\C-xt" 'twitter-get-friends-timeline)
