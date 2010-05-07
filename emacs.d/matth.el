@@ -6,12 +6,7 @@
 (setq mac-command-modifier 'meta) ;Aquamacs
 
 ;; Define fullscreen command
-(defun fullscreen ()
-  (interactive)
-  (set-frame-parameter nil 'fullscreen (if (frame-parameter nil 'fullscreen)
-                                           nil
-                                           'fullboth)))
-(global-set-key [M-ret] 'fullscreen)
+(global-set-key [C-M-return] 'ns-toggle-fullscreen)
 (set-face-attribute 'default nil :height 140)
 
 ;; Theme
