@@ -1,3 +1,4 @@
 *.swp
+vim/.netrwhist
 zsh/zsh_history
 zsh/cache
