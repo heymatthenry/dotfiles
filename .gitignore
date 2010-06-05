@@ -1,4 +1,6 @@
+.DS_Store
 *.swp
+vim/doc/tags
 vim/.netrwhist
 zsh/zsh_history
 zsh/cache
