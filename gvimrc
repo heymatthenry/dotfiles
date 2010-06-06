@@ -8,6 +8,7 @@ set vb
 set guioptions-=T
 set guioptions-=r
 set guioptions-=l
+set guioptions-=L
 
 " Use console dialogs
 set guioptions+=c
@@ -16,3 +17,6 @@ set guioptions+=c
 if filereadable($HOME . "/.gvimrc.local")
   source ~/.gvimrc.local
 endif
+
+" Fullscreen should be *fullscreen*
+set fuoptions=maxvert,maxhorz

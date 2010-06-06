@@ -18,5 +18,8 @@ set statusline=%<%f,%Y\ %h%m%r%=%-20(line=%l\/%L,\ col=%c%)%-40(buf=%n%)\ %{strf
 " Hide search highlighting
 map <Leader>l :set invhls <CR>
 
+" Toggle NERDTree
+map <F2> :NERDTreeToggle<CR>
+
 " Fullscreen should be *fullscreen*
 set fuoptions=maxvert,maxhorz
