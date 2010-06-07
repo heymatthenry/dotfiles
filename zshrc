@@ -28,13 +28,14 @@ zle -N zle-keymap-select
 export EDITOR='vim'
 export LSCOLORS="cxfxcxdxbxegedabagacad"
 export GEM_HOME='/usr/local/Cellar/RubyGems/1.8/'
-export PATH=$PATH:/usr/local/Cellar/RubyGems/1.8/bin/:/usr/local/narwhal/bin/
+export PATH=$PATH:/usr/local/Cellar/RubyGems/1.8/bin/:/usr/local/narwhal/bin/:/Users/matth/.scripts/
 
 # BRING in all of my aliases
 source ~/.zsh/aliases
 source ~/.zsh/titlebar
 source ~/.zsh/git
 source ~/.zsh/git_prompt
+
 # rvm installer added line:
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
