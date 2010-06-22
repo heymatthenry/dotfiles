@@ -21,5 +21,3 @@ map <Leader>l :set invhls <CR>
 " Toggle NERDTree
 map <F2> :NERDTreeToggle<CR>
 
-" Fullscreen should be *fullscreen*
-set fuoptions=maxvert,maxhorz
