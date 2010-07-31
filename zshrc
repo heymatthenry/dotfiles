@@ -27,8 +27,9 @@ zle -N zle-keymap-select
 # Set global variables 
 export EDITOR='vim'
 export LSCOLORS="cxfxcxdxbxegedabagacad"
-export GEM_HOME='/usr/local/Cellar/RubyGems/1.8/'
-export PATH=$PATH:/usr/local/Cellar/RubyGems/1.8/bin/:/usr/local/narwhal/bin/:/Users/matth/.scripts/
+export GEM_HOME='/usr/local/bin'
+export GEM_PATH='/usr/local/bin'
+export PATH=$PATH:/usr/local/narwhal/bin/:/Users/matth/.scripts/
 
 # BRING in all of my aliases
 source ~/.zsh/aliases
