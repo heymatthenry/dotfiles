@@ -30,7 +30,7 @@ export GEM_HOME='/usr/local/bin'
 export GEM_PATH='/usr/local/bin'
 export PATH=$PATH:/usr/local/narwhal/bin/:/Users/matth/.scripts/
 
-# BRING in all of my aliases
+# Bring in all of my aliases
 source ~/.zsh/aliases
 source ~/.zsh/titlebar
 source ~/.zsh/git
