@@ -1,7 +1,6 @@
 # Set Zsh theme
 autoload -U promptinit
 promptinit
-prompt ResetAll
 
 # General preferences
 setopt autocd  # cd when a path is entered
@@ -39,4 +38,3 @@ source ~/.zsh/git_prompt
 
 # rvm installer added line:
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
-
