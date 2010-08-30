@@ -5,7 +5,7 @@ set foldmethod=indent
 
 " tabs
 set tabstop=2
-set shiftwidth
+set shiftwidth=2
 set expandtab
 
 " color
@@ -15,9 +15,13 @@ colorscheme vividchalk
 set laststatus=2
 set statusline=%<%f,%Y\ %h%m%r%=%-20(line=%l\/%L,\ col=%c%)%-40(buf=%n%)\ %{strftime(\"%c\")}
 
-" Hide search highlighting
-map <Leader>l :set invhls <CR>
+let mapleader = ',' " Leader key
 
-" Toggle NERDTree
-map <F2> :NERDTreeToggle<CR>
+
+" Hide search highlighting
+set invhls
+
+set nobackup                      " Don't make a backup before overwriting a file.
+set nowritebackup                 " And again.
+set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
