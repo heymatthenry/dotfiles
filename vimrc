@@ -1,25 +1,20 @@
-set autoindent
-filetype plugin indent on
+set autoindent                   
 
-set foldmethod=indent
+"filetype plugin indent on         " code folding
+"set foldmethod=indent             " 
 
-" tabs
-set tabstop=2
-set shiftwidth=2
-set expandtab
+set tabstop=2                     " tabs
+set shiftwidth=2                  " 
+set expandtab                     " 
 
-" color
-colorscheme vividchalk
+colorscheme vividchalk            " color
 
-" Always display the status line
-set laststatus=2
+set laststatus=2                  " Always display the status line
 set statusline=%<%f,%Y\ %h%m%r%=%-20(line=%l\/%L,\ col=%c%)%-40(buf=%n%)\ %{strftime(\"%c\")}
 
-let mapleader = ',' " Leader key
+let mapleader = ','               " Leader key
 
-
-" Hide search highlighting
-set invhls
+set nohlsearch                    " Hide search highlighting
 
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
