@@ -20,3 +20,23 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
+" set wildmenu 
+" fancy command line completion menu
+set wildmode=list:longest " complete files like a shell
+set wildignore=*.DS_Store,*.dSYM,*.log,*.o,*.ss~ " files to ignore
+
+" FuzzyFinder shortcuts
+map <leader>t :NERDTreeToggle<CR>
+map <leader>f :FufFile<CR>
+map <leader>F :FufFileWithCurrentBufferDir<CR>
+map <leader>b :FufBuffer<CR>
+map <leader>/ :FufFileRecursive<CR>
+map <leader>r :FufRenewCache<CR>
+
+" enter adds blank lines
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
+
+" persistent undo
+set undofile
+set undodir=~/.vim/undo
