@@ -1,8 +1,0 @@
---- 
-todo.txt-vim: 
-  branch: master
-  remote: braid/todo.txt-vim
-  revision: 9f3f85d8496a326d184875162c688108146d776d
-  squashed: true
-  type: git
-  url: http://github.com/davidoc/todo.txt-vim.git
