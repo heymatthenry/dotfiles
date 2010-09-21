@@ -6,3 +6,10 @@ vim/bundle/ack:
   squashed: true
   type: git
   url: http://github.com/mileszs/ack.vim.git
+vim/bundle/yankring: 
+  branch: master
+  remote: braid/vim/bundle/yankring
+  revision: aae4a676d3164cb9ab9255d81b3dfac2b9286d69
+  squashed: true
+  type: git
+  url: git://github.com/chrismetcalf/vim-yankring.git
