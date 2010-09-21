@@ -1,9 +1,11 @@
 "necessary on some Linux distros for pathogen to properly load bundles
 filetype off
 
+call pathogen#helptags()                    " generate help for pathogen bundles
 call pathogen#runtime_append_all_bundles()  " load pathogen bundles
 
 set autoindent                   
+set nocompatible                   
 
 "filetype plugin indent on         " code folding
 "set foldmethod=indent             " 
