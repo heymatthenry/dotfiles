@@ -16,7 +16,7 @@ colorscheme vividchalk            " color
 
 set laststatus=2                  " Always display the status line
 set statusline=%<%f,%Y\ %h%m%r%=%-20(line=%l\/%L,\ col=%c%)%-40(buf=%n%)\ %{strftime(\"%c\")}
-set relativenumber                " show line numbers relative to the cursor
+set number     
 set cursorline
 
 let mapleader = ','               " Leader key
@@ -58,6 +58,11 @@ map <leader>r :FufRenewCache<CR>
 " enter adds blank lines
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
+
+" Change line numbering scheme
+map <leader>ln <Esc>:set number<CR>
+map <leader>rn <Esc>:set relativenumber<CR>
+map <leader>nn <Esc>:set nonumber norelativenumber<CR>
 
 " persistent undo
 set undofile
