@@ -11,6 +11,8 @@ colorscheme vividchalk            " color
 
 set laststatus=2                  " Always display the status line
 set statusline=%<%f,%Y\ %h%m%r%=%-20(line=%l\/%L,\ col=%c%)%-40(buf=%n%)\ %{strftime(\"%c\")}
+set relativenumber                " show line numbers relative to the cursor
+set cursorline
 
 let mapleader = ','               " Leader key
 
