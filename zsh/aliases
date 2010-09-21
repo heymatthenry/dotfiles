@@ -8,6 +8,7 @@ alias vm="~/vm"
 alias dev="ssh felllonethen"
 alias jeos="ssh 172.16.243.151"
 alias log="open -a console log/development.log"
+alias todo="mvim ~/todo.txt"
 
 # Ruby/Rails aliases
 alias sc="script/console"
