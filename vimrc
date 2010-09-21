@@ -27,6 +27,10 @@ set hlsearch
 " cancel search
 nnoremap <leader><space> :let @/=''<cr>
 
+" Tab to match bracket pairs
+nnoremap <tab> %
+vnoremap <tab> %
+
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
