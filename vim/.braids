@@ -48,3 +48,10 @@ vim/bundle/yankring:
   squashed: true
   type: git
   url: git://github.com/chrismetcalf/vim-yankring.git
+zsh/oh-my-zsh: 
+  branch: master
+  remote: braid/zsh/oh-my-zsh
+  revision: 99f159e0a7c63e6756f8e6e40691914da8f7a96c
+  squashed: true
+  type: git
+  url: git@github.com:greenideas/oh-my-zsh.git
