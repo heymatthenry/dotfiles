@@ -14,8 +14,18 @@ set statusline=%<%f,%Y\ %h%m%r%=%-20(line=%l\/%L,\ col=%c%)%-40(buf=%n%)\ %{strf
 
 let mapleader = ','               " Leader key
 
-set nohlsearch                    " Hide search highlighting
 set hidden                        " Let me leave buffers even when they have changes
+
+" search preferences
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+
+" cancel search
+nnoremap <leader><space> :let @/=''<cr>
 
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
