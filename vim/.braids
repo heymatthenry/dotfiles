@@ -48,6 +48,13 @@ vim/bundle/yankring:
   squashed: true
   type: git
   url: git://github.com/chrismetcalf/vim-yankring.git
+vim/bundle/zencoding: 
+  branch: master
+  remote: braid/vim/bundle/zencoding
+  revision: 51bcdaa1813edce0abb58b6511a3766871e92523
+  squashed: true
+  type: git
+  url: git://github.com/mattn/zencoding-vim.git
 vim/snippets: 
   branch: master
   remote: braid/vim/snippets
