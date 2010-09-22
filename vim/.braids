@@ -41,6 +41,13 @@ vim/bundle/rooter:
   squashed: true
   type: git
   url: git://github.com/airblade/vim-rooter.git
+vim/bundle/surround: 
+  branch: master
+  remote: braid/vim/bundle/surround
+  revision: 27710a2224d6dd0486d1c40d09ef18dd752e7d37
+  squashed: true
+  type: git
+  url: http://github.com/tpope/vim-surround.git
 vim/bundle/yankring: 
   branch: master
   remote: braid/vim/bundle/yankring
