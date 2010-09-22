@@ -1,4 +1,11 @@
 --- 
+vim/bundle/abolish: 
+  branch: master
+  remote: braid/vim/bundle/abolish
+  revision: 434a64450d052c2f3909841f55a55e0d653adcd1
+  squashed: true
+  type: git
+  url: http://github.com/tpope/vim-abolish.git
 vim/bundle/ack: 
   branch: master
   remote: braid/vim/bundle/ack
