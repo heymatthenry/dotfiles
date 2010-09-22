@@ -21,3 +21,5 @@ plugins=(git osx ruby)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+# rvm installer added line:
+if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
