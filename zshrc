@@ -21,6 +21,17 @@ plugins=(git osx ruby)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+# Use Vim keybindings
+bindkey -v
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+# path stuff
 export GEM_HOME='/usr/local/bin'
 export GEM_PATH='/usr/local/bin'
 export PATH=$PATH:/Users/matth/.scripts/
