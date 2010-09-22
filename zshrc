@@ -21,5 +21,9 @@ plugins=(git osx ruby)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+export GEM_HOME='/usr/local/bin'
+export GEM_PATH='/usr/local/bin'
+export PATH=$PATH:/Users/matth/.scripts/
+
 # rvm installer added line:
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
