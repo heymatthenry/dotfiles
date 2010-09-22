@@ -48,6 +48,13 @@ vim/bundle/yankring:
   squashed: true
   type: git
   url: git://github.com/chrismetcalf/vim-yankring.git
+vim/snippets: 
+  branch: master
+  remote: braid/vim/snippets
+  revision: c37351df1541fcfdd5e4e22050ebc3b3eb320b00
+  squashed: true
+  type: git
+  url: git://github.com/scrooloose/snipmate-snippets.git
 zsh/oh-my-zsh: 
   branch: master
   remote: braid/zsh/oh-my-zsh
