@@ -86,3 +86,5 @@ let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 let Tlist_WinWidth = 50
 map <leader>tl :TlistToggle<cr>
 set tags=./tags;/                   " look back up in the tree for a tags file
+
+map <leader>yr :YRShow<cr>        " Show yankring viewer
