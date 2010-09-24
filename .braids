@@ -13,13 +13,6 @@ vim/bundle/fugitive:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-fugitive.git
-vim/bundle/sparkup: 
-  branch: master
-  remote: braid/vim/bundle/sparkup
-  revision: 04a81b41f116a19184359a6f8685c192f5c36c70
-  squashed: true
-  type: git
-  url: http://github.com/rstacruz/sparkup.git
 vim/bundle/taglist: 
   branch: master
   remote: braid/vim/bundle/taglist
