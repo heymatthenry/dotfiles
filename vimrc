@@ -2,10 +2,8 @@
 filetype off
 
 call pathogen#runtime_append_all_bundles()  " load pathogen bundles
-call pathogen#helptags()                    " generate help for pathogen bundles
 
 set autoindent                   
-set nocompatible                   
 
 "filetype plugin indent on         " code folding
 "set foldmethod=indent             " 
@@ -81,10 +79,8 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
-" Taglist
-let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
-let Tlist_WinWidth = 50
-map <leader>tl :TlistToggle<cr>
-set tags=./tags;/                   " look back up in the tree for a tags file
+" Highlight extra whitespace and call out the hated tabs
+syntax match Tab /\t/
+hi Tab guibg=Red guifg=NONE ctermbg=red
+set list listchars=tab:>>,trail:·,eol:¶
 
-map <leader>yr :YRShow<cr>        " Show yankring viewer
