@@ -82,5 +82,8 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 " Highlight extra whitespace and call out the hated tabs
 syntax match Tab /\t/
 hi Tab guibg=Red guifg=NONE ctermbg=red
-set list listchars=tab:>>,trail:·,eol:¶
+"set list listchars=tab:>>,trail:·,eol:¶
+map <leader>sc <Esc>:set list listchars=tab:>>,trail:·,eol:¶<CR>
+map <leader>hc <Esc>:set nolist<CR>
 
+map <leader>yr <Esc>:YRShow<CR>           " Show yankring window
