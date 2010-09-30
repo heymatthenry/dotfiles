@@ -21,6 +21,9 @@ plugins=(git osx ruby)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+source ~/.zsh/aliases   # Bring in my aliases
+
 # Use Vim keybindings
 bindkey -v
 function zle-line-init zle-keymap-select {
