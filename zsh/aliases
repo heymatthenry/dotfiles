@@ -1,14 +1,9 @@
 # Utility aliases
-alias dev="ssh 192.168.45.129"
 alias ls="ls -GF"
 alias ll="ls -lGF"
 alias la="ls -aGF"
-alias cm="CD_Mate"
-alias vm="~/vm"
-alias dev="ssh felllonethen"
-alias jeos="ssh 172.16.243.151"
 alias log="open -a console log/development.log"
-alias todo="mvim ~/todo.txt"
+alias todo="mvim ~/Dropbox/PlainText/todo.txt"
 
 # Ruby/Rails aliases
 alias sc="script/console"
