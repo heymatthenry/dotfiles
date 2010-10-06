@@ -27,3 +27,10 @@ vim/bundle/taglist:
   squashed: true
   type: git
   url: git://github.com/chronon/taglist.vim.git
+vim/snippets: 
+  branch: master
+  remote: braid/vim/snippets
+  revision: c37351df1541fcfdd5e4e22050ebc3b3eb320b00
+  squashed: true
+  type: git
+  url: git://github.com/scrooloose/snipmate-snippets.git
