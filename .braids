@@ -13,6 +13,13 @@ vim/bundle/fugitive:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-fugitive.git
+vim/bundle/snipmate: 
+  branch: master
+  remote: braid/vim/bundle/snipmate
+  revision: 59d9d23ef83c8007e5ad95c4767502198b832cbf
+  squashed: true
+  type: git
+  url: http://github.com/akitaonrails/snipmate.vim.git
 vim/bundle/sparkup: 
   branch: master
   remote: braid/vim/bundle/sparkup
