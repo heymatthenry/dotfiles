@@ -1,0 +1,15 @@
+Pathogen style bundle of sparkup vim plugin, based on the sparkup V0.2 branch.
+
+Basically I have created my own fork of the sparkup project. In my branch I
+added a file: VimBundle.mk, which puts all the right stuff in this repo. To
+use this bundle, just do the normal pathogeny stuff:
+
+	git submodule add  bundle/sparkup
+
+Much easier than the craziness of the sparkup module, no?
+
+Orignal URL for sparkup:
+http://github.com/rstacruz/sparkup
+
+Url formy sparkup branch:
+http://github.com/sophacles/sparkup
