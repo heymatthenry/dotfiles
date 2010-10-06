@@ -5,8 +5,8 @@ call pathogen#runtime_append_all_bundles()  " load pathogen bundles
 
 set autoindent                   
 
-"filetype plugin indent on         " code folding
-"set foldmethod=indent             " 
+filetype plugin indent on         
+set foldmethod=indent             " code folding 
 
 set tabstop=2                     " tabs
 set shiftwidth=2                  " 

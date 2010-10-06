@@ -3,7 +3,7 @@ alias ls="ls -GF"
 alias ll="ls -lGF"
 alias la="ls -aGF"
 alias log="open -a console log/development.log"
-alias todo="mvim ~/Dropbox/PlainText/todo.txt"
+alias t="sh ~/.todo/todo.sh"
 
 # Ruby/Rails aliases
 alias sc="script/console"

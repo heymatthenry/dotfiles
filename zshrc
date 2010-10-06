@@ -21,7 +21,8 @@ plugins=(git osx ruby)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-
+# PROMPT=$'[%d{blue}]\n->'
+# PROMPT="${~/.rvm/bin/rvm-prompt} $PROMPT"
 source ~/.zsh/aliases   # Bring in my aliases
 
 # Use Vim keybindings
@@ -37,7 +38,7 @@ zle -N zle-keymap-select
 # path stuff
 export GEM_HOME='/usr/local/bin'
 export GEM_PATH='/usr/local/bin'
-export PATH=/usr/local/bin:$PATH:/usr/local/sbin:/Users/matth/.scripts
 
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # rvm installer added line:
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
