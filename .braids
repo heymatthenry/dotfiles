@@ -2,7 +2,7 @@
 vim: 
   branch: master
   remote: braid/vim
-  revision: 9fcb0305d5703493cf164721a41d33af511ff1f1
+  revision: 61907a99c1d290384d6a07ddb3d9f39d978ad751
   squashed: true
   type: git
   url: http://github.com/tpope/vim-rails.git
