@@ -1,4 +1,11 @@
 --- 
+bundle/vim-css-color: 
+  branch: master
+  remote: braid/bundle/vim-css-color
+  revision: 5c9b1f1ca2093f1d54a495b53000cf78d43339ca
+  squashed: true
+  type: git
+  url: http://github.com/skammer/vim-css-color.git
 vim: 
   branch: master
   remote: braid/vim
