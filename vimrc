@@ -66,6 +66,10 @@ map <leader>ln <Esc>:set number<CR>
 map <leader>rn <Esc>:set relativenumber<CR>
 map <leader>nn <Esc>:set nonumber norelativenumber<CR>
 
+" Toggle statusline
+map <leader>nb <Esc>:set laststatus=0<CR>
+map <leader>sb <Esc>:set laststatus=2<CR>
+
 " persistent undo
 set undofile
 set undodir=~/.vim/undo
