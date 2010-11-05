@@ -1,8 +1,4 @@
-" Font
-set guifont=Monaco:h13.00
-
-" No audible bell
-set vb
+set guifont=Monaco:h13.00         " font
 
 " No toolbar
 set guioptions-=T
@@ -20,3 +16,9 @@ endif
 
 " Fullscreen should be *fullscreen*
 set fuoptions=maxvert,maxhorz
+
+set laststatus=2                  " Always display the status line
+
+"set list listchars=tab:>>,trail:·,eol:¶
+map <leader>hc <Esc>:set nolist<CR>
+map <leader>sc <Esc>:set list listchars=tab:>>,trail:·,eol:¶<CR>

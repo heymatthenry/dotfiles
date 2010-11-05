@@ -1,8 +1,8 @@
 "necessary on some Linux distros for pathogen to properly load bundles
 filetype off
-
 call pathogen#runtime_append_all_bundles()  " load pathogen bundles
 
+colorscheme vividchalk            " color
 syntax on
 filetype on
 filetype plugin indent on         
@@ -14,9 +14,8 @@ set tabstop=2                     " tabs
 set shiftwidth=2                  " 
 set expandtab                     " 
 
-colorscheme vividchalk            " color
+set vb                            " no audible bell
 
-set laststatus=2                  " Always display the status line
 set statusline=%<%f,%Y\ %h%m%r%=%-20(line=%l\/%L,\ col=%c%)%-40(buf=%n%)\ %{strftime(\"%c\")}
 set number     
 set cursorline
@@ -54,17 +53,26 @@ map <leader>t :NERDTreeToggle<CR>
 map <leader>f :FufFile<CR>
 map <leader>F :FufFileWithCurrentBufferDir<CR>
 map <leader>b :FufBuffer<CR>
-map <leader>/ :FufFileRecursive<CR>
 map <leader>r :FufRenewCache<CR>
 
 " enter adds blank lines
 map <Enter> o<ESC>
 map <S-Enter> O<ESC>
 
+" movement
+nnoremap j gj
+nnoremap k gk
+
 " Change line numbering scheme
 map <leader>ln <Esc>:set number<CR>
 map <leader>rn <Esc>:set relativenumber<CR>
 map <leader>nn <Esc>:set nonumber norelativenumber<CR>
+
+" Emacs-like bindings
+imap <C-a> <Esc>^I
+imap <C-e> <Esc>$a
+map <C-a> <Esc>^I
+map <C-e> <Esc>$a
 
 " Toggle statusline
 map <leader>nb <Esc>:set laststatus=0<CR>
@@ -88,8 +96,5 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 " Highlight extra whitespace and call out the hated tabs
 syntax match Tab /\t/
 hi Tab guibg=Red guifg=NONE ctermbg=red
-"set list listchars=tab:>>,trail:·,eol:¶
-map <leader>sc <Esc>:set list listchars=tab:>>,trail:·,eol:¶<CR>
-map <leader>hc <Esc>:set nolist<CR>
 
 map <leader>yr <Esc>:YRShow<CR>           " Show yankring window
