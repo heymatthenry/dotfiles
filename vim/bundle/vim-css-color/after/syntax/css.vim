@@ -1,9 +1,8 @@
 " Language:     Colored CSS Color Preview
-" Author:       Niklas Hofer <niklas+vim@lanpartei.de>
-" Maintainer:   Max Vasiliev <vim@skammer.name>
+" Author:       Max Vasiliev <vim@skammer.name>
 " Last Change:  2010 Jul 3
 " Licence:      No Warranties. WTFPL. But please tell me!
-" Version:      0.7
+" Version:      0.7.1
 
 function! s:StrLen(str)
   return strlen(substitute(a:str, '.', 'x', 'g'))
@@ -391,5 +390,8 @@ if has("gui_running") || &t_Co==256
 
   autocmd CursorHold * silent call s:PreviewCSSColorInLine('.')
   autocmd CursorHoldI * silent call s:PreviewCSSColorInLine('.')
-  set ut=100
-endif   " has("gui_running")
+  if !exists('g:cssColorVimDoNotMessMyUpdatetime')
+    set ut=100
+  endif
+
+endif
