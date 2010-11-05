@@ -68,12 +68,6 @@ map <leader>ln <Esc>:set number<CR>
 map <leader>rn <Esc>:set relativenumber<CR>
 map <leader>nn <Esc>:set nonumber norelativenumber<CR>
 
-" Emacs-like bindings
-imap <C-a> <Esc>^I
-imap <C-e> <Esc>$a
-map <C-a> <Esc>^I
-map <C-e> <Esc>$a
-
 " Toggle statusline
 map <leader>nb <Esc>:set laststatus=0<CR>
 map <leader>sb <Esc>:set laststatus=2<CR>
