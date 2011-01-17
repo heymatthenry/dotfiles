@@ -35,6 +35,8 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
+export EDITOR='vim'
+
 # path stuff
 export GEM_HOME='/usr/local/bin'
 export GEM_PATH='/usr/local/bin'
