@@ -1,4 +1,11 @@
 --- 
+bundle/tabular: 
+  branch: master
+  remote: braid/bundle/tabular
+  revision: f4d460ea92527f242e447aab37e3fd180ceef526
+  squashed: true
+  type: git
+  url: git://github.com/godlygeek/tabular.git
 vim/bundle/abolish: 
   branch: master
   remote: braid/vim/bundle/abolish
