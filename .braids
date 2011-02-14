@@ -34,6 +34,13 @@ vim/bundle/sparkup:
   squashed: true
   type: git
   url: http://github.com/sophacles/vim-bundle-sparkup.git
+vim/bundle/tabular: 
+  branch: master
+  remote: braid/vim/bundle/tabular
+  revision: 1835018f9622d05fb55298b0db3afa3db39a8032
+  squashed: true
+  type: git
+  url: https://github.com/godlygeek/tabular.git
 vim/bundle/taglist: 
   branch: master
   remote: braid/vim/bundle/taglist
