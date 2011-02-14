@@ -16,7 +16,7 @@ alias rc="rcov --rails test/unit/* test/functional/* && open coverage/index.html
 alias gc="git commit"
 alias ga="git add"
 alias gac="git commit -am"
-alias gst="git status"
+alias gst="git status --ignore-submodules=dirty"
 alias push="git push"
 alias pull="git pull"
 
