@@ -13,6 +13,13 @@ vim/bundle/fugitive:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-fugitive.git
+vim/bundle/jshint: 
+  branch: master
+  remote: braid/vim/bundle/jshint
+  revision: 5cb45891545a272f99a649e3ede3fae4a8ac859b
+  squashed: true
+  type: git
+  url: https://github.com/wookiehangover/jshint.vim.git
 vim/bundle/snipmate: 
   branch: master
   remote: braid/vim/bundle/snipmate
