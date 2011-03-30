@@ -6,6 +6,13 @@ vim:
   squashed: true
   type: git
   url: http://github.com/tpope/vim-rails.git
+vim/bundle/easymotion: 
+  branch: master
+  remote: braid/vim/bundle/easymotion
+  revision: 5809794d20575ede0e8277a1487b3a6e3eb0b586
+  squashed: true
+  type: git
+  url: https://github.com/Lokaltog/vim-easymotion.git
 vim/bundle/fugitive: 
   branch: master
   remote: braid/vim/bundle/fugitive
