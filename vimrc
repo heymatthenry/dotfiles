@@ -1,5 +1,6 @@
 "necessary on some Linux distros for pathogen to properly load bundles
 filetype off
+set nocompatible
 call pathogen#runtime_append_all_bundles()  " load pathogen bundles
 
 colorscheme vividchalk            " color
