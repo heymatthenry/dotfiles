@@ -6,6 +6,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/snipmate-snippets'
 Bundle 'skammer/vim-css-color'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
 Bundle 'wookiehangover/jshint.vim'
 
 " vim.org
