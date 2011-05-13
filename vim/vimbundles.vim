@@ -1,6 +1,7 @@
 " github
 Bundle 'airblade/vim-rooter'
 Bundle 'brettbuddin/fuzzyfinder'
+Bundle 'godlygeek/tabular'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/snipmate-snippets'
