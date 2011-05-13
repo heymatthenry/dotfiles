@@ -4,8 +4,8 @@ Currently these config files cover
 
 * Super-basic git config
 * IRB (for best results, gem install wirble)
-* Emacs!!
-* vim
+* Emacs
+* vim!!
 * zsh
 
 To get started, just run:
