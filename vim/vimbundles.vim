@@ -1,5 +1,6 @@
 " github
 Bundle 'airblade/vim-rooter'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'brettbuddin/fuzzyfinder'
 Bundle 'godlygeek/tabular'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}

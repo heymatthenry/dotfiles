@@ -7,7 +7,7 @@ call vundle#rc()
 
 so ~/.vim/vimbundles.vim
 
-colorscheme vividchalk            " color
+colorscheme solarized             " color
 syntax on
 filetype on
 filetype plugin indent on         
