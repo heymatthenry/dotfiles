@@ -8,11 +8,12 @@ call vundle#rc()
 so ~/.vim/vimbundles.vim
 
 colorscheme solarized             " color
-syntax on
-filetype on
-filetype plugin indent on         
 
-set autoindent                   
+syntax on
+filetype plugin on
+filetype indent on
+
+set autoindent
 set foldmethod=indent             " code folding 
 
 set tabstop=2                     " tabs
