@@ -1,7 +1,11 @@
-"necessary on some Linux distros for pathogen to properly load bundles
 filetype off
 set nocompatible
-call pathogen#runtime_append_all_bundles()  " load pathogen bundles
+
+" initialize vundle
+set rtp+=~/.vim/vundle.git/ 
+call vundle#rc()
+
+so ~/.vim/vimbundles.vim
 
 colorscheme vividchalk            " color
 syntax on
