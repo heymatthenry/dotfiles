@@ -7,7 +7,14 @@ call vundle#rc()
 
 so ~/.vim/vimbundles.vim
 
-colorscheme solarized             " color
+" color
+if has('gui_running')
+    set background=dark
+else
+    set background=light
+endif
+let g:solarized_termcolors=256
+colorscheme solarized
 
 syntax on
 filetype plugin on
