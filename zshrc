@@ -3,7 +3,7 @@ export ZSH=$HOME/.zsh/oh-my-zsh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
-export ZSH_THEME="candy"
+export ZSH_THEME="eastwood"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -44,3 +44,4 @@ export GEM_PATH='/usr/local/bin'
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # rvm installer added line:
 if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
+export PATH=$HOME/local/node/bin:$PATH
