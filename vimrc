@@ -6,6 +6,7 @@ set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
 so ~/.vim/vimbundles.vim
+so ~/.vim/wildignore.vim
 
 " color
 if has('gui_running')
@@ -20,6 +21,7 @@ syntax on
 filetype plugin on
 filetype indent on
 
+set autoread
 set autoindent
 set foldmethod=indent             " code folding 
 
@@ -62,11 +64,11 @@ set wildmode=list:longest " complete files like a shell
 set wildignore=*.DS_Store,*.dSYM,*.log,*.o,*.ss~ " files to ignore
 
 " FuzzyFinder shortcuts
-map <leader>t :NERDTreeToggle<CR>
 map <leader>f :FufFile<CR>
 map <leader>F :FufFileWithCurrentBufferDir<CR>
 map <leader>b :FufBuffer<CR>
 map <leader>r :FufRenewCache<CR>
+map <leader>c :FufFileRecursive<CR>
 
 " enter adds blank lines
 map <Enter> o<ESC>
@@ -113,3 +115,6 @@ syntax match Tab /\t/
 hi Tab guibg=Red guifg=NONE ctermbg=red
 
 map <leader>yr <Esc>:YRShow<CR>           " Show yankring window
+
+" Cheapo JSON highlighting
+autocmd BufNewFile,BufRead *.json set ft=javascript
