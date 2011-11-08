@@ -3,8 +3,6 @@ alias ls="ls -GF"
 alias ll="ls -lGF"
 alias la="ls -aGF"
 alias log="open -a console log/development.log"
-alias t="todo.pl"
-alias hm="todo.pl"
 
 # Ruby/Rails aliases
 alias sc="script/console"
@@ -19,6 +17,8 @@ alias gac="git commit -am"
 alias gst="git status --ignore-submodules=dirty"
 alias push="git push"
 alias pull="git pull"
+alias gb="git branch"
+alias gco="git checkout"
 
 # SVN aliases
 alias co="svn co"
@@ -28,3 +28,5 @@ alias st="svn status"
 alias saddall="svn st | awk '/\?/ {print $2}' | xargs svn add"
 
 # Project aliases
+alias mt="mulberry test"
+alias ms="mulberry serve"
