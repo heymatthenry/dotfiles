@@ -12,6 +12,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'mikewest/vimroom'
 Bundle 'majutsushi/tagbar'
 Bundle 'wincent/Command-T'
+Bundle 'walm/jshint.vim'
 
 " vim.org
 Bundle 'ack.vim'

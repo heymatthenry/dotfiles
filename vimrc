@@ -5,8 +5,8 @@ set nocompatible
 set rtp+=~/.vim/vundle.git/ 
 call vundle#rc()
 
-so ~/.vim/vimbundles.vim
 so ~/.vim/wildignore.vim
+so ~/.vim/vimbundles.vim
 
 " color
 if has('gui_running')
@@ -101,6 +101,9 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
+
+" Run jshint on save
+autocmd BufWritePost,FileWritePost *.js JSHint
 
 " tabular
 if exists(":Tabularize")
