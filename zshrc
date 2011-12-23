@@ -19,7 +19,7 @@ export EDITOR='vim'
 export GEM_HOME='/usr/local/bin'
 export GEM_PATH='/usr/local/bin'
 export ANDROID_PATH='/Developer/SDKs/android-sdk-mac_x86/tools:/Developer/SDKs/android-sdk-mac_x86/platform-tools'
-export MULBERRY_PATH=$HOME/Toura/mulberry/mulberry/bin
+export MULBERRY_PATH=$HOME/Toura/mulberry/cli/bin/
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # rvm installer added line:
