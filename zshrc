@@ -12,6 +12,7 @@ plugins=(git osx ruby)
 source $ZSH/oh-my-zsh.sh
 
 source ~/.zsh/aliases   # Bring in my aliases
+source ~/.zsh/functions # Load custom functions 
 
 export EDITOR='vim'
 
