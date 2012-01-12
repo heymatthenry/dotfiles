@@ -2,7 +2,7 @@ filetype off
 set nocompatible
 
 " initialize vundle
-set rtp+=~/.vim/vundle.git/ 
+set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
 so ~/.vim/wildignore.vim
@@ -10,29 +10,33 @@ so ~/.vim/vimbundles.vim
 
 " color
 if has('gui_running')
-    set background=dark
+  set background=dark
+  set guifont=Inconsolata:h14
 else
-    set background=light
+  set background=light
 endif
+
 let g:solarized_termcolors=256
+
 colorscheme solarized
 
 syntax on
 filetype plugin on
 filetype indent on
 
+set noswapfile
 set autoread
 set autoindent
-set foldmethod=indent             " code folding 
+set foldmethod=indent             " code folding
 
 set tabstop=2                     " tabs
-set shiftwidth=2                  " 
-set expandtab                     " 
+set shiftwidth=2                  "
+set expandtab                     "
 
 set vb                            " no audible bell
 
 set statusline=%<%f,%Y\ %h%m%r%=%-20(line=%l\/%L,\ col=%c%)%-40(buf=%n%)\ %{strftime(\"%c\")}
-set number     
+set number
 set cursorline
 
 let mapleader = ','               " Leader key
@@ -58,7 +62,7 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
-" set wildmenu 
+" set wildmenu
 " fancy command line completion menu
 set wildmode=list:longest " complete files like a shell
 set wildignore=*.DS_Store,*.dSYM,*.log,*.o,*.ss~ " files to ignore
@@ -66,9 +70,9 @@ set wildignore=*.DS_Store,*.dSYM,*.log,*.o,*.ss~ " files to ignore
 " FuzzyFinder shortcuts
 map <leader>f :FufFile<CR>
 map <leader>F :FufFileWithCurrentBufferDir<CR>
-map <leader>b :FufBuffer<CR>
-map <leader>r :FufRenewCache<CR>
-map <leader>c :FufFileRecursive<CR>
+map <leader>c :FufRenewCache<CR>
+
+map <leader>T :NERDTreeToggle<CR>
 
 " enter adds blank lines
 map <Enter> o<ESC>
@@ -86,6 +90,8 @@ map <leader>nn <Esc>:set nonumber norelativenumber<CR>
 " Toggle statusline
 map <leader>nb <Esc>:set laststatus=0<CR>
 map <leader>sb <Esc>:set laststatus=2<CR>
+
+map <leader>mp <Esc>:!open % -a Marked<CR>
 
 " persistent undo
 set undofile
@@ -117,7 +123,14 @@ endif
 syntax match Tab /\t/
 hi Tab guibg=Red guifg=NONE ctermbg=red
 
+" Strip whitespace before write
+autocmd BufWritePre * :%s/\s\+$//e
+
 map <leader>yr <Esc>:YRShow<CR>           " Show yankring window
+
+" remap yankring triggers
+let g:yankring_replace_n_pkey = '<S-p>'
+let g:yankring_replace_n_nkey = '<S-n>'
 
 " Cheapo JSON highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
