@@ -1,5 +1,3 @@
-set guifont=Monaco:h13.00         " font
-
 " No toolbar
 set guioptions-=T
 set guioptions-=r
