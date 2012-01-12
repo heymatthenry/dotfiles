@@ -3,12 +3,14 @@ alias ls="ls -GF"
 alias ll="ls -lGF"
 alias la="ls -aGF"
 alias log="open -a console log/development.log"
+alias ack="ack -a"
 
 # Ruby/Rails aliases
 alias sc="script/console"
 alias sdb="script/dbconsole"
 alias ss="script/server"
 alias rc="rcov --rails test/unit/* test/functional/* && open coverage/index.html"
+alias be="bundle exec"
 
 # git aliases
 alias gc="git commit"
