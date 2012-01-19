@@ -18,7 +18,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-abolish'
 Bundle 'walm/jshint.vim'
-Bundle 'wincent/Command-T'
 
 " vim.org
 Bundle 'ack.vim'
