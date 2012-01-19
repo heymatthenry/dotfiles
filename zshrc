@@ -12,7 +12,7 @@ plugins=(git osx ruby)
 source $ZSH/oh-my-zsh.sh
 
 source ~/.zsh/aliases   # Bring in my aliases
-source ~/.zsh/functions # Load custom functions 
+source ~/.zsh/functions # Load custom functions
 
 export EDITOR='vim'
 
@@ -28,3 +28,4 @@ if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
 export PATH=$HOME/local/node/bin:$ANDROID_PATH:$MULBERRY_PATH:$PATH
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+fpath=(./zsh-completions $fpath)
