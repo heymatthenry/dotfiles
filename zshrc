@@ -28,3 +28,11 @@ if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 export PATH=$HOME/local/node/bin:$MULBERRY_PATH:$PATH
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 fpath=(./zsh-completions $fpath)
+
+# Improve cuke runtime
+# REE only
+export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_HEAP_FREE_MIN=500000
