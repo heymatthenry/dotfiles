@@ -1,15 +1,16 @@
-# Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.zsh/oh-my-zsh
+autoload -U colors && colors
+autoload -Uz vcs_info
+autoload -U compinit && compinit
 
-# Set to the name theme to load.
-# Look in ~/.oh-my-zsh/themes/
-export ZSH_THEME="eastwood"
+zstyle ':vcs_info:git*' formats "%{$fg[yellow]%}[%b]%{$reset_color%}%m%u%c%{$reset_color%}"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx ruby)
+precmd() {
+  vcs_info
+}
 
-source $ZSH/oh-my-zsh.sh
+setopt prompt_subst
+RPROMPT='${vcs_info_msg_0_}'
+PROMPT="%{$fg[blue]%}[%~] %{$reset_color%}%# "
 
 source ~/.zsh/aliases   # Bring in my aliases
 source ~/.zsh/functions # Load custom functions
@@ -20,6 +21,7 @@ export EDITOR='vim'
 export GEM_HOME='/usr/local/bin'
 export GEM_PATH='/usr/local/bin'
 export MULBERRY_PATH=$HOME/Toura/mulberry/cli/bin/
+export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r16/
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # rvm installer added line:
