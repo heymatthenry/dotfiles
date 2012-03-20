@@ -5,6 +5,10 @@ alias la="ls -aGF"
 alias log="open -a console log/development.log"
 alias ack="ack -a"
 
+# R
+alias r="R"
+alias R="R --quiet"
+
 # Ruby/Rails aliases
 alias sc="script/console"
 alias sdb="script/dbconsole"
