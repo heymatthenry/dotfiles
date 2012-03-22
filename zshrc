@@ -11,7 +11,7 @@ precmd() {
 }
 
 setopt prompt_subst
-RPROMPT='%{$fg[magenta]%}(`rvm-prompt`)${vcs_info_msg_0_}'
+RPROMPT='%{$fg[magenta]%}(`rvm-prompt`)${vcs_info_msg_0_}%{$reset_color%}%'
 PROMPT="%{$fg[blue]%}[%~] %{$reset_color%}%# "
 
 source ~/.zsh/aliases   # Bring in my aliases
