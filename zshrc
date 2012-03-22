@@ -2,7 +2,9 @@ autoload -U colors && colors
 autoload -Uz vcs_info
 autoload -U compinit && compinit
 
-zstyle ':vcs_info:git*' formats "%{$fg[yellow]%}[%b]%{$reset_color%}%m%u%c%{$reset_color%}"
+zstyle ':vcs_info:git*' check-for-changes true
+zstyle ':vcs_info:git*' unstagedstr "*"
+zstyle ':vcs_info:git*' formats "%{$fg[yellow]%}[%b]%{$reset_color%}%{$fg[red]%}%m%u%c%{$reset_color%}"
 
 precmd() {
   vcs_info
@@ -16,6 +18,8 @@ source ~/.zsh/aliases   # Bring in my aliases
 source ~/.zsh/functions # Load custom functions
 
 export EDITOR='vim'
+
+bindkey -e
 
 # path stuff
 export GEM_HOME='/usr/local/bin'
