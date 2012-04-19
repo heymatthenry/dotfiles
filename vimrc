@@ -10,15 +10,14 @@ so ~/.vim/vimbundles.vim
 
 " color
 if has('gui_running')
-  set background=dark
   set guifont=Inconsolata:h14
 else
-  set background=light
+  let &t_Co=256
 endif
 
 let g:solarized_termcolors=256
-
 colorscheme solarized
+set background=dark
 
 syntax on
 filetype plugin on
