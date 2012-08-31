@@ -16,7 +16,7 @@ Bundle 'skammer/vim-css-color'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-markdown'
 Bundle 'walm/jshint.vim'
 
 " vim.org

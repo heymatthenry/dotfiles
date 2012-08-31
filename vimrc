@@ -10,7 +10,7 @@ so ~/.vim/vimbundles.vim
 
 " color
 if has('gui_running')
-  set guifont=Inconsolata:h14
+  set guifont=Inconsolata:h16
 else
   let &t_Co=256
 endif
@@ -133,3 +133,19 @@ let g:yankring_replace_n_nkey = '<S-n>'
 
 " Cheapo JSON highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
+
+" tagbar config
+map <leader>b <Esc>:TagbarToggle<CR>      " Show tagbar window
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+let g:tagbar_type_markdown = {
+  \ 'ctagstype' : 'markdown',
+  \ 'kinds' : [
+    \ 'h:Heading_L1',
+    \ 'i:Heading_L2',
+    \ 'k:Heading_L3',
+    \ 'l:Heading_L4',
+    \ 'm:Heading_L5',
+    \ 'n:Heading_L6',
+    \ 'o:Heading_L7'
+  \ ]
+\ }
