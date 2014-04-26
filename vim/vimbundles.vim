@@ -12,11 +12,12 @@ Bundle 'mikewest/vimroom'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/snipmate-snippets'
 Bundle 'sickill/vim-pasta'
+Bundle 'groenewege/vim-less'
 Bundle 'skammer/vim-css-color'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-markdown'
 Bundle 'walm/jshint.vim'
 
 " vim.org
