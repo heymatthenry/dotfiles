@@ -81,6 +81,10 @@ map <S-Enter> O<ESC>
 nnoremap j gj
 nnoremap k gk
 
+set tw=72
+set fo=cqt
+set wm=0
+
 " Change line numbering scheme
 map <leader>ln <Esc>:set number<CR>
 map <leader>rn <Esc>:set relativenumber<CR>
@@ -130,6 +134,9 @@ map <leader>yr <Esc>:YRShow<CR>           " Show yankring window
 " remap yankring triggers
 let g:yankring_replace_n_pkey = '<S-p>'
 let g:yankring_replace_n_nkey = '<S-n>'
+
+" Markdown settings
+autocmd FileType markdown setlocal tw=80 wm=0 fo=cqt ts=4 sw=4 sts=0 noexpandtab
 
 " Cheapo JSON highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
