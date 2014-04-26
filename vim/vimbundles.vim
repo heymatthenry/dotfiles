@@ -1,3 +1,5 @@
+Plugin 'gmarik/Vundle.vim'
+
 " github
 Bundle 'airblade/vim-rooter'
 Bundle 'altercation/vim-colors-solarized'
