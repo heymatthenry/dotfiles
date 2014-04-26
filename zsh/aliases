@@ -35,6 +35,3 @@ alias st="svn status"
 alias saddall="svn st | awk '/\?/ {print $2}' | xargs svn add"
 
 # Project aliases
-alias mt="mulberry test"
-alias ms="mulberry serve"
-alias emu="emulator @2.3.3 -partition-size 128"

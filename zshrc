@@ -31,14 +31,10 @@ setopt share_history
 # path stuff
 export GEM_HOME='/usr/local/bin'
 export GEM_PATH='/usr/local/bin'
-export MULBERRY_PATH=$HOME/Toura/mulberry/cli/bin/
-export ANDROID_SDK_ROOT=/usr/local/Cellar/android-sdk/r16/
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-# rvm installer added line:
-if [ -s ~/.rvm/scripts/rvm ] ; then source ~/.rvm/scripts/rvm ; fi
 
-export PATH=$HOME/local/node/bin:$MULBERRY_PATH:$PATH
+export PATH=$HOME/local/node/bin:$PATH
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 fpath=(./zsh-completions $fpath)
 
