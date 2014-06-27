@@ -1,0 +1,6 @@
+tmux has-session -t default
+if [ $? != 0 ]
+then
+  tmux new-session -s default
+fi
+tmux attach -t default

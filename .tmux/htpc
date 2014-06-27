@@ -1,0 +1,11 @@
+tmux has-session -t htpc
+if [ $? != 0 ]
+then
+  tmux new-session -s htpc -n sickbeard -d
+  tmux send-keys -t htpc 'cd ~/Projects' C-m
+  tmux send-keys -t htpc 'python sickbeard/Sickbeard.py' C-m
+  tmux new-window -n mylar -t htpc
+  tmux send-keys -t htpc:1 'cd ~/Projects' C-m
+  tmux send-keys -t htpc 'python mylar/Mylar.py' C-m
+  tmux select-window -t htpc:1
+fi
