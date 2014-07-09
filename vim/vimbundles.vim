@@ -1,8 +1,9 @@
 Plugin 'gmarik/Vundle.vim'
 
 " github
+Plugin 'airblade/vim-gitgutter'
 Plugin 'airblade/vim-rooter'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'kaihowl/vim-colors-solarized'
 Plugin 'godlygeek/tabular'
 Plugin 'heymatthenry/sparkup', {'rtp': 'vim/'}
 Plugin 'int3/vim-taglist-plus'
