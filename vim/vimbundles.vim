@@ -1,7 +1,6 @@
 Plugin 'gmarik/Vundle.vim'
 
 " github
-Plugin 'airblade/vim-gitgutter'
 Plugin 'airblade/vim-rooter'
 Plugin 'kaihowl/vim-colors-solarized'
 Plugin 'godlygeek/tabular'
