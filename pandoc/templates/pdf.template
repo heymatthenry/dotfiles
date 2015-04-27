@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage[basic]{wordlike}
+\usepackage{booktabs}
+\usepackage{longtable}
+
+% Necessary when documents have URLs in them.
+\usepackage{hyperref}
+
+% Be able to use unicode character "∆" in text. Requires XeTeX engine (--latex-engine=xelatex)
+% See: http://tex.stackexchange.com/questions/60637/converting-greek-utf-letters-to-latex-symbols
+% Though this might work, too: http://tex.stackexchange.com/questions/201363/why-cant-my-build-produce-certain-greek-symbols?rq=1
+
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{STIXGeneral}
+
+\def\textdelta{∆} \catcode`\∆=\active \def∆{\relax\ifmmode \Delta \else \textdelta \fi}
+
+% Title info
+
+$if(title)$
+\title{\bigskip \bigskip $title$}
+\date{} % Remove date (https://en.wikibooks.org/wiki/LaTeX/Title_Creation)
+$endif$
+
+% Author info
+
+%\author{$for(author)$$author$$sep$\\$endfor$}
+
+\author{$for(author)$\Large $author.name$ $endfor$}
+
+%\author{$for(author)$$author.name$ ($author.affiliation$)$sep$ \and $endfor$}
+
+\usepackage{sectsty}
+\allsectionsfont{\sffamily}
+
+\begin{document}
+
+\setromanfont[Mapping=tex-text]{Palatino}
+\setsansfont[Mapping=tex-text]{Sofia Pro}
+
+$if(title)$
+\maketitle
+$endif$
+
+$if(toc)$
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+}
+$endif$
+
+\newpage
+
+$body$
+
+\end{document}
