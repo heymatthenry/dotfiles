@@ -1,5 +1,5 @@
 filetype off
-set nocompatible
+:set nocompatible
 
 " initialize vundle
 set rtp+=~/.vim/vundle.git/
@@ -8,9 +8,12 @@ call vundle#rc()
 so ~/.vim/wildignore.vim
 so ~/.vim/vimbundles.vim
 
+" map 'jj' to ESC
+imap jj <Esc>
+
 " color
 if has('gui_running')
-  set guifont=Inconsolata:h16
+  set guifont=Anonymice\ Powerline:h14
 else
   let &t_Co=256
 endif
@@ -159,6 +162,7 @@ let g:tagbar_type_markdown = {
 
 " Goyo config
 
+map <leader>go <Esc>:Goyo<CR>
 function! GoyoBefore()
   Limelight
 endfunction
