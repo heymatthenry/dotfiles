@@ -13,7 +13,7 @@ imap jj <Esc>
 
 " color
 if has('gui_running')
-  set guifont=Anonymice\ Powerline:h14
+  set guifont=Hack:h14
 else
   let &t_Co=256
 endif
