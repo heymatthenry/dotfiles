@@ -1,9 +1,7 @@
 filetype off
 :set nocompatible
 
-" initialize vundle
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
+execute pathogen#infect()
 
 so ~/.vim/wildignore.vim
 so ~/.vim/vimbundles.vim
