@@ -1,10 +1,10 @@
+runtime bundle/pathogen/autoload/pathogen.vim
 filetype off
 :set nocompatible
 
 execute pathogen#infect()
 
 so ~/.vim/wildignore.vim
-so ~/.vim/vimbundles.vim
 
 " map 'jj' to ESC
 imap jj <Esc>
