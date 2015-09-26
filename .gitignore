@@ -1,6 +1,5 @@
 .DS_Store
 *.swp
-vim/bundle
 vim/doc/tags
 vim/.netrwhist
 zsh/zsh_history
