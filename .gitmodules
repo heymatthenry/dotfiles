@@ -13,3 +13,12 @@
 [submodule "vim/bundle/goyo"]
 	path = vim/bundle/goyo
 	url = https://github.com/junegunn/goyo.vim.git
+[submodule "vim/bundle/tabular"]
+	path = vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "vim-pencil"]
+	path = vim-pencil
+	url = https://github.com/reedes/vim-pencil.git

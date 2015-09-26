@@ -158,6 +158,12 @@ let g:tagbar_type_markdown = {
   \ ]
 \ }
 
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+augroup END
+
 " Goyo config
 
 map <leader>go <Esc>:Goyo<CR>
