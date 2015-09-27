@@ -22,3 +22,6 @@
 [submodule "vim-pencil"]
 	path = vim-pencil
 	url = https://github.com/reedes/vim-pencil.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter

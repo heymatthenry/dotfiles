@@ -67,11 +67,6 @@ set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 set wildmode=list:longest " complete files like a shell
 set wildignore=*.DS_Store,*.dSYM,*.log,*.o,*.ss~ " files to ignore
 
-" FuzzyFinder shortcuts
-map <leader>f :FufFile<CR>
-map <leader>F :FufFileWithCurrentBufferDir<CR>
-map <leader>c :FufRenewCache<CR>
-
 map <leader>T :NERDTreeToggle<CR>
 
 " enter adds blank lines
