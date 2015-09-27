@@ -4,6 +4,12 @@ filetype off
 
 execute pathogen#infect()
 
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
+set rtp+=/Users/matt/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
+
 so ~/.vim/wildignore.vim
 
 " map 'jj' to ESC
@@ -35,7 +41,6 @@ set expandtab                     "
 
 set vb                            " no audible bell
 
-set statusline=%<%f,%Y\ %h%m%r%=%-20(line=%l\/%L,\ col=%c%)%-40(buf=%n%)\ %{strftime(\"%c\")}
 set number
 set cursorline
 
