@@ -65,7 +65,6 @@ set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 " set wildmenu
 " fancy command line completion menu
 set wildmode=list:longest " complete files like a shell
-set wildignore=*.DS_Store,*.dSYM,*.log,*.o,*.ss~ " files to ignore
 
 map <leader>T :NERDTreeToggle<CR>
 
