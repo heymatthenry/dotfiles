@@ -4,3 +4,5 @@ autocmd BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn
       \ else |
       \ setf markdown |
       \ endif
+
+let g:vim_markdown_frontmatter=1
