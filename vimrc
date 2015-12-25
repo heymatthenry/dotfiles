@@ -4,11 +4,6 @@ filetype off
 
 execute pathogen#infect()
 
-" powerline config
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-
 set rtp+=/Users/matt/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim
 
 so ~/.vim/wildignore.vim
