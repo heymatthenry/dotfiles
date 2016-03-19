@@ -11,3 +11,5 @@ tags-ja
 zsh/secret_keys
 *.error
 *.log
+flexget/db-config.sqlite
+flexget/received/
