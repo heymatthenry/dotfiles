@@ -11,7 +11,8 @@ Plug 'mhinz/vim-startify' 			" Fancy start screen
 " Utilities
 "
 
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'reedes/vim-pencil'
 
 "
 " ftplugins
