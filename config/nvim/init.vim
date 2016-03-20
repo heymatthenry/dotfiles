@@ -2,16 +2,7 @@
 " Initialize plugins
 "
 
-" Required configs for Vundle
-
-set nocompatible              " turn off vi compatibility
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
-source ~/.config/nvim/vimbundles.vim
-call vundle#end()
+source ~/.config/nvim/vimplugins.vim
 
 "
 " Filetypes
