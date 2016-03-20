@@ -6,6 +6,8 @@ zsh/zsh_history
 zsh/cache
 vim/tmp
 vim/undo
+config/nvim/bundle
+config/nvim/.netrwhist
 tags
 tags-ja
 zsh/secret_keys
