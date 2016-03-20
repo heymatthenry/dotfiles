@@ -1,19 +1,23 @@
 "
-" Required configs for Vundle
+" Initialize plugins
 "
 
-set nocompatible              " be iMproved, required
+" Required configs for Vundle
+
+set nocompatible              " turn off vi compatibility
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
-
 source ~/.config/nvim/vimbundles.vim
+call vundle#end()
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+"
+" Filetypes
+"
+
+filetype plugin indent on
 
 "
 " UI
@@ -33,3 +37,22 @@ let mapleader = ','
 "
 
 set hidden						" suppress warning on leaving buffer
+
+"
+" Key mappings
+"
+
+noremap % v%						" vis. select when jumping b/w matching chars
+inoremap jj <ESC>					" in insert mode, map jj to Esc
+
+"
+" Special characters
+"
+
+" Whitespace
+
+set expandtab                                           " Soft tabs
+set tabstop=2                                           " 2 visual spaces per tab
+set softtabstop=2                                       " 2 spaces per tab when editing
+set listchars=tab:\ \ ,trail:.				" Highlight tabs chars & trailing whitespace
+set list
