@@ -46,5 +46,3 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH="/usr/local/heroku/bin:$PATH"
 
 source ~/.zsh/secret_keys
-export NODE_PATH=/usr/local/lib/jsctags/::/usr/local/lib/node_modules
-source /usr/local/opt/chruby/share/chruby/chruby.sh

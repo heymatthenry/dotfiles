@@ -13,10 +13,14 @@ imap jj <Esc>
 
 " color
 if has('gui_running')
-  set guifont=Hack:h14
+  set guifont=Hack:h12
 else
   let &t_Co=256
 endif
+
+set guioptions-=T
+set guioptions-=L
+set guioptions-=r
 
 let g:solarized_termcolors=256
 colorscheme solarized

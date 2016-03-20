@@ -14,7 +14,7 @@ filetype plugin indent on
 " UI
 "
 
-syntax enable						" enable syntax highlighting
+syntax enable                 " enable syntax highlighting
 set background=light					" set solarized to light
 colorscheme solarized					" turn on solarized
 
@@ -35,6 +35,8 @@ set hidden						" suppress warning on leaving buffer
 
 noremap % v%						" vis. select when jumping b/w matching chars
 inoremap jj <ESC>					" in insert mode, map jj to Esc
+nnoremap j gj             " move vertically by visual line for line-wrapped paragraphs
+nnoremap k gk             " move horizontally by visual line
 
 "
 " Special characters
