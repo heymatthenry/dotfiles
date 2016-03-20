@@ -9,7 +9,7 @@ filetype off                  " required
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
 
-source .config/nvim/vimbundles.vim
+source ~/.config/nvim/vimbundles.vim
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -28,3 +28,8 @@ autocmd! bufwritepost ~/.config/nvim/init.vim source % 	" source init.vim on sav
 set vb                            		 	" no audible bell
 let mapleader = ','
 
+"
+" Buffers
+"
+
+set hidden						" suppress warning on leaving buffer
