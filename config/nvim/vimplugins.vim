@@ -11,8 +11,11 @@ Plug 'mhinz/vim-startify' 			" Fancy start screen
 " Utilities
 "
 
+Plug 'kien/ctrlp.vim'
+
 "
 " ftplugins
 "
+
 
 call plug#end()
