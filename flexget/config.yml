@@ -5,35 +5,20 @@ templates:
     transmission:
       host: localhost
       port: 9091
-      username: trsmss
-      password: koR#K8$NVBeisR3GDptYbpzDK%DnMyFhiPTqDuTE7EJk6bRjan
     series:
       seriesgroup:
         - Adventure Time
-        #- American Crime
-        #- Arrow
         - Ash vs Evil Dead
-        - Bates Motel
         - Better Call Saul
         - Fargo
         - Fear the Walking Dead
-        - Game of Thrones
-        #- Gotham
-        - Louie
-        - "Marvel's Agents of S.H.I.E.L.D."
-        #- Modern Family
         - Penny Dreadful
         - Sherlock
-        #- Supernatural
-        - 'The Americans (2013)'
-        #- The Flash
-        - The Strain
         - The Walking Dead
-        - True Detective
-        - Vikings
       settings:
         seriesgroup:
           target: sdtv+ 720p
+          tracking: no
           set:
             path: '/Volumes/Data/Spanned Media/TV Shows/{{series_name}}/Season {{series_season}}'
     transmission: yes
