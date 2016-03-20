@@ -10,6 +10,20 @@ source ~/.config/nvim/vimplugins.vim
 
 filetype plugin indent on
 
+
+" Markdown configs
+
+let g:pencil#wrapModeDefault='soft'                 " default soft wrap in Pencil
+let g:pencil_terminal_italics=1
+let g:vim_markdown_frontmatter=1                    " enable YAML frontmatter in md files
+
+
+augroup pencil                                      " initalize pencil with md files
+  autocmd!
+  autocmd FileType markdown,md,mkd  call pencil#init()
+  autocmd FileType text             call pencil#init()
+augroup END
+
 "
 " UI
 "
