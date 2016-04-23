@@ -17,7 +17,6 @@ let g:pencil#wrapModeDefault='soft'                 " default soft wrap in Penci
 let g:pencil_terminal_italics=1
 let g:vim_markdown_frontmatter=1                    " enable YAML frontmatter in md files
 
-
 augroup pencil                                      " initalize pencil with md files
   autocmd!
   autocmd FileType markdown,md,mkd  call pencil#init()
@@ -28,8 +27,12 @@ augroup END
 " UI
 "
 
+if has('gui_running')
+  set guifont=Hack:h12
+endif
+
 syntax enable                 " enable syntax highlighting
-set background=light          " set solarized to light
+set background=dark          " set solarized to light
 colorscheme solarized         " turn on solarized
 
 autocmd! bufwritepost ~/.config/nvim/init.vim source %  " source init.vim on save
