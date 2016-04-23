@@ -10,12 +10,10 @@ precmd() {
   vcs_info
 }
 
-setopt prompt_subst
-RPROMPT='%{$fg[magenta]%}${vcs_info_msg_0_}%{$reset_color%}%'
-PROMPT="%{$fg[blue]%}[%~] %{$reset_color%}%# "
 
 source ~/.zsh/aliases   # Bring in my aliases
 source ~/.zsh/functions # Load custom functions
+source ~/.zsh/prompt    # Load prompt
 
 export EDITOR='vim'
 
