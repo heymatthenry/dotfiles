@@ -1,0 +1,3 @@
+{
+  "filename_with_episode": "%(seriesname)s - %(seasonno)02dx%(episode)s - %(episodename)s%(ext)s"
+}
