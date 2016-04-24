@@ -15,12 +15,18 @@ Plug 'mhinz/vim-startify'               " Fancy start screen
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'reedes/vim-pencil'
 Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'itspriddle/vim-marked'
 
 "
 " ftplugins
 "
 
-Plug 'plasticboy/vim-markdown'
 Plug 'jalvesaq/Nvim-R'
+Plug 'chrisbra/csv.vim'
 
 call plug#end()
