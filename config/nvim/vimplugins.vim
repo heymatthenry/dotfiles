@@ -21,5 +21,6 @@ Plug 'Valloric/YouCompleteMe'
 "
 
 Plug 'plasticboy/vim-markdown'
+Plug 'jalvesaq/Nvim-R'
 
 call plug#end()
