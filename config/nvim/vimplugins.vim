@@ -14,6 +14,7 @@ Plug 'mhinz/vim-startify'               " Fancy start screen
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'reedes/vim-pencil'
+Plug 'Valloric/YouCompleteMe'
 
 "
 " ftplugins
