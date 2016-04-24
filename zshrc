@@ -13,7 +13,11 @@ precmd() {
 
 source ~/.zsh/aliases   # Bring in my aliases
 source ~/.zsh/functions # Load custom functions
-source ~/.zsh/prompt    # Load prompt
+#source ~/.zsh/prompt    # Load prompt
+
+setopt prompt_subst
+RPROMPT='%{$fg[magenta]%}${vcs_info_msg_0_}%{$reset_color%}%'
+PROMPT="%{$fg[blue]%}[%~] %{$reset_color%}%# "
 
 export EDITOR='vim'
 

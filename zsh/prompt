@@ -22,8 +22,8 @@ function zle-line-finish {
 zle -N zle-line-finish
 
 setopt prompt_subst
-RPROMPT='${vim_mode}%{$fg[magenta]%}${vcs_info_msg_0_}%{$reset_color%}%'
-RPROMPT2='${vim_mode}%{$fg[magenta]%}${vcs_info_msg_0_}%{$reset_color%}%'
+RPROMPT='%{$fg[magenta]%}${vcs_info_msg_0_}%{$reset_color%}%'
+RPROMPT2='%{$fg[magenta]%}${vcs_info_msg_0_}%{$reset_color%}%'
 PROMPT="%{$fg[blue]%}[%~] %{$reset_color%}%# "
 
 setopt transient_rprompt # don't show command modes on previously accepted lines
