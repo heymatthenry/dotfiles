@@ -28,5 +28,6 @@ Plug 'itspriddle/vim-marked'
 
 Plug 'jalvesaq/Nvim-R'
 Plug 'chrisbra/csv.vim'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
