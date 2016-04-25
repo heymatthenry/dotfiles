@@ -29,5 +29,8 @@ Plug 'itspriddle/vim-marked'
 Plug 'jalvesaq/Nvim-R'
 Plug 'chrisbra/csv.vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'vim-latex/vim-latex'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 call plug#end()
