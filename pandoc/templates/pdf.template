@@ -6,6 +6,9 @@
 % Necessary when documents have URLs in them.
 \usepackage{hyperref}
 
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 % Be able to use unicode character "∆" in text. Requires XeTeX engine (--latex-engine=xelatex)
 % See: http://tex.stackexchange.com/questions/60637/converting-greek-utf-letters-to-latex-symbols
 % Though this might work, too: http://tex.stackexchange.com/questions/201363/why-cant-my-build-produce-certain-greek-symbols?rq=1
