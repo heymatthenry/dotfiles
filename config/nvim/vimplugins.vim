@@ -21,7 +21,7 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'itspriddle/vim-marked'
-
+Plug 'christoomey/vim-tmux-navigator'   " Navigate vim & tmux splits
 "
 " ftplugins
 "
