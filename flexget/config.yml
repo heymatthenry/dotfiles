@@ -7,14 +7,15 @@ templates:
       port: 9091
     series:
       seriesgroup:
-        - Adventure Time
+        #- Adventure Time
         - Ash vs Evil Dead
-        - Better Call Saul
-        - Fargo
-        - Fear the Walking Dead
-        - Penny Dreadful
-        - Sherlock
+        #- Better Call Saul
+        #- Fargo
+        #- Fear the Walking Dead
+        #- Penny Dreadful
+        #- Sherlock
         - The Walking Dead
+        - Channel Zero
       settings:
         seriesgroup:
           target: sdtv+ 720p
@@ -24,28 +25,28 @@ templates:
     transmission: yes
 
 tasks:
-  kickass:
-    template: tv
-    rss:
-      url: http://kat.cr/tv/?rss=1
-      other_fields: ['torrent:magnetURI']
-      link: 'torrent:magnetURI'
-      silent: yes
-    headers:
-      User-Agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36"
-      Referer: "http://kat.cr/"
-      Accept-Encoding: "deflate, gzip"
-    verify_ssl_certificates: no
-    domain_delay:
-      kat.cr: 5 seconds
-    retry_failed:
-      retry_time: 10 seconds
-      retry_time_multiplier: 1
-      max_retries: 4
+  #kickass:
+    #template: tv
+    #rss:
+      #url: http://kat.cr/tv/?rss=1
+      #other_fields: ['torrent:magnetURI']
+      #link: 'torrent:magnetURI'
+      #silent: yes
+    #headers:
+      #User-Agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36"
+      #Referer: "http://kat.cr/"
+      #Accept-Encoding: "deflate, gzip"
+    #verify_ssl_certificates: no
+    #domain_delay:
+      #kat.cr: 5 seconds
+    #retry_failed:
+      #retry_time: 10 seconds
+      #retry_time_multiplier: 1
+      #max_retries: 4
 
   showrss:
     template: tv
-    rss: "http://showrss.info/rss.php?user_id=76578&hd=null&proper=null"
+    rss: "http://showrss.info/user/32884.rss?magnets=true&namespaces=true&name=null&quality=null&re=null"
 
   seed_series_db:
     # The find plugin will find all of your existing episodes
