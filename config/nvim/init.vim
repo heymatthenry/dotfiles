@@ -52,9 +52,10 @@ set hidden                    " suppress warning on leaving buffer
 " Key mappings
 "
 
-noremap % v%                      " vis. select when jumping b/w matching chars
-inoremap jj <ESC>                 " in insert mode, map jj to Esc
-map <leader>t :NERDTreeToggle<CR> " Toggle nerdtree sidebar
+noremap % v%                            " vis. select when jumping b/w matching chars
+inoremap jj <ESC>                       " in insert mode, map jj to Esc
+map <leader>t :NERDTreeToggle<CR>       " Toggle nerdtree sidebar
+map <leader><Space> :set hlsearch!<CR>  " Toggle search highlighting
 
 "
 " Special characters
