@@ -1,7 +1,7 @@
 templates:
   tv:
     download: /Users/matt/Downloads
-    exists_series: '/Volumes/Data/Spanned Media/TV Shows/'
+    exists_series: '/Volumes/Uatu/Media/TV Shows/'
     transmission:
       host: localhost
       port: 9091
@@ -21,7 +21,7 @@ templates:
           target: sdtv+ 720p
           tracking: no
           set:
-            path: '/Volumes/Data/Spanned Media/TV Shows/{{series_name}}/Season {{series_season}}'
+            path: '/Volumes/Uatu/Media/TV Shows/{{series_name}}/Season {{series_season}}'
     transmission: yes
 
 tasks:
@@ -52,7 +52,7 @@ tasks:
     # The find plugin will find all of your existing episodes
     find:
       regexp: .*(avi|mkv|mp4)$
-      path: '/Volumes/Data/Spanned Media/TV Shows'
+      path: '/Volumes/Uatu/Media/TV Shows'
       recursive: yes
     template: tv
     # We use the manual plugin so that this task only runs when explicitly called

@@ -1,9 +1,0 @@
-let foreground="#00f919"
-let background="#000000"
-let nontext="#0b1f0d"
-let filename="#0b1f0d"
-
-let width=80
-let height=40
-
-set listchars=eol:¶,tab:»·
