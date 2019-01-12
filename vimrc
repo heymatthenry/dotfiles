@@ -3,8 +3,6 @@ filetype plugin on                        " enable plugins for filetypes
 
 " Colors
 syntax on                                 " Enable syntax highlighting
-set background=dark                       " Background light or dark
-colorscheme solarized                     " Color scheme is a solved problem
 
 " Whitespace
 set expandtab                             " spaces not tabs
@@ -18,3 +16,13 @@ let g:netrw_liststyle = 3                 " Make directories expandable
 let g:netrw_banner = 0                    " Suppress banner
 let g:netrw_winsize = 15                  " 15 columns wide
 let g:netrw_browse_split = 4              " Open files in previous window
+
+autocmd BufWritePost *.py call Flake8()   " Run flake8 on saving a python file 
+
+" Python-specific configs
+autocmd BufNewFile,BufRead *.py
+  \ setlocal tabstop=4      |
+  \ setlocal softtabstop=4  |
+  \ setlocal shiftwidth=4   |
+  \ setlocal textwidth=79   |
+  \ setlocal fileformat=unix
