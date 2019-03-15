@@ -1,0 +1,200 @@
+#+TITLE: Emacs Configuration
+#+AUTHOR: Matt Henry
+#+EMAIL: matthew.w.henry@gmail.com
+#+STARTUP: showeverything
+#+OPTIONS: toc:nil num:nil
+
+* Configure =use-package=
+
+=use-package= will automatically install any package invoked in a
+config file that isn't already installed. It just needs a little
+configuration in init.el.
+
+#+begin_src emacs-lisp
+  (setq use-package-always-ensure t)
+#+end_src
+
+* Configure UI
+
+** Emacs UI config
+
+I like as little chrome as possible.
+
+#+begin_src emacs-lisp
+  (tool-bar-mode 0)    ; Hide menu bar
+  (scroll-bar-mode -1) ; Hide scroll bar
+#+end_src
+
+Don't give me all of that default emacs startup garbage.
+
+#+begin_src emacs-lisp
+;; Suppress startup bling
+(setq inhibit-startup-message t)
+(setq inhibit-splash-screen t)
+(setq initial-scratch-message nil)
+#+end_src
+
+** Theme
+
+Used to use solarized, because I'm a solarized kind of guy, but I'm
+really digging spacemacs dark!
+
+#+begin_src emacs-lisp
+  (use-package spacemacs-theme
+    :defer t
+    :init (load-theme 'spacemacs-dark t))
+#+end_src
+
+I held out against programming ligatures for as long as I could, but
+damn they just look so good in =R= code.
+
+#+begin_src emacs-lisp
+(mac-auto-operator-composition-mode) ;; Enable ligatures
+(set-face-attribute 'default nil :family "Fira Code" :height 140)
+(set-face-attribute 'fixed-pitch nil :family "Fira Code" :height 140)
+(set-face-attribute 'variable-pitch nil :family "Georgia")
+#+end_src
+
+* Utilities
+
+** Evil
+
+#+begin_src emacs-lisp
+(use-package evil
+  :ensure t ;; install the evil package if not installed
+  :init ;; tweak evil's configuration before loading it
+  (setq evil-search-module 'evil-search)
+  (setq evil-ex-complete-emacs-commands nil)
+  (setq evil-vsplit-window-right t)
+  (setq evil-split-window-below t)
+  (setq evil-shift-round nil)
+  (setq evil-want-C-u-scroll t)
+  :config ;; tweak evil after loading it
+  (evil-mode))
+
+(use-package evil-org
+  :ensure t
+  :after org
+  :config
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (add-hook 'evil-org-mode-hook
+            (lambda ()
+              (evil-org-set-key-theme)))
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
+#+end_src
+
+** ido 
+
+Use =ido-mode= for buffers and files. I don't know if this is really
+/en vogue/ anymore, but it works for me for now.
+
+#+begin_src emacs-lisp
+  (setq ido-enable-flex-matching t)
+  (ido-mode 1)
+  (setq ido-everywhere t)
+#+end_src
+
+** Company
+
+#+begin_src emacs-lisp
+  (use-package company)
+  (add-hook 'after-init-hook 'global-company-mode)
+#+end_src
+
+* Configure writing environment
+
+This bit inspired by/cribbed from [[https://github.com/hrs/dotfiles/blob/master/emacs/.emacs.d/configuration.org][Harry Schwarz.]]
+
+=AutoFillMode= automatically wraps paragraphs, kinda like hitting =M-q=. I wrap
+a lot of paragraphs, so this automatically wraps 'em when I'm writing text,
+Markdown, or Org. At some point maybe I'll go back to
+[[https://www.emacswiki.org/emacs/VisualLineMode][VisualLineMode]]. Who knows?
+
+Enable =auto-fill-mode= to add line breaks after reaching the column
+width. Do this for text, md, and org files.
+
+#+begin_src emacs-lisp
+  (add-hook 'text-mode-hook 'auto-fill-mode)
+  (add-hook 'gfm-mode-hook 'auto-fill-mode)
+  (add-hook 'org-mode-hook 'auto-fill-mode)
+#+end_src
+
+** Code editing
+
+Use spaces! Two of them!
+
+#+begin_src emacs-lisp
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+#+end_src
+
+Save backups in their own directory.
+
+#+begin_src emacs-lisp
+(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+#+end_src
+
+*** Javascript
+
+#+begin_src emacs-lisp
+(use-package company-tern)
+(add-to-list 'company-backends 'company-tern)
+#+end_src
+
+* Org
+
+  #+begin_src emacs-lisp
+(use-package org-bullets
+  :init
+  (add-hook 'org-mode-hook 'org-bullets-mode))
+  #+end_src
+
+Add a template to insert an =elisp= block per [[https://orgmode.org/manual/Structure-Templates.html][=org-tempo=]] 
+
+#+begin_src emacs-lisp
+(require 'org-tempo)
+(add-to-list 'org-structure-template-alist
+             '("el" . "src emacs-lisp"))
+#+end_src
+
+* Custom functions
+
+Cribbed shamelessly from [[https://kieranhealy.org/blog/archives/2009/10/12/make-shift-enter-do-a-lot-in-ess/][Kieran Healy]]. Give S-RET superpowers in an ESS buffer.
+
+#+begin_src emacs-lisp
+(setq ess-ask-for-ess-directory nil)
+(setq ess-local-process-name "R")
+(setq ansi-color-for-comint-mode 'filter)
+(setq comint-scroll-to-bottom-on-input t)
+(setq comint-scroll-to-bottom-on-output t)
+(setq comint-move-point-for-output t)
+(defun my-ess-start-R ()
+  (interactive)
+  (if (not (member "*R*" (mapcar (function buffer-name) (buffer-list))))
+      (progn
+        (delete-other-windows)
+        (setq w1 (selected-window))
+        (setq w1name (buffer-name))
+        (setq w2 (split-window w1 nil t))
+        (R)
+        (set-window-buffer w2 "*R*")
+        (set-window-buffer w1 w1name))))
+(defun my-ess-eval ()
+  (interactive)
+  (my-ess-start-R)
+  (if (and transient-mark-mode mark-active)
+      (call-interactively 'ess-eval-region)
+    (call-interactively 'ess-eval-line-and-step)))
+(add-hook 'ess-mode-hook
+          '(lambda()
+             (local-set-key [(shift return)] 'my-ess-eval)))
+(add-hook 'inferior-ess-mode-hook
+          '(lambda()
+             (local-set-key [C-up] 'comint-previous-input)
+             (local-set-key [C-down] 'comint-next-input)))
+(add-hook 'Rnw-mode-hook
+          '(lambda()
+             (local-set-key [(shift return)] 'my-ess-eval)))
+
+#+end_src
