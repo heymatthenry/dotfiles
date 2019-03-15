@@ -14,6 +14,17 @@ configuration in init.el.
   (setq use-package-always-ensure t)
 #+end_src
 
+* Environment Variables
+
+  #+begin_src emacs-lisp
+  (let ((path (shell-command-to-string ". ~/.zshrc; echo -n $PATH")))
+  (setenv "PATH" path)
+  (setq exec-path 
+        (append
+         (split-string-and-unquote path ":")
+         exec-path)))
+  #+end_src
+
 * Configure UI
 
 ** Emacs UI config
@@ -46,7 +57,7 @@ really digging spacemacs dark!
 #+end_src
 
 I held out against programming ligatures for as long as I could, but
-damn they just look so good in =R= code.
+damn they just look so good in =R= code and JS arrow functions.
 
 #+begin_src emacs-lisp
 (mac-auto-operator-composition-mode) ;; Enable ligatures
@@ -101,6 +112,15 @@ Use =ido-mode= for buffers and files. I don't know if this is really
   (use-package company)
   (add-hook 'after-init-hook 'global-company-mode)
 #+end_src
+
+
+** pdf-tools
+   #+begin_src emacs-lisp
+   (use-package pdf-tools
+        :ensure t)
+
+   (pdf-loader-install)
+   #+end_src
 
 * Configure writing environment
 
