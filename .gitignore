@@ -1,4 +1,11 @@
 .DS_Store
+zsh/secret_keys
+*.error
+*.log
+
+########
+# vim
+########
 *.swp
 vim/doc/tags
 vim/.netrwhist
@@ -10,8 +17,16 @@ config/nvim/bundle
 config/nvim/.netrwhist
 tags
 tags-ja
-zsh/secret_keys
-*.error
-*.log
-flexget/db-config.sqlite
-flexget/received/
+
+########
+# emacs
+########
+
+emacs.d/abbrev_defs
+emacs.d/dotemacs.el
+emacs.d/dotemacs.html
+emacs.d/dotemacs.odt
+emacs.d/elpa/
+emacs.d/ido.last
+emacs.d/transient/
+emacs.d/url/
