@@ -115,11 +115,24 @@ Use =ido-mode= for buffers and files. I don't know if this is really
 
 
 ** pdf-tools
+   
    #+begin_src emacs-lisp
    (use-package pdf-tools
         :ensure t)
 
    (pdf-loader-install)
+   #+end_src
+
+** Emmet 
+   
+   #+begin_src emacs-lisp
+    (use-package emmet-mode
+        :ensure t)
+
+    (add-hook 'sgml-mode-hook 'emmet-mode)
+    (add-hook 'css-mode-hook  'emmet-mode)
+    (setq emmet-move-cursor-between-quotes t) ;; move point to first quote
+    (setq emmet-expand-jsx-className? t)      ;; expand to className in JSX
    #+end_src
 
 * Configure writing environment
