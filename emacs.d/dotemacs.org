@@ -123,6 +123,24 @@ Use =ido-mode= for buffers and files. I don't know if this is really
    (pdf-loader-install)
    #+end_src
 
+** web-mode
+  
+=web-mode= has decent JSX support, so let's just load that and have it
+take over for html & js files.
+ 
+   #+begin_src emacs-lisp
+    (use-package web-mode)
+    (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))
+    
+    (add-hook 'web-mode-hook
+          (lambda ()
+            ;; short circuit js mode and just do everything in jsx-mode
+            (if (equal web-mode-content-type "javascript")
+                (web-mode-set-content-type "jsx")
+              (message "now set to: %s" web-mode-content-type))))
+   #+end_src
+
 ** Emmet 
    
    #+begin_src emacs-lisp
@@ -131,6 +149,7 @@ Use =ido-mode= for buffers and files. I don't know if this is really
 
     (add-hook 'sgml-mode-hook 'emmet-mode)
     (add-hook 'css-mode-hook  'emmet-mode)
+    (add-hook 'web-mode-hook  'emmet-mode)
     (setq emmet-move-cursor-between-quotes t) ;; move point to first quote
     (setq emmet-expand-jsx-className? t)      ;; expand to className in JSX
    #+end_src
