@@ -39,10 +39,10 @@ I like as little chrome as possible.
 Don't give me all of that default emacs startup garbage.
 
 #+begin_src emacs-lisp
-;; Suppress startup bling
-(setq inhibit-startup-message t)
-(setq inhibit-splash-screen t)
-(setq initial-scratch-message nil)
+    ;; Suppress startup bling
+    (setq inhibit-startup-message t)
+    (setq inhibit-splash-screen t)
+    (setq initial-scratch-message nil)
 #+end_src
 
 ** Theme
@@ -60,10 +60,10 @@ I held out against programming ligatures for as long as I could, but
 damn they just look so good in =R= code and JS arrow functions.
 
 #+begin_src emacs-lisp
-(mac-auto-operator-composition-mode) ;; Enable ligatures
-(set-face-attribute 'default nil :family "Fira Code" :height 140)
-(set-face-attribute 'fixed-pitch nil :family "Fira Code" :height 140)
-(set-face-attribute 'variable-pitch nil :family "Georgia")
+    (mac-auto-operator-composition-mode) ;; Enable ligatures
+    (set-face-attribute 'default nil :family "Fira Code" :height 140)
+    (set-face-attribute 'fixed-pitch nil :family "Fira Code" :height 140)
+    (set-face-attribute 'variable-pitch nil :family "Georgia")
 #+end_src
 
 * Utilities
@@ -71,28 +71,28 @@ damn they just look so good in =R= code and JS arrow functions.
 ** Evil
 
 #+begin_src emacs-lisp
-(use-package evil
-  :ensure t ;; install the evil package if not installed
-  :init ;; tweak evil's configuration before loading it
-  (setq evil-search-module 'evil-search)
-  (setq evil-ex-complete-emacs-commands nil)
-  (setq evil-vsplit-window-right t)
-  (setq evil-split-window-below t)
-  (setq evil-shift-round nil)
-  (setq evil-want-C-u-scroll t)
-  :config ;; tweak evil after loading it
-  (evil-mode))
+    (use-package evil
+      :ensure t ;; install the evil package if not installed
+      :init ;; tweak evil's configuration before loading it
+      (setq evil-search-module 'evil-search)
+      (setq evil-ex-complete-emacs-commands nil)
+      (setq evil-vsplit-window-right t)
+      (setq evil-split-window-below t)
+      (setq evil-shift-round nil)
+      (setq evil-want-C-u-scroll t)
+      :config ;; tweak evil after loading it
+      (evil-mode))
 
-(use-package evil-org
-  :ensure t
-  :after org
-  :config
-  (add-hook 'org-mode-hook 'evil-org-mode)
-  (add-hook 'evil-org-mode-hook
-            (lambda ()
-              (evil-org-set-key-theme)))
-  (require 'evil-org-agenda)
-  (evil-org-agenda-set-keys))
+    (use-package evil-org
+      :ensure t
+      :after org
+      :config
+      (add-hook 'org-mode-hook 'evil-org-mode)
+      (add-hook 'evil-org-mode-hook
+                (lambda ()
+                  (evil-org-set-key-theme)))
+      (require 'evil-org-agenda)
+      (evil-org-agenda-set-keys))
 #+end_src
 
 ** ido 
@@ -177,37 +177,42 @@ width. Do this for text, md, and org files.
 Use spaces! Two of them!
 
 #+begin_src emacs-lisp
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
+    (setq-default indent-tabs-mode nil)
+    (setq-default tab-width 2)
+#+end_src
+
+
+#+begin_src emacs-lisp
+    (add-hook 'before-save-hook 'whitespace-cleanup)
 #+end_src
 
 Save backups in their own directory.
 
 #+begin_src emacs-lisp
-(setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
+    (setq backup-directory-alist '(("." . "~/.emacs.d/backups")))
 #+end_src
 
 *** Javascript
 
 #+begin_src emacs-lisp
-(use-package company-tern)
-(add-to-list 'company-backends 'company-tern)
+    (use-package company-tern)
+    (add-to-list 'company-backends 'company-tern)
 #+end_src
 
 * Org
 
   #+begin_src emacs-lisp
-(use-package org-bullets
-  :init
-  (add-hook 'org-mode-hook 'org-bullets-mode))
+    (use-package org-bullets
+      :init
+      (add-hook 'org-mode-hook 'org-bullets-mode))
   #+end_src
 
 Add a template to insert an =elisp= block per [[https://orgmode.org/manual/Structure-Templates.html][=org-tempo=]] 
 
 #+begin_src emacs-lisp
-(require 'org-tempo)
-(add-to-list 'org-structure-template-alist
-             '("el" . "src emacs-lisp"))
+    (require 'org-tempo)
+    (add-to-list 'org-structure-template-alist
+                 '("el" . "src emacs-lisp"))
 #+end_src
 
 * Custom functions
@@ -215,38 +220,38 @@ Add a template to insert an =elisp= block per [[https://orgmode.org/manual/Struc
 Cribbed shamelessly from [[https://kieranhealy.org/blog/archives/2009/10/12/make-shift-enter-do-a-lot-in-ess/][Kieran Healy]]. Give S-RET superpowers in an ESS buffer.
 
 #+begin_src emacs-lisp
-(setq ess-ask-for-ess-directory nil)
-(setq ess-local-process-name "R")
-(setq ansi-color-for-comint-mode 'filter)
-(setq comint-scroll-to-bottom-on-input t)
-(setq comint-scroll-to-bottom-on-output t)
-(setq comint-move-point-for-output t)
-(defun my-ess-start-R ()
-  (interactive)
-  (if (not (member "*R*" (mapcar (function buffer-name) (buffer-list))))
-      (progn
-        (delete-other-windows)
-        (setq w1 (selected-window))
-        (setq w1name (buffer-name))
-        (setq w2 (split-window w1 nil t))
-        (R)
-        (set-window-buffer w2 "*R*")
-        (set-window-buffer w1 w1name))))
-(defun my-ess-eval ()
-  (interactive)
-  (my-ess-start-R)
-  (if (and transient-mark-mode mark-active)
-      (call-interactively 'ess-eval-region)
-    (call-interactively 'ess-eval-line-and-step)))
-(add-hook 'ess-mode-hook
-          '(lambda()
-             (local-set-key [(shift return)] 'my-ess-eval)))
-(add-hook 'inferior-ess-mode-hook
-          '(lambda()
-             (local-set-key [C-up] 'comint-previous-input)
-             (local-set-key [C-down] 'comint-next-input)))
-(add-hook 'Rnw-mode-hook
-          '(lambda()
-             (local-set-key [(shift return)] 'my-ess-eval)))
+    (setq ess-ask-for-ess-directory nil)
+    (setq ess-local-process-name "R")
+    (setq ansi-color-for-comint-mode 'filter)
+    (setq comint-scroll-to-bottom-on-input t)
+    (setq comint-scroll-to-bottom-on-output t)
+    (setq comint-move-point-for-output t)
+    (defun my-ess-start-R ()
+      (interactive)
+      (if (not (member "*R*" (mapcar (function buffer-name) (buffer-list))))
+          (progn
+            (delete-other-windows)
+            (setq w1 (selected-window))
+            (setq w1name (buffer-name))
+            (setq w2 (split-window w1 nil t))
+            (R)
+            (set-window-buffer w2 "*R*")
+            (set-window-buffer w1 w1name))))
+    (defun my-ess-eval ()
+      (interactive)
+      (my-ess-start-R)
+      (if (and transient-mark-mode mark-active)
+          (call-interactively 'ess-eval-region)
+        (call-interactively 'ess-eval-line-and-step)))
+    (add-hook 'ess-mode-hook
+              '(lambda()
+                 (local-set-key [(shift return)] 'my-ess-eval)))
+    (add-hook 'inferior-ess-mode-hook
+              '(lambda()
+                 (local-set-key [C-up] 'comint-previous-input)
+                 (local-set-key [C-down] 'comint-next-input)))
+    (add-hook 'Rnw-mode-hook
+              '(lambda()
+                 (local-set-key [(shift return)] 'my-ess-eval)))
 
 #+end_src
