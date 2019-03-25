@@ -19,7 +19,7 @@ configuration in init.el.
   #+begin_src emacs-lisp
   (let ((path (shell-command-to-string ". ~/.zshrc; echo -n $PATH")))
   (setenv "PATH" path)
-  (setq exec-path 
+  (setq exec-path
         (append
          (split-string-and-unquote path ":")
          exec-path)))
@@ -95,7 +95,7 @@ damn they just look so good in =R= code and JS arrow functions.
       (evil-org-agenda-set-keys))
 #+end_src
 
-** ido 
+** ido
 
 Use =ido-mode= for buffers and files. I don't know if this is really
 /en vogue/ anymore, but it works for me for now.
@@ -115,7 +115,7 @@ Use =ido-mode= for buffers and files. I don't know if this is really
 
 
 ** pdf-tools
-   
+
    #+begin_src emacs-lisp
    (use-package pdf-tools
         :ensure t)
@@ -124,15 +124,15 @@ Use =ido-mode= for buffers and files. I don't know if this is really
    #+end_src
 
 ** web-mode
-  
+
 =web-mode= has decent JSX support, so let's just load that and have it
 take over for html & js files.
- 
+
    #+begin_src emacs-lisp
     (use-package web-mode)
     (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
     (add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))
-    
+
     (add-hook 'web-mode-hook
           (lambda ()
             ;; short circuit js mode and just do everything in jsx-mode
@@ -141,8 +141,8 @@ take over for html & js files.
               (message "now set to: %s" web-mode-content-type))))
    #+end_src
 
-** Emmet 
-   
+** Emmet
+
    #+begin_src emacs-lisp
     (use-package emmet-mode
         :ensure t)
@@ -152,6 +152,35 @@ take over for html & js files.
     (add-hook 'web-mode-hook  'emmet-mode)
     (setq emmet-move-cursor-between-quotes t) ;; move point to first quote
     (setq emmet-expand-jsx-className? t)      ;; expand to className in JSX
+   #+end_src
+
+** Flycheck
+
+Flycheck is a package for running linters & static analysis tools. I
+cribbed configs from [[http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html][this post]] and will probably take more from there
+going forward.
+
+   #+begin_src emacs-lisp
+    (use-package flycheck)
+
+    ;; turn on flychecking globally
+    (add-hook 'after-init-hook #'global-flycheck-mode)
+
+    ;; disable jshint since we prefer eslint checking
+    (setq-default flycheck-disabled-checkers
+      (append flycheck-disabled-checkers
+        '(javascript-jshint)))
+
+    ;; use eslint with web-mode for jsx files
+    (flycheck-add-mode 'javascript-eslint 'web-mode)
+
+    ;; customize flycheck temp file prefix
+    (setq-default flycheck-temp-prefix ".flycheck")
+
+    ;; disable json-jsonlist checking for json files
+    (setq-default flycheck-disabled-checkers
+      (append flycheck-disabled-checkers
+        '(json-jsonlist)))
    #+end_src
 
 * Configure writing environment
@@ -207,7 +236,7 @@ Save backups in their own directory.
       (add-hook 'org-mode-hook 'org-bullets-mode))
   #+end_src
 
-Add a template to insert an =elisp= block per [[https://orgmode.org/manual/Structure-Templates.html][=org-tempo=]] 
+Add a template to insert an =elisp= block per [[https://orgmode.org/manual/Structure-Templates.html][=org-tempo=]]
 
 #+begin_src emacs-lisp
     (require 'org-tempo)
