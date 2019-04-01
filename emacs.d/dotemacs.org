@@ -141,6 +141,12 @@ take over for html & js files.
               (message "now set to: %s" web-mode-content-type))))
    #+end_src
 
+** prettier
+
+   #+begin_src emacs-lisp
+   (use-package prettier-js)
+   (add-hook 'web-mode-hook 'prettier-js-mode)
+   #+end_src
 ** Emmet
 
    #+begin_src emacs-lisp
