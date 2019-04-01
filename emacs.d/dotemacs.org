@@ -249,12 +249,16 @@ post]], it's working great now.
         (add-to-list 'company-backends 'company-tern))
 #+end_src
 
-*** TypeScript
+*** TODO TypeScript
 
 I haven't written a line of TypeScript yet but I plan to! So naturally
 I already started looking for emacs integration so I don't have to use
 VSCode. Seems like [[https://github.com/ananthakumaran/tide][tide-mode]] is the way to go according to the
 comments [[https://emacs.cafe/emacs/javascript/setup/2017/05/09/emacs-setup-javascript-2.html][here]].
+
+*** TODO JSX
+
+Look at [[https://github.com/felipeochoa/rjsx-mode][=rjsx-mode=]] to improve JSX support
 
 * Org
 
