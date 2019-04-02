@@ -134,6 +134,11 @@ take over for html & js files.
     (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
     (add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))
 
+    ;; Indent two spaces
+    (setq web-mode-markup-indent-offset 2)
+    (setq web-mode-css-indent-offset 2)
+    (setq web-mode-code-indent-offset 2)
+
     (add-hook 'web-mode-hook
           (lambda ()
             ;; short circuit js mode and just do everything in jsx-mode
