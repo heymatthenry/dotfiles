@@ -68,6 +68,18 @@ damn they just look so good in =R= code and JS arrow functions.
     (set-face-attribute 'variable-pitch nil :family "Georgia")
   #+end_src
 
+** Potpourri
+
+Just a place to stick random configs that I don't have a better home
+for yet at the moment
+
+#+begin_src emacs-lisp
+ ;; For all the (dumb) jokes about people not being able to quit vim,
+ ;; I couldn't get emacs to close because of a modified ido buffer.
+ ;; I got this line from this SO post: https://superuser.com/questions/690122/cannot-kill-emacs-with-m-x-kill-emacs
+    (defun ido-kill-emacs-hook () (ignore-errors (ido-save-history)))
+#+end_src
+
 * Utilities
 
 ** Evil
@@ -132,6 +144,7 @@ take over for html & js files.
   #+begin_src emacs-lisp
     (use-package web-mode)
     (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+    (add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
     (add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))
 
     ;; Indent two spaces
