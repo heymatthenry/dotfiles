@@ -5,3 +5,6 @@ filetype plugin on
 set cursorline 						" highlight current line
 highlight Cursorline term=none cterm=none ctermbg=59    " Turn on bg color, turn *off* underline
 
+" Enable basic fuzzy search and show the results nicely
+set path+=**						" Traverse subdirectories recursively
+set wildmenu						" Show all matches in a menu
