@@ -1,48 +1,6 @@
 [submodule "zsh-completions"]
 	path = zsh-completions
 	url = git://github.com/zsh-users/zsh-completions.git
-[submodule "vim/bundle/pathogen"]
-	path = vim/bundle/pathogen
-	url = https://github.com/tpope/vim-pathogen.git
-[submodule "vim/bundle/vim-colors-solarized"]
-	path = vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/bundle/limelight"]
-	path = vim/bundle/limelight
-	url = https://github.com/junegunn/limelight.vim.git
-[submodule "vim/bundle/goyo"]
-	path = vim/bundle/goyo
-	url = https://github.com/junegunn/goyo.vim.git
-[submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular
-[submodule "vim/bundle/vim-markdown"]
-	path = vim/bundle/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown.git
-[submodule "vim-pencil"]
-	path = vim-pencil
-	url = https://github.com/reedes/vim-pencil.git
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter
-[submodule "vim/bundle/vim-gitgutter"]
-	path = vim/bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "vim/bundle/vim-pencil"]
-	path = vim/bundle/vim-pencil
-	url = https://github.com/reedes/vim-pencil.git
-[submodule "vim/bundle/ctrlp"]
-	path = vim/bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/vim-rooter"]
-	path = vim/bundle/vim-rooter
-	url = https://github.com/airblade/vim-rooter.git
-[submodule "vim/bundle/powerline"]
-	path = vim/bundle/powerline
-	url = https://github.com/powerline/powerline.git
 [submodule "vim/pack/bundle/start/vim-commentary"]
 	path = vim/pack/bundle/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
