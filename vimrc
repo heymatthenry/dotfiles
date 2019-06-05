@@ -43,7 +43,7 @@
 " the transom at HN that day.
 
 " Basic settings:
-" These are essential to vim just vorking the way you'd expect vim to work
+" These are essential to vim just working the way you'd expect vim to work
 "==========================================================================
 
 set nocompatible                            " disable vi compatibility
