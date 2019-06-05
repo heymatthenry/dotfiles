@@ -8,6 +8,14 @@ filetype plugin on
 
 let mapleader=" "
 
+" Text settings:
+"==========================================================================
+
+set expandtab				  " Use spaces instead of tabs
+set shiftwidth=4			  " In-/outdent by 4 columns
+set tabstop=4				  " literal tab should be 4 columns
+set softtabstop=4		          " tab key inserts 4 spaces
+
 " UI:
 "==========================================================================
 
