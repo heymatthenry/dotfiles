@@ -46,7 +46,6 @@
 " These are essential to vim just working the way you'd expect vim to work
 "==========================================================================
 
-set nocompatible                            " disable vi compatibility
 syntax enable                               " enable syntax
 filetype plugin on                          " enable autoloading plugin based on filetype
 
