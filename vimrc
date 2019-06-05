@@ -4,13 +4,14 @@
 
 set nocompatible                            " disable vi compatibility
 syntax enable                               " enable syntax
-filetype plugin on
+filetype plugin on                          " enable autoloading plugin based on filetype
 
-let mapleader=" "
+let mapleader=" "                           " set leader key to SPC
 
 " Text settings:
 "==========================================================================
 
+" Tabs/Spaces --- retab! reformats a file according to tab settings
 set expandtab                               " Use spaces instead of tabs
 set shiftwidth=4                            " In-/outdent by 4 columns
 set tabstop=4                               " literal tab should be 4 columns
