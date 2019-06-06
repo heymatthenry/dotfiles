@@ -78,3 +78,9 @@ set listchars=tab:▸\ ,eol:¬                                 " Specify better 
 set path+=**                                                " Traverse subdirectories recursively
 set wildmenu                                                " Show all matches in a menu
 
+" Source vimrc on save
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc,vimrc so $MYVIMRC
+augroup END
+
