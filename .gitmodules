@@ -7,3 +7,6 @@
 [submodule "vim/pack/bundle/start/vim-surround"]
 	path = vim/pack/bundle/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/pack/bundle/start/vim-repeat"]
+	path = vim/pack/bundle/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
