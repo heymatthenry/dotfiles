@@ -56,9 +56,9 @@ let mapleader=" "                           " set leader key to SPC
 
 " Tabs/Spaces --- retab! reformats a file according to tab settings
 set expandtab                               " Use spaces instead of tabs
-set shiftwidth=4                            " In-/outdent by 4 columns
-set tabstop=4                               " literal tab should be 4 columns
-set softtabstop=4                           " tab key inserts 4 spaces
+set shiftwidth=2                            " In-/outdent by 4 columns
+set tabstop=2                               " literal tab should be 4 columns
+set softtabstop=2                           " tab key inserts 4 spaces
 
 " UI:
 "==========================================================================
