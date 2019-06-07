@@ -78,6 +78,11 @@ set laststatus=2                                            " Always show status
 nmap <leader>l :set list!<CR>                               " Shortcut to rapidly toggle `set list`
 set listchars=tab:▸\ ,eol:¬                                 " Specify better Tab & EOL characters
 
+" Utilities
+"=========================================================================
+
+map <leader>t :NERDTreeToggle<CR>                           " Mapping to toggle project drawer
+
 " Enable basic fuzzy search and show the results nicely
 set path+=**                                                " Traverse subdirectories recursively
 set wildmenu                                                " Show all matches in a menu
