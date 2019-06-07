@@ -16,3 +16,6 @@
 [submodule "vim/pack/bundle/start/nerdtree"]
 	path = vim/pack/bundle/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/pack/bundle/start/prettier"]
+	path = vim/pack/bundle/start/prettier
+	url = https://github.com/prettier/vim-prettier.git
