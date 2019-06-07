@@ -95,10 +95,9 @@ augroup END
 "=========================================================================
 
 " Prettier config
-let g:prettier#quickfix_enabled = 0                         " disable quickfix
 let g:prettier#autoformat = 0                               " disable pragma-based autoformat
 " autoformat on save, change, and leaving insert mode
-autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " NERDTree
 map <leader>t :NERDTreeToggle<CR>                           " Mapping to toggle project drawer
