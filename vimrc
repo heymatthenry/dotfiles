@@ -47,7 +47,7 @@
 "==========================================================================
 
 syntax enable                               " enable syntax
-filetype plugin on                          " enable autoloading plugin based on filetype
+filetype plugin indent on                          " enable autoloading plugin based on filetype
 
 let mapleader=" "                           " set leader key to SPC
 
