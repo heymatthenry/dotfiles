@@ -63,6 +63,10 @@ set softtabstop=4                           " tab key inserts 4 spaces
 " UI:
 "==========================================================================
 
+" theme
+set background=dark
+colorscheme solarized8
+
 " Higlight the current line, as I have grown soft in the embrace of VSCode
 set cursorline                                              " highlight current line
 highlight Cursorline term=none cterm=none ctermbg=23        " Turn on bg color, turn *off* underline
