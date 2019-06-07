@@ -90,14 +90,16 @@ augroup myvimrc
     au!
     au BufWritePost .vimrc,vimrc so $MYVIMRC
 augroup END
-
+"
 " Plugins:
 "=========================================================================
 
 " Prettier config
 let g:prettier#autoformat = 0                               " disable pragma-based autoformat
-" autoformat on save, change, and leaving insert mode
-autocmd BufWritePre,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+"
+" autoformat on save (anything more aggressive e.g. on leaving insert mode
+" breaks vim-surround)
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " NERDTree
 map <leader>t :NERDTreeToggle<CR>                           " Mapping to toggle project drawer
