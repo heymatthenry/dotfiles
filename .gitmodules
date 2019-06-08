@@ -10,12 +10,12 @@
 [submodule "vim/pack/bundle/start/vim-repeat"]
 	path = vim/pack/bundle/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
-[submodule "vim/pack/themes/opt/solarized8"]
-	path = vim/pack/themes/opt/solarized8
-	url = https://github.com/lifepillar/vim-solarized8.git
 [submodule "vim/pack/bundle/start/nerdtree"]
 	path = vim/pack/bundle/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/pack/bundle/start/prettier"]
 	path = vim/pack/bundle/start/prettier
 	url = https://github.com/prettier/vim-prettier.git
+[submodule "vim/pack/themes/opt/solarized"]
+	path = vim/pack/themes/opt/solarized
+	url = https://github.com/altercation/vim-colors-solarized.git

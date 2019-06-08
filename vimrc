@@ -65,11 +65,10 @@ set softtabstop=2                           " tab key inserts 4 spaces
 
 " theme
 set background=dark
-colorscheme solarized8
+colorscheme solarized
 
 " Higlight the current line, as I have grown soft in the embrace of VSCode
 set cursorline                                              " highlight current line
-highlight Cursorline term=none cterm=none ctermbg=23        " Turn on bg color, turn *off* underline
 
 set relativenumber                                          " Show line numbers relative to the cursor
 
