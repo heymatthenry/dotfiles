@@ -70,6 +70,7 @@ colorscheme solarized
 " Higlight the current line, as I have grown soft in the embrace of VSCode
 set cursorline                                              " highlight current line
 
+set number                                                  " Show current line number even with relativenumber
 set relativenumber                                          " Show line numbers relative to the cursor
 
 set laststatus=2                                            " Always show statusline
