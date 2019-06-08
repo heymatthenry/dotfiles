@@ -1,13 +1,12 @@
 autoload -U colors && colors
-autoload -Uz vcs_info
 autoload -U compinit && compinit
-
+autoload -U promptinit; promptinit
+prompt pure # https://github.com/sindresorhus/pure                          
 
 source ~/.zsh/aliases   # Bring in my aliases
 source ~/.zsh/functions # Load custom functions
 
 export EDITOR='vim'
-
 bindkey -v
 
 # history
