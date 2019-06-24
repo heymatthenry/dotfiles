@@ -9,6 +9,9 @@ source ~/.zsh/functions # Load custom functions
 export EDITOR='vim'
 bindkey -v
 
+# case insensitive tab complete
+zstyle ':completion:*:*:git:files' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 # history
 HISTSIZE=10000
 HISTFILE=~/.zsh_history
