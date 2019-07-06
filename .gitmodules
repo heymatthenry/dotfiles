@@ -22,3 +22,6 @@
 [submodule "vim/pack/bundle/start/emmet"]
 	path = vim/pack/bundle/start/emmet
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "vim/pack/bundle/start/auto-pairs"]
+	path = vim/pack/bundle/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
