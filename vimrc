@@ -49,7 +49,6 @@
 syntax enable                               " enable syntax
 filetype plugin indent on                   " enable autoloading plugin based on filetype
 
-set encoding=UTF-8                          " Set encoding to utf 8 (for devicons)
 let mapleader=" "                           " set leader key to SPC
 
 set ttimeoutlen=100                         " Shorten time vim will wait to complete an escape sequence, per https://superuser.com/questions/161178/why-does-vim-delay-for-a-second-whenever-i-use-the-o-command-open-a-new-line
@@ -67,6 +66,7 @@ set softtabstop=2                           " tab key inserts 4 spaces
 "==========================================================================
 
 " theme
+set encoding=UTF-8                          " Set encoding to utf 8 (for devicons)
 set background=dark
 colorscheme solarized
 
@@ -113,3 +113,7 @@ let g:ale_fix_on_save = 1
 
 " NERDTree
 map <leader>t :NERDTreeToggle<CR>                           " Mapping to toggle project drawer
+
+" Gitgutter
+let g:gitgutter_override_sign_column_highlight = 0
+highlight SignColumn ctermbg=black                          " terminal Vim
