@@ -43,3 +43,6 @@
 [submodule "vim/pack/bundle/start/tmuxline"]
 	path = vim/pack/bundle/start/tmuxline
 	url = https://github.com/edkolev/tmuxline.vim.git
+[submodule "vim/pack/bundle/start/airline-themes"]
+	path = vim/pack/bundle/start/airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
