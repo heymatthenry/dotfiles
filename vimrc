@@ -81,6 +81,12 @@ set laststatus=2                                            " Always show status
 nmap <leader>l :set list!<CR>                               " Shortcut to rapidly toggle `set list`
 set listchars=tab:▸\ ,eol:¬                                 " Specify better Tab & EOL characters
 
+highlight SignColumn ctermbg=NONE guibg=NONE                " no bgcolor for signcolumn
+highlight LineNr ctermbg=NONE guibg=NONE                    " …or line number
+
+set noshowcmd                                               " Don't show last command run 
+set noshowmode                                              " Don't show mode since airline shows it
+
 " Utilities
 "=========================================================================
 
@@ -115,5 +121,10 @@ let g:ale_fix_on_save = 1
 map <leader>t :NERDTreeToggle<CR>                           " Mapping to toggle project drawer
 
 " Gitgutter
-let g:gitgutter_override_sign_column_highlight = 0
-highlight SignColumn ctermbg=black                          " terminal Vim
+highlight clear SignColumn
+highlight GitGutterAdd ctermfg=green
+highlight GitGutterChange ctermfg=yellow
+highlight GitGutterDelete ctermfg=red
+highlight GitGutterChangeDelete ctermfg=yellow
+
+let g:airline_theme='space'                                 " Cribbed from https://github.com/ctaylo21/jarvis
