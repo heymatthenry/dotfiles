@@ -46,3 +46,6 @@
 [submodule "vim/pack/bundle/start/airline-themes"]
 	path = vim/pack/bundle/start/airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "vim/pack/bundle/start/js_alternate"]
+	path = vim/pack/bundle/start/js_alternate
+	url = https://github.com/dunckr/js_alternate.vim.git
