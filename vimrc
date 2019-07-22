@@ -120,6 +120,11 @@ let g:ale_fix_on_save = 1
 " NERDTree
 map <leader>t :NERDTreeToggle<CR>                           " Mapping to toggle project drawer
 
+" Ensure webdevicons gets refreshed after NERDtree loads so clobbered settings don't get reapplied
+if exists('g:loaded_webdevicons')                           
+  call webdevicons#refresh()
+endif
+
 " Gitgutter
 highlight clear SignColumn
 highlight GitGutterAdd ctermfg=green
