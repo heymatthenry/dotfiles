@@ -49,3 +49,6 @@
 [submodule "vim/pack/bundle/start/js_alternate"]
 	path = vim/pack/bundle/start/js_alternate
 	url = https://github.com/dunckr/js_alternate.vim.git
+[submodule "vim/pack/bundle/start/vim-jinja"]
+	path = vim/pack/bundle/start/vim-jinja
+	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
