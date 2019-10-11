@@ -27,6 +27,7 @@ eval `/usr/libexec/path_helper -s`
 export PATH=/Users/matt/Code/scripts:$PATH
 fpath=(./zsh-completions $fpath)
 
+export PATH=$PATH:$HOME/.composer/vendor/bin 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
