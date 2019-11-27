@@ -34,3 +34,4 @@ config/configstore
 config/exercism
 config/learnyounode
 config/yarn
+config/coc/extensions/node_modules/
