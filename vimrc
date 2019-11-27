@@ -104,19 +104,6 @@ augroup END
 " Plugins
 "=========================================================================
 
-let g:ale_linters = {
-      \'javascript': ['eslint'],
-      \'typescript': ['tsserver', 'eslint']
-      \}
-
-let g:ale_fixers = {
-      \'javascript': ['prettier'],
-      \'typescript': ['prettier'],
-      \'json': ['prettier']
-      \}
-
-let g:ale_fix_on_save = 1
-
 " NERDTree
 map <leader>t :NERDTreeToggle<CR>                           " Mapping to toggle project drawer
 
