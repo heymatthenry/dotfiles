@@ -132,4 +132,4 @@ highlight GitGutterChange ctermfg=yellow
 highlight GitGutterDelete ctermfg=red
 highlight GitGutterChangeDelete ctermfg=yellow
 
-let g:airline_theme='space'                                 " Cribbed from https://github.com/ctaylo21/jarvis
+let g:airline_theme='night_owl'                                 " Cribbed from https://github.com/ctaylo21/jarvis
