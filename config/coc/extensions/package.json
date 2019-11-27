@@ -1,1 +1,11 @@
-{"dependencies":{}}
+{
+  "dependencies": {
+    "coc-css": ">=1.2.2",
+    "coc-emmet": ">=1.1.3",
+    "coc-eslint": ">=1.2.3",
+    "coc-highlight": ">=1.2.5",
+    "coc-html": ">=1.2.1",
+    "coc-prettier": ">=1.1.10",
+    "coc-tsserver": ">=1.4.8"
+  }
+}
