@@ -56,3 +56,6 @@
 	path = vim/pack/bundle/start/coc
 	url = https://github.com/neoclide/coc.nvim.git
 	branch = release
+[submodule "vim/pack/bundle/start/elm-vim"]
+	path = vim/pack/bundle/start/elm-vim
+	url = https://github.com/theJian/elm.vim.git
