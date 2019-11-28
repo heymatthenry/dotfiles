@@ -35,3 +35,7 @@ config/exercism
 config/learnyounode
 config/yarn
 config/coc/extensions/node_modules/
+config/gatsby
+config/hub
+config/devcert
+config/karabiner/automatic_backups
