@@ -59,3 +59,6 @@
 [submodule "vim/pack/bundle/start/elm-vim"]
 	path = vim/pack/bundle/start/elm-vim
 	url = https://github.com/theJian/elm.vim.git
+[submodule "vim/pack/bundle/start/vim-prettier"]
+	path = vim/pack/bundle/start/vim-prettier
+	url = https://github.com/prettier/vim-prettier.git
