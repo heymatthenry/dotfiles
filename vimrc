@@ -53,6 +53,9 @@ let mapleader=" "                           " set leader key to SPC
 
 set ttimeoutlen=100                         " Shorten time vim will wait to complete an escape sequence, per https://superuser.com/questions/161178/why-does-vim-delay-for-a-second-whenever-i-use-the-o-command-open-a-new-line
 
+au CursorHold,CursorHoldI,FocusGained,BufEnter * :checktime " Check timestamp on files after certain events
+set autoread                                " reload files that change on disk outside the buffer 
+
 " Text settings:
 "==========================================================================
 
