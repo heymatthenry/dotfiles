@@ -1,4 +1,4 @@
-## greenideas's dotfiles
+## heymatthenry's dotfiles
 
 Currently these config files cover
 
@@ -7,6 +7,7 @@ Currently these config files cover
 * ~~Emacs~~
 * vim!!
 * zsh
+* tmux
 
 To get started, just run:
 
