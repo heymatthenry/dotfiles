@@ -35,6 +35,9 @@ config/exercism
 config/learnyounode
 config/yarn
 config/coc/extensions/node_modules/
+config/coc/history.json
+config/coc/mru
+config/coc/commands
 config/gatsby
 config/hub
 config/devcert
