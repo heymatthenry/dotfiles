@@ -1,0 +1,4 @@
+{
+  "eslint.autoFixOnSave": true,
+  "coc.source.file.enable": true
+}
