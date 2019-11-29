@@ -70,6 +70,7 @@ set softtabstop=2                           " tab key inserts 4 spaces
 
 " theme
 set encoding=UTF-8                          " Set encoding to utf 8 (for devicons)
+
 set background=dark
 colorscheme solarized
 
@@ -129,4 +130,4 @@ highlight GitGutterChange ctermfg=yellow
 highlight GitGutterDelete ctermfg=red
 highlight GitGutterChangeDelete ctermfg=yellow
 
-let g:airline_theme='night_owl'                                 " Cribbed from https://github.com/ctaylo21/jarvis
+let g:airline_theme='solarized'
