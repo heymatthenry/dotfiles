@@ -119,7 +119,7 @@ map <leader>t :NERDTreeToggle<CR>                           " Mapping to toggle 
 let g:NERDTreeWinPos = "right"                              " NERDTree should open on right
 
 " Ensure webdevicons gets refreshed after NERDtree loads so clobbered settings don't get reapplied
-if exists('g:loaded_webdevicons')                           
+if exists('g:loaded_webdevicons')
   call webdevicons#refresh()
 endif
 
