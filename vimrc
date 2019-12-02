@@ -131,3 +131,11 @@ highlight GitGutterDelete ctermfg=red
 highlight GitGutterChangeDelete ctermfg=yellow
 
 let g:airline_theme='solarized'
+
+" fzf
+set rtp+=/usr/local/opt/fzf
+nmap <leader>p :Files<cr>|                                " fuzzy find files in the working directory (where you launched Vim from)
+nmap <leader>/ :BLines<cr>|                               " fuzzy find lines in the current file
+nmap <leader>b :Buffers<cr>|                              " fuzzy find an open buffer
+nmap <leader>r :Rg<cr>|                                       " fuzzy find text in the working directory
+nmap <leader>P :Commands<cr>|                             " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)

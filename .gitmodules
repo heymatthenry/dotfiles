@@ -62,3 +62,6 @@
 [submodule "vim/pack/bundle/start/vim-prettier"]
 	path = vim/pack/bundle/start/vim-prettier
 	url = https://github.com/prettier/vim-prettier.git
+[submodule "vim/pack/bundle/start/fzf"]
+	path = vim/pack/bundle/start/fzf
+	url = https://github.com/junegunn/fzf.vim.git
