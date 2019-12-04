@@ -104,7 +104,10 @@ augroup myvimrc
     au BufWritePost .vimrc,vimrc so $MYVIMRC
 augroup END
 
-"
+" tmux
+"=========================================================================
+autocmd VimResized * :wincmd =                              " Resize splits when window is resized
+
 " Plugins
 "=========================================================================
 

@@ -65,3 +65,6 @@
 [submodule "vim/pack/bundle/start/fzf"]
 	path = vim/pack/bundle/start/fzf
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "vim/pack/bundle/start/vim-tmux-navigator"]
+	path = vim/pack/bundle/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
