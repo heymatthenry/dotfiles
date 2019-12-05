@@ -111,11 +111,12 @@ autocmd VimResized * :wincmd =                              " Resize splits when
 " Plugins
 "=========================================================================
 
+" Prettier
 " when running at every change you may want to disable quickfix
 let g:prettier#quickfix_enabled = 0
 
 let g:prettier#autoformat = 0
-autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " NERDTree
 map <leader>t :NERDTreeToggle<CR>                           " Mapping to toggle project drawer
