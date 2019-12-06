@@ -68,3 +68,6 @@
 [submodule "vim/pack/bundle/start/vim-tmux-navigator"]
 	path = vim/pack/bundle/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule "vim/pack/themes/opt/night-owl"]
+	path = vim/pack/themes/opt/night-owl
+	url = https://github.com/haishanh/night-owl.vim.git

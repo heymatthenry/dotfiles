@@ -12,7 +12,6 @@ zsh/zsh_history
 zsh/cache
 vim/tmp
 vim/undo
-vim/pack
 config/nvim/bundle
 config/nvim/.netrwhist
 tags

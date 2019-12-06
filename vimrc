@@ -72,7 +72,8 @@ set softtabstop=2                           " tab key inserts 4 spaces
 set encoding=UTF-8                          " Set encoding to utf 8 (for devicons)
 
 set background=dark
-colorscheme solarized
+colorscheme night-owl
+set termguicolors
 
 " Higlight the current line, as I have grown soft in the embrace of VSCode
 set cursorline                                              " highlight current line
@@ -134,12 +135,16 @@ highlight GitGutterChange ctermfg=yellow
 highlight GitGutterDelete ctermfg=red
 highlight GitGutterChangeDelete ctermfg=yellow
 
-let g:airline_theme='solarized'
+let g:airline_theme='night_owl'
 
 " fzf
 set rtp+=/usr/local/opt/fzf
-nmap <leader>p :Files<cr>|                                " fuzzy find files in the working directory (where you launched Vim from)
-nmap <leader>/ :BLines<cr>|                               " fuzzy find lines in the current file
-nmap <leader>b :Buffers<cr>|                              " fuzzy find an open buffer
-nmap <leader>r :Rg<cr>|                                       " fuzzy find text in the working directory
-nmap <leader>P :Commands<cr>|                             " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
+nmap <c-p> :Files<cr>|                                " fuzzy find files in the working directory (where you launched Vim from)
+nmap <c-/> :BLines<cr>|                               " fuzzy find lines in the current file
+nmap <c-b> :Buffers<cr>|                              " fuzzy find an open buffer
+nmap <c-r> :Rg<cr>|                                       " fuzzy find text in the working directory
+nmap <leader>p :Commands<cr>|                             " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
+
+" CoC
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
