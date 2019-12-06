@@ -3,6 +3,12 @@ autoload -U compinit && compinit
 autoload -U promptinit; promptinit
 prompt pure # https://github.com/sindresorhus/pure                          
 
+function git_prompt_short_sha() {
+  SHA=$(git rev-parse --short HEAD 2> /dev/null) && echo "$ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$ZSH_THEME_GIT_PROMPT_SHA_AFTER"
+}
+
+RPROMPT='%{$fg[green]%}$(git_prompt_short_sha)%{$reset_color%}'
+
 source ~/.zsh/aliases   # Bring in my aliases
 source ~/.zsh/functions # Load custom functions
 
