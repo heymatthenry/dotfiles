@@ -145,3 +145,8 @@ nmap <leader>p :Commands<cr>|                             " fuzzy find Vim comma
 " CoC
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" lightline
+let g:lightline = {
+    \ 'colorscheme': 'solarized',
+    \ }
