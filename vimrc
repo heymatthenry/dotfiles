@@ -72,8 +72,7 @@ set softtabstop=2                           " tab key inserts 4 spaces
 set encoding=UTF-8                          " Set encoding to utf 8 (for devicons)
 
 set background=dark
-colorscheme night-owl
-set termguicolors
+colorscheme solarized
 
 " Higlight the current line, as I have grown soft in the embrace of VSCode
 set cursorline                                              " highlight current line
