@@ -135,8 +135,6 @@ highlight GitGutterChange ctermfg=yellow
 highlight GitGutterDelete ctermfg=red
 highlight GitGutterChangeDelete ctermfg=yellow
 
-let g:airline_theme='night_owl'
-
 " fzf
 set rtp+=/usr/local/opt/fzf
 nmap <c-p> :Files<cr>|                                " fuzzy find files in the working directory (where you launched Vim from)

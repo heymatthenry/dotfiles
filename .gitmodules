@@ -34,15 +34,6 @@
 [submodule "vim/pack/bundle/start/gitgutter"]
 	path = vim/pack/bundle/start/gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "vim/pack/bundle/start/airline"]
-	path = vim/pack/bundle/start/airline
-	url = https://github.com/vim-airline/vim-airline.git
-[submodule "vim/pack/bundle/start/tmuxline"]
-	path = vim/pack/bundle/start/tmuxline
-	url = https://github.com/edkolev/tmuxline.vim.git
-[submodule "vim/pack/bundle/start/airline-themes"]
-	path = vim/pack/bundle/start/airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes.git
 [submodule "vim/pack/bundle/start/js_alternate"]
 	path = vim/pack/bundle/start/js_alternate
 	url = https://github.com/dunckr/js_alternate.vim.git
@@ -71,3 +62,6 @@
 [submodule "vim/pack/themes/opt/night-owl"]
 	path = vim/pack/themes/opt/night-owl
 	url = https://github.com/haishanh/night-owl.vim.git
+[submodule "vim/pack/bundle/start/lightline"]
+	path = vim/pack/bundle/start/lightline
+	url = https://github.com/itchyny/lightline.vim
