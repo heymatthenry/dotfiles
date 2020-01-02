@@ -65,3 +65,6 @@
 [submodule "vim/pack/bundle/start/elm-language-server"]
 	path = vim/pack/bundle/start/elm-language-server
 	url = https://github.com/elm-tooling/elm-language-server.git
+[submodule "vim/pack/bundle/start/elm-syntax"]
+	path = vim/pack/bundle/start/elm-syntax
+	url = https://github.com/andys8/vim-elm-syntax.git
