@@ -1,4 +1,16 @@
 {
   "eslint.autoFixOnSave": true,
-  "coc.source.file.enable": true
+  "coc.source.file.enable": true,
+  "languageserver": {
+    "elmLS": {
+      "command": "elm-language-server",
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"],
+      "initializationOptions": {
+        "elmAnalyseTrigger": "change"
+      }
+    }
+  },
+  "coc.preferences.formatOnSaveFiletypes": ["elm"],
+  "codeLens.enable": true
 }
