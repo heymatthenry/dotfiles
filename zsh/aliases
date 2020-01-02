@@ -39,3 +39,4 @@ alias st="svn status"
 alias saddall="svn st | awk '/\?/ {print $2}' | xargs svn add"
 
 # Project aliases
+alias hugo59="/usr/local/bin/hugo-0.59.1/hugo"
