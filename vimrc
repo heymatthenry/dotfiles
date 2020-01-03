@@ -150,6 +150,12 @@ nmap <leader>p :Commands<cr>|                             " fuzzy find Vim comma
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+nmap <silent> gd <Plug>(coc-definition)               " jump to definition
+nmap <silent> gy <Plug>(coc-type-definition)          " jump to type definition
+nmap <silent> gi <Plug>(coc-implementation)           " jump to implementation
+nmap <silent> gr <Plug>(coc-references)               " jump to reference
+nmap <silent> rn <Plug>(coc-rename)                   " rename
+
 " lightline
 let g:lightline = {
     \ 'colorscheme': 'solarized',
