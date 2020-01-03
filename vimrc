@@ -85,6 +85,8 @@ set laststatus=2                                            " Always show status
 nmap <leader>l :set list!<CR>                               " Shortcut to rapidly toggle `set list`
 set listchars=tab:▸\ ,eol:¬                                 " Specify better Tab & EOL characters
 
+nmap <leader>, :set hlsearch!<CR>
+
 highlight SignColumn ctermbg=NONE guibg=NONE                " no bgcolor for signcolumn
 highlight LineNr ctermbg=NONE guibg=NONE                    " …or line number
 
