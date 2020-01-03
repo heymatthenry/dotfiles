@@ -68,3 +68,6 @@
 [submodule "vim/pack/bundle/start/elm-syntax"]
 	path = vim/pack/bundle/start/elm-syntax
 	url = https://github.com/andys8/vim-elm-syntax.git
+[submodule "vim/pack/bundle/start/conflicted"]
+	path = vim/pack/bundle/start/conflicted
+	url = https://github.com/christoomey/vim-conflicted.git
