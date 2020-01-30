@@ -71,3 +71,6 @@
 [submodule "vim/pack/bundle/start/conflicted"]
 	path = vim/pack/bundle/start/conflicted
 	url = https://github.com/christoomey/vim-conflicted.git
+[submodule "vim/pack/bundle/start/vim-polyglot"]
+	path = vim/pack/bundle/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
