@@ -9,6 +9,10 @@ function git_prompt_short_sha() {
 
 RPROMPT='%{$fg[green]%}$(git_prompt_short_sha)%{$reset_color%}'
 
+if [ "$TERM" = "xterm" ]; then
+  export TERM=xterm-256color
+fi
+
 source ~/.zsh/aliases   # Bring in my aliases
 source ~/.zsh/functions # Load custom functions
 
