@@ -148,6 +148,9 @@ nmap <c-b> :Buffers<cr>|                              " fuzzy find an open buffe
 nmap <c-r> :Rg<cr>|                                       " fuzzy find text in the working directory
 nmap <leader>p :Commands<cr>|                             " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
 
+" Fugitive
+nmap <c-g> :Gstatus<cr>|                              " open git status window, ala VSCode
+
 " CoC
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
