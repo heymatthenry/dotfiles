@@ -144,7 +144,6 @@ highlight GitGutterChangeDelete ctermfg=yellow
 set rtp+=/usr/local/opt/fzf
 nmap <c-p> :Files<cr>|                                " fuzzy find files in the working directory (where you launched Vim from)
 nmap <c-/> :BLines<cr>|                               " fuzzy find lines in the current file
-nmap <c-b> :Buffers<cr>|                              " fuzzy find an open buffer
 nmap <c-r> :Rg<cr>|                                       " fuzzy find text in the working directory
 nmap <leader>p :Commands<cr>|                             " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
 
