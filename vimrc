@@ -163,5 +163,5 @@ nmap <silent> rn <Plug>(coc-rename)                   " rename
 
 " lightline
 let g:lightline = {
-    \ 'colorscheme': 'solarized',
+    \ 'colorscheme': 'nightowl',
     \ }
