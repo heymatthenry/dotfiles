@@ -93,6 +93,7 @@ imap jj <Esc>                                               " double-j -> Esc
 
 highlight SignColumn ctermbg=NONE guibg=NONE                " no bgcolor for signcolumn
 highlight LineNr ctermbg=NONE guibg=NONE                    " …or line number
+set signcolumn=yes                                          " always show signcolumn
 
 set noshowcmd                                               " Don't show last command run 
 set noshowmode                                              " Don't show mode since airline shows it
