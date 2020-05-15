@@ -97,6 +97,8 @@ highlight LineNr ctermbg=NONE guibg=NONE                    " …or line number
 set noshowcmd                                               " Don't show last command run 
 set noshowmode                                              " Don't show mode since airline shows it
 
+set updatetime=250                                          " update sign column every .25s
+
 " Utilities
 "=========================================================================
 
