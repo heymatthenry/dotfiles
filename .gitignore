@@ -18,6 +18,7 @@ tags
 tags-ja
 config/coc/snippets-mru
 vim/plugged
+config/coc/snippets-mru
 
 # emacs ------------------------
 

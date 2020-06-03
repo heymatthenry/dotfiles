@@ -12,6 +12,9 @@
     "coc-snippets": ">=2.1.26",
     "full-react-snippets": "https://github.com/walteribeiro/full-react-snippets",
     "coc-pairs": ">=1.2.21",
-    "coc-tsserver": ">=1.5.1"
+    "coc-prettier": ">=1.1.12",
+    "coc-tsserver": ">=1.5.1",
+    "coc-snippets": ">=2.1.26",
+    "full-react-snippets": "https://github.com/walteribeiro/full-react-snippets"
   }
 }
