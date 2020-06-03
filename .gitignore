@@ -16,6 +16,7 @@ config/nvim/bundle
 config/nvim/.netrwhist
 tags
 tags-ja
+config/coc/snippets-mru
 
 # emacs ------------------------
 
