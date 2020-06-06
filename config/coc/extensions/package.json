@@ -10,7 +10,8 @@
     "coc-json": ">=1.2.5",
     "coc-prettier": ">=1.1.14",
     "coc-snippets": ">=2.1.26",
-    "coc-tsserver": ">=1.4.13",
-    "full-react-snippets": "https://github.com/walteribeiro/full-react-snippets"
+    "full-react-snippets": "https://github.com/walteribeiro/full-react-snippets",
+    "coc-pairs": ">=1.2.21",
+    "coc-tsserver": ">=1.5.1"
   }
 }

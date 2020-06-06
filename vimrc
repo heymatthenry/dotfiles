@@ -56,6 +56,10 @@ set ttimeoutlen=100                         " Shorten time vim will wait to comp
 au CursorHold,CursorHoldI,FocusGained,BufEnter * :checktime " Check timestamp on files after certain events
 set autoread                                " reload files that change on disk outside the buffer https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
 
+" Load plugins
+"==========================================================================
+so vim/plugins.vim
+
 " Text settings:
 "==========================================================================
 
