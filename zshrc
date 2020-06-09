@@ -41,7 +41,7 @@ export PATH=$PATH:$HOME/.composer/vendor/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/heroku/bin:/Users/matthewwhenry/.local/bin:$PATH"
 
 # source ~/.zsh/secret_keys
 
@@ -60,4 +60,8 @@ fi
 # fzf should hide anything in gitignore
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden'
+fi
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
 fi

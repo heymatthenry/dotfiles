@@ -2,12 +2,13 @@
   "dependencies": {
     "coc-css": ">=1.2.3",
     "coc-emmet": ">=1.1.4",
-    "coc-eslint": ">=1.2.6",
+    "coc-eslint": ">=1.2.7",
     "coc-highlight": ">=1.2.5",
     "coc-html": ">=1.2.4",
+    "coc-inline-jest": ">=0.1.2",
     "coc-jest": ">=1.0.3",
     "coc-json": ">=1.2.5",
-    "coc-prettier": ">=1.1.12",
+    "coc-prettier": ">=1.1.14",
     "coc-snippets": ">=2.1.26",
     "coc-tsserver": ">=1.4.13",
     "full-react-snippets": "https://github.com/walteribeiro/full-react-snippets"

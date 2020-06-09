@@ -165,6 +165,9 @@ nmap <silent> gi <Plug>(coc-implementation)           " jump to implementation
 nmap <silent> gr <Plug>(coc-references)               " jump to reference
 nmap <silent> rn <Plug>(coc-rename)                   " rename
 
+nmap <silent> <Leader>j <Plug>(coc-diagnostic-next-error)
+nmap <silent> <Leader>k <Plug>(coc-diagnostic-prev-error)
+
 " lightline
 let g:lightline = {
     \ 'colorscheme': 'wombat',
