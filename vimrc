@@ -58,7 +58,7 @@ set autoread                                " reload files that change on disk o
 
 " Load plugins
 "==========================================================================
-so vim/plugins.vim
+runtime plugins.vim
 
 " Text settings:
 "==========================================================================
