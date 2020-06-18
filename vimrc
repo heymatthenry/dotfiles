@@ -55,6 +55,7 @@ set ttimeoutlen=100                         " Shorten time vim will wait to comp
 
 au CursorHold,CursorHoldI,FocusGained,BufEnter * :checktime " Check timestamp on files after certain events
 set autoread                                " reload files that change on disk outside the buffer https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+set hidden                                  " Allow leaving dirty buffers (including terminal buffers)
 
 " Load plugins
 "==========================================================================
@@ -168,6 +169,8 @@ nmap <silent> gy <Plug>(coc-type-definition)          " jump to type definition
 nmap <silent> gi <Plug>(coc-implementation)           " jump to implementation
 nmap <silent> gr <Plug>(coc-references)               " jump to reference
 nmap <silent> rn <Plug>(coc-rename)                   " rename
+" nmap <C-q> <Plug>(coc-terminal-toggle)       " toggle terminal
+tnoremap <Esc> <C-\><C-n>
 
 nmap <silent> <Leader>j <Plug>(coc-diagnostic-next-error)
 nmap <silent> <Leader>k <Plug>(coc-diagnostic-prev-error)
