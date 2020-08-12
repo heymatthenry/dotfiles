@@ -166,11 +166,13 @@ nmap <silent> gy <Plug>(coc-type-definition)          " jump to type definition
 nmap <silent> gi <Plug>(coc-implementation)           " jump to implementation
 nmap <silent> gr <Plug>(coc-references)               " jump to reference
 nmap <silent> rn <Plug>(coc-rename)                   " rename
-" nmap <C-q> <Plug>(coc-terminal-toggle)       " toggle terminal
 tnoremap <Esc> <C-\><C-n>
 
 nmap <silent> <Leader>j <Plug>(coc-diagnostic-next-error)
 nmap <silent> <Leader>k <Plug>(coc-diagnostic-prev-error)
+
+nnoremap <silent> ]y :call CocAction('runCommand', 'document.jumpToNextSymbol')<CR>
+nnoremap <silent> [y :call CocAction('runCommand', 'document.jumpToPrevSymbol')<CR>
 
 " lightline
 let g:lightline = {
