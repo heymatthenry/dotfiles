@@ -132,9 +132,11 @@ let g:prettier#quickfix_enabled = 0
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-" NERDTree
-map <leader>t :NERDTreeToggle<CR>                           " Mapping to toggle project drawer
-let g:NERDTreeWinPos = "right"                              " NERDTree should open on right
+" CHADtree
+map <leader>t <cmd>CHADopen<CR>                           " Mapping to toggle project drawer
+let g:chadtree_settings = {
+    \ 'open_left': 0
+    \ }
 
 " Ensure webdevicons gets refreshed after NERDtree loads so clobbered settings don't get reapplied
 if exists('g:loaded_webdevicons')
