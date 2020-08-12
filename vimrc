@@ -176,7 +176,7 @@ nnoremap <silent> [y :call CocAction('runCommand', 'document.jumpToPrevSymbol')<
 
 " lightline
 let g:lightline = {
-    \ 'colorscheme': 'wombat',
+    \ 'colorscheme': 'nightowl',
     \ 'active': { 'left': [[ 'mode', 'paste' ],
     \                      [ 'gitbranch', 'readonly', 'filename', 'modified' ]] },
     \ 'component_function': {
