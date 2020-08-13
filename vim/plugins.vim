@@ -4,6 +4,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 
+Plug 'hardcoreplayers/dashboard-nvim'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
 Plug 'mattn/emmet-vim'
 Plug 'ryanoasis/vim-devicons'

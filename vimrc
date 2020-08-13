@@ -213,3 +213,6 @@ let g:lightline = {
     \   'gitbranch': 'FugitiveHead'
     \ }
     \ }
+
+let g:dashboard_default_executive ='fzf'
+let g:dashboard_default_header ='skull'
