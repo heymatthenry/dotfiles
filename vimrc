@@ -92,7 +92,7 @@ set laststatus=2                                            " Always show status
 nmap <leader>l :set list!<CR>                               " Shortcut to rapidly toggle `set list`
 set listchars=tab:▸\ ,eol:¬                                 " Specify better Tab & EOL characters
 
-nmap <leader>, :set hlsearch!<CR>                           " toggle search highlighting
+nmap <silent><leader>, :set hlsearch!<CR>                   " toggle search highlighting
 
 imap jj <Esc>                                               " double-j -> Esc
 
