@@ -105,6 +105,8 @@ set noshowmode                                              " Don't show mode si
 
 set updatetime=250                                          " update sign column every .25s
 
+set mouse=a                                                 " Yes I enabled mouse mode, sue me
+
 " Utilities
 "=========================================================================
 
