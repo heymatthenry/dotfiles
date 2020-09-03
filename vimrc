@@ -9,7 +9,7 @@
 " by $MSFT while working, and generally I'm trying to cut out tools from the
 " big tech companies—even the open source ones (again, please do not @ me, and
 " no I haven't decided yet whether this means I ought to prefer Vue or Svelte
-" over React). 
+" over React).
 "
 " As far as emacs goes, I briefly (and enthusiastically!) used emacs as my
 " main editor, and actually got it working pretty nicely. I was an emacs user
@@ -30,14 +30,14 @@
 "   1. Comment *every* line. Don't put anything in here that I don't
 "   understand and can't explain in a comment.
 "   2. Keep the number of plugins small but don't be a zealot about it. If I
-"   don't feel like becoming a netrw master, it's ok to use NERDtree. 
+"   don't feel like becoming a netrw master, it's ok to use NERDtree.
 "   3. Keep it organized
 "
 " In my last go-round with vim before wandering in the editor desert for a
 " bit, I tried neovim. I may again, but for now the plan is to stick with
-" Vim8. 
+" Vim8.
 "
-" Ok, that's a lot. Now, here is the stuff that makes vim into vim for me. 
+" Ok, that's a lot. Now, here is the stuff that makes vim into vim for me.
 " Much, much more TK. I'm trying to rebuild this slowly and thoughtfully,
 " rather than just pasting in configs from whatever vim article floated across
 " the transom at HN that day.
@@ -76,7 +76,7 @@ set softtabstop=2                           " tab key inserts 4 spaces
 " theme
 set encoding=UTF-8                          " Set encoding to utf 8 (for devicons)
 
-colorscheme night-owl 
+colorscheme night-owl
 set termguicolors
 set t_Co=256
 set t_ut=
@@ -100,7 +100,7 @@ highlight SignColumn ctermbg=NONE guibg=NONE                " no bgcolor for sig
 highlight LineNr ctermbg=NONE guibg=NONE                    " …or line number
 set signcolumn=yes                                          " always show signcolumn
 
-set noshowcmd                                               " Don't show last command run 
+set noshowcmd                                               " Don't show last command run
 set noshowmode                                              " Don't show mode since airline shows it
 
 set updatetime=250                                          " update sign column every .25s
@@ -218,3 +218,6 @@ let g:lightline = {
 
 let g:dashboard_default_executive ='fzf'
 let g:dashboard_default_header ='skull'
+
+" TrailerTrash
+autocmd BufWritePre * TrailerTrim

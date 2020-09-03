@@ -20,4 +20,5 @@ Plug 'haishanh/night-owl.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-conflicted'
 Plug 'sheerun/vim-polyglot'
+Plug 'csexton/trailertrash.vim'
 call plug#end()
