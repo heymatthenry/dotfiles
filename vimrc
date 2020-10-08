@@ -120,6 +120,15 @@ augroup myvimrc
     au BufWritePost .vimrc,vimrc so $MYVIMRC
 augroup END
 
+" Map M + j or k to move lines or visual selections up or down
+nnoremap <M-j> :m .+1<CR>==
+nnoremap <M-k> :m .-2<CR>==
+inoremap <M-j> <Esc>:m .+1<CR>==gi
+inoremap <M-k> <Esc>:m .-2<CR>==gi
+vnoremap <M-j> :m '>+1<CR>gv=gv
+vnoremap <M-k> :m '<-2<CR>gv=gv
+
+
 " tmux
 "=========================================================================
 autocmd VimResized * :wincmd =                              " Resize splits when window is resized
