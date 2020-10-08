@@ -2,17 +2,17 @@
   "dependencies": {
     "coc-css": ">=1.2.4",
     "coc-emmet": ">=1.1.6",
-    "coc-eslint": ">=1.2.7",
-    "coc-highlight": ">=1.2.5",
+    "coc-eslint": ">=1.3.1",
+    "coc-highlight": ">=1.2.6",
     "coc-html": ">=1.2.4",
     "coc-inline-jest": ">=0.1.2",
-    "coc-jest": ">=1.0.3",
-    "coc-json": ">=1.2.5",
+    "coc-jest": ">=1.1.1",
+    "coc-json": ">=1.3.2",
     "coc-pairs": ">=1.2.21",
     "coc-prettier": ">=1.1.17",
     "coc-python": ">=1.2.12",
-    "coc-snippets": ">=2.1.26",
-    "coc-tsserver": ">=1.5.4",
+    "coc-snippets": ">=2.2.1",
+    "coc-tsserver": ">=1.5.8",
     "full-react-snippets": "https://github.com/walteribeiro/full-react-snippets"
   }
 }
