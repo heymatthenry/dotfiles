@@ -1,13 +1,6 @@
 autoload -U colors && colors
 autoload -U compinit && compinit
 autoload -U promptinit; promptinit
-prompt pure # https://github.com/sindresorhus/pure                          
-
-function git_prompt_short_sha() {
-  SHA=$(git rev-parse --short HEAD 2> /dev/null) && echo "$ZSH_THEME_GIT_PROMPT_SHA_BEFORE$SHA$ZSH_THEME_GIT_PROMPT_SHA_AFTER"
-}
-
-RPROMPT='%{$fg[green]%}$(git_prompt_short_sha)%{$reset_color%}'
 
 if [ "$TERM" = "xterm" ]; then
   export TERM=xterm-256color
@@ -65,3 +58,5 @@ fi
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+eval "$(starship init zsh)"
