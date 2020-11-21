@@ -3,6 +3,7 @@ alias ls="ls -GF"
 alias ll="ls -lGF"
 alias la="ls -aGF"
 alias cask="brew cask"
+alias brewx="arch -x86_64 brew"
 
 # Postgres
 alias pgstart="pg_ctl -D /usr/local/var/postgres start"
