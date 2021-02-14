@@ -29,6 +29,7 @@ export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 eval `/usr/libexec/path_helper -s`
 export PATH=/Users/matt/Code/scripts:$PATH
 export PATH=/usr/local/anaconda3/bin:$PATH
+export PATH=/Applications/Racket\ v7.9.0.17/bin:$PATH
 fpath=(./zsh-completions $fpath)
 
 export PATH=$PATH:$HOME/.composer/vendor/bin
