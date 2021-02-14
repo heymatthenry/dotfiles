@@ -3,6 +3,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-endwise'
 
 Plug 'hardcoreplayers/dashboard-nvim'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
@@ -21,4 +22,5 @@ Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-conflicted'
 Plug 'sheerun/vim-polyglot'
 Plug 'csexton/trailertrash.vim'
+Plug 'vim-ruby/vim-ruby'
 call plug#end()
