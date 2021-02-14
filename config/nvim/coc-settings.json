@@ -1,6 +1,7 @@
 {
   "eslint.autoFixOnSave": true,
   "coc.source.file.enable": true,
+  "suggest.noselect": false,
   "tsserver.npm": "/usr/local/bin/npm",
   "languageserver": {
     "elmLS": {
