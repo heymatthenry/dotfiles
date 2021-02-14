@@ -9,7 +9,7 @@ fi
 source ~/.zsh/aliases   # Bring in my aliases
 source ~/.zsh/functions # Load custom functions
 
-export EDITOR='vim'
+export EDITOR='nvim'
 bindkey -v
 
 # case insensitive tab complete
