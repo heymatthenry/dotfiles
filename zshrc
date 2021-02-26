@@ -22,7 +22,14 @@ SAVEHIST=10000
 setopt inc_append_history
 setopt share_history
 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/opt/local/bin:/usr/local/bin:/usr/local/sbin:$PATH
+
+# Homebrew >= 3.0 has different paths depending on whether it's an M1 Mac
+if [ $(uname -m) = "arm64" ]; then
+  export HOMEBREW_PATH="/opt/homebrew"
+else
+  export HOMEBREW_PATH="/usr/local"
+fi
 
 export PATH=$HOME/local/node/bin:$PATH
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
@@ -46,8 +53,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # Required by chruby
 if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
+  source $HOMEBREW_PATH/share/chruby/chruby.sh
+  source $HOMEBREW_PATH/share/chruby/auto.sh
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
