@@ -12,6 +12,7 @@
     "coc-prettier": ">=1.1.20",
     "coc-python": ">=1.2.13",
     "coc-snippets": ">=2.3.1",
+    "coc-solargraph": ">=1.2.0",
     "coc-tsserver": ">=1.6.7",
     "full-react-snippets": "https://github.com/walteribeiro/full-react-snippets"
   }

@@ -5,6 +5,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-rails'
 
 Plug 'hardcoreplayers/dashboard-nvim'
 Plug 'mattn/emmet-vim'
