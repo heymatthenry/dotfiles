@@ -24,5 +24,4 @@ Plug 'christoomey/vim-conflicted'
 Plug 'sheerun/vim-polyglot'
 Plug 'csexton/trailertrash.vim'
 Plug 'vim-ruby/vim-ruby'
-Plug 'vimpostor/vim-tpipeline'
 call plug#end()
