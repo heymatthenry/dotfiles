@@ -134,12 +134,6 @@ let g:prettier#quickfix_enabled = 0
 let g:prettier#autoformat = 0
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-" CHADtree
-map <leader>t <cmd>CHADopen<CR>                           " Mapping to toggle project drawer
-let g:chadtree_settings = {
-    \ 'open_left': 0
-    \ }
-
 " Gitgutter
 highlight clear SignColumn
 highlight GitGutterAdd ctermfg=green
@@ -149,12 +143,9 @@ highlight GitGutterChangeDelete ctermfg=yellow
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
 
-" fzf
-set rtp+=/usr/local/opt/fzf
-nmap <c-p> :Files<cr>|                                " fuzzy find files in the working directory (where you launched Vim from)
-nmap <c-/> :BLines<cr>|                               " fuzzy find lines in the current file
-nmap <c-r> :Rg<cr>|                                       " fuzzy find text in the working directory
-nmap <leader>p :Commands<cr>|                             " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
+" Telescope
+nmap <c-p> <cmd>Telescope find_files<cr>|                                " fuzzy find files in the working directory (where you launched Vim from)
+nmap <c-r> <cmd>Telescope live_grep<cr>|                                 " fuzzy find text in the working directory
 
 " Fugitive
 nmap <c-g> :Gstatus<cr>|                              " open git status window, ala VSCode
@@ -170,39 +161,6 @@ else
   set signcolumn=yes
 endif
 
-" Use Up/Down for trigger completion with characters ahead and navigate.
-inoremap <silent><expr> <Down>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><Up> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <TAB> to confirm completion, `<C-g>u` means break undo chain at current
-" position.
-if exists('*complete_info')
-  inoremap <expr> <TAB> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
-
-nmap <silent> gd <Plug>(coc-definition)               " jump to definition
-nmap <silent> gy <Plug>(coc-type-definition)          " jump to type definition
-nmap <silent> gi <Plug>(coc-implementation)           " jump to implementation
-nmap <silent> gr <Plug>(coc-references)               " jump to reference
-nmap <silent> rn <Plug>(coc-rename)                   " rename
-tnoremap <Esc> <C-\><C-n>
-
-nmap <silent> <Leader>j <Plug>(coc-diagnostic-next-error)
-nmap <silent> <Leader>k <Plug>(coc-diagnostic-prev-error)
-
-nnoremap <silent> ]y :call CocAction('runCommand', 'document.jumpToNextSymbol')<CR>
-nnoremap <silent> [y :call CocAction('runCommand', 'document.jumpToPrevSymbol')<CR>
-
 " lightline
 let g:lightline = {
     \ 'colorscheme': 'nightowl',
@@ -213,8 +171,14 @@ let g:lightline = {
     \ }
     \ }
 
-let g:dashboard_default_executive ='fzf'
-let g:dashboard_default_header ='skull'
-
 " TrailerTrash
 autocmd BufWritePre * TrailerTrim
+
+" indent-blankline.nvim
+let g:indent_blankline_char = '▏'
+set colorcolumn=99999
+
+:lua << END
+  require'lspconfig'.tsserver.setup{}
+  require'lspconfig'.solargraph.setup{}
+END
