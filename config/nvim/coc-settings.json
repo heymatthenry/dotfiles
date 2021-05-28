@@ -17,6 +17,17 @@
   "solargraph.autoformat": true,
   "solargraph.formatting": true,
   "solargraph.hover": true,
-  "coc.preferences.formatOnSaveFiletypes": ["elm", "ruby", "eruby"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "elm",
+    "ruby",
+    "eruby",
+    "json",
+    "jsonc",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
   "codeLens.enable": true
 }

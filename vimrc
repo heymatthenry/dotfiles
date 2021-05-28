@@ -127,13 +127,6 @@ autocmd VimResized * :wincmd =                              " Resize splits when
 " Plugins
 "=========================================================================
 
-" Prettier
-" when running at every change you may want to disable quickfix
-let g:prettier#quickfix_enabled = 0
-
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-
 " CHADtree
 map <leader>t <cmd>CHADopen<CR>                           " Mapping to toggle project drawer
 let g:chadtree_settings = {
@@ -160,6 +153,9 @@ nmap <leader>p :Commands<cr>|                             " fuzzy find Vim comma
 nmap <c-g> :Gstatus<cr>|                              " open git status window, ala VSCode
 
 " CoC
+
+" coc-prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
