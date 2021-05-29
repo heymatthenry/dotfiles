@@ -83,13 +83,6 @@ autocmd VimResized * :wincmd =                              " Resize splits when
 " Plugins
 "=========================================================================
 
-" Prettier
-" when running at every change you may want to disable quickfix
-let g:prettier#quickfix_enabled = 0
-
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-
 " Gitgutter
 highlight clear SignColumn
 highlight GitGutterAdd ctermfg=green
@@ -133,6 +126,8 @@ autocmd BufWritePre * TrailerTrim
 " indent-blankline.nvim
 let g:indent_blankline_char = '▏'
 set colorcolumn=99999
+
+:lua require('efm')
 
 :lua << END
   require'lspconfig'.tsserver.setup{}

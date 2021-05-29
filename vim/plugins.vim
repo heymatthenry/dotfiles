@@ -12,7 +12,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'dunckr/js_alternate.vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'haishanh/night-owl.vim'
 Plug 'itchyny/lightline.vim'
