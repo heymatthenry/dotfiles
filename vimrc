@@ -132,4 +132,10 @@ set colorcolumn=99999
 :lua << END
   require'lspconfig'.tsserver.setup{}
   require'lspconfig'.solargraph.setup{}
+
+  require('telescope').setup{
+    defaults = {
+      layout_strategy = 'center'
+    }
+  }
 END
