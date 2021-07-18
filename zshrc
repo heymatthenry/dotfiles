@@ -35,7 +35,6 @@ export PATH=$HOME/local/node/bin:$PATH
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 eval `/usr/libexec/path_helper -s`
 export PATH=/Users/matt/Code/scripts:$PATH
-export PATH=/usr/local/anaconda3/bin:$PATH
 export PATH=/Applications/Racket\ v7.9.0.17/bin:$PATH
 fpath=(./zsh-completions $fpath)
 
@@ -64,24 +63,12 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden'
 fi
 
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
 eval "$(starship init zsh)"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/local/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+# Config pyenv
+export PYENV_ROOT="$HOME/.pyenv" 
+export PATH="$PYENV_ROOT/bin:$PATH" 
+eval "$(pyenv init --path)" 
+eval "$(pyenv init -)"
+# Created by `pipx` on 2021-07-17 23:59:24
+export PATH="$PATH:/Users/matt/.local/bin"
