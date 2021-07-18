@@ -66,9 +66,9 @@ fi
 eval "$(starship init zsh)"
 
 # Config pyenv
-export PYENV_ROOT="$HOME/.pyenv" 
-export PATH="$PYENV_ROOT/bin:$PATH" 
-eval "$(pyenv init --path)" 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 # Created by `pipx` on 2021-07-17 23:59:24
 export PATH="$PATH:/Users/matt/.local/bin"
