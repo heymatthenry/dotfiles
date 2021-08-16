@@ -23,4 +23,5 @@ Plug 'christoomey/vim-conflicted'
 Plug 'sheerun/vim-polyglot'
 Plug 'csexton/trailertrash.vim'
 Plug 'vim-ruby/vim-ruby'
+Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()

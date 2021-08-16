@@ -214,3 +214,9 @@ let g:dashboard_default_header ='skull'
 
 " TrailerTrash
 autocmd BufWritePre * TrailerTrim
+
+" nvim-tree
+let g:nvim_tree_side = 'right'
+nnoremap <leader>t :NvimTreeToggle<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
