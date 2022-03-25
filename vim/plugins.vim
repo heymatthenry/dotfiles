@@ -17,6 +17,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'vimpostor/vim-tpipeline'
 Plug 'haishanh/night-owl.vim'
 Plug 'christoomey/vim-conflicted'
 Plug 'sheerun/vim-polyglot'
