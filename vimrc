@@ -32,7 +32,7 @@ set softtabstop=2                           " tab key inserts 4 spaces
 " theme
 set encoding=UTF-8                          " Set encoding to utf 8 (for devicons)
 
-" colorscheme night-owl
+colorscheme nightfox
 set termguicolors
 set t_Co=256
 set t_ut=
@@ -95,11 +95,6 @@ nmap [h <Plug>(GitGutterPrevHunk)
 " Fugitive
 nmap <c-g> :Gstatus<cr>|                              " open git status window, ala VSCode
 
-" lightline
-let g:lightline = {
-    \ 'active': { 'left': [[ 'mode', 'paste' ],
-    \                      [ 'gitbranch', 'readonly', 'filename', 'modified' ]] },
-    \ 'component_function': {
-    \   'gitbranch': 'FugitiveHead'
-    \ }
-    \ }
+lua << END
+require('lualine').setup()
+END
