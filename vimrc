@@ -32,7 +32,7 @@ set softtabstop=2                           " tab key inserts 4 spaces
 " theme
 set encoding=UTF-8                          " Set encoding to utf 8 (for devicons)
 
-colorscheme night-owl
+" colorscheme night-owl
 set termguicolors
 set t_Co=256
 set t_ut=
@@ -83,12 +83,6 @@ autocmd VimResized * :wincmd =                              " Resize splits when
 " Plugins
 "=========================================================================
 
-" CHADtree
-map <leader>t <cmd>CHADopen<CR>                           " Mapping to toggle project drawer
-let g:chadtree_settings = {
-    \ 'open_left': 0
-    \ }
-
 " Gitgutter
 highlight clear SignColumn
 highlight GitGutterAdd ctermfg=green
@@ -98,81 +92,14 @@ highlight GitGutterChangeDelete ctermfg=yellow
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
 
-" fzf
-set rtp+=/usr/local/opt/fzf
-nmap <c-p> :Files<cr>|                                " fuzzy find files in the working directory (where you launched Vim from)
-nmap <c-/> :BLines<cr>|                               " fuzzy find lines in the current file
-nmap <c-r> :Rg<cr>|                                       " fuzzy find text in the working directory
-nmap <leader>p :Commands<cr>|                             " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
-
 " Fugitive
 nmap <c-g> :Gstatus<cr>|                              " open git status window, ala VSCode
 
-" CoC
-
-" coc-prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-" Use Up/Down for trigger completion with characters ahead and navigate.
-inoremap <silent><expr> <Down>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><Up> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <TAB> to confirm completion, `<C-g>u` means break undo chain at current
-" position.
-if exists('*complete_info')
-  inoremap <expr> <TAB> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
-
-nmap <silent> gd <Plug>(coc-definition)               " jump to definition
-nmap <silent> gy <Plug>(coc-type-definition)          " jump to type definition
-nmap <silent> gi <Plug>(coc-implementation)           " jump to implementation
-nmap <silent> gr <Plug>(coc-references)               " jump to reference
-nmap <silent> rn <Plug>(coc-rename)                   " rename
-tnoremap <Esc> <C-\><C-n>
-
-nmap <silent> <Leader>j <Plug>(coc-diagnostic-next-error)
-nmap <silent> <Leader>k <Plug>(coc-diagnostic-prev-error)
-
-nnoremap <silent> ]y :call CocAction('runCommand', 'document.jumpToNextSymbol')<CR>
-nnoremap <silent> [y :call CocAction('runCommand', 'document.jumpToPrevSymbol')<CR>
-
 " lightline
 let g:lightline = {
-    \ 'colorscheme': 'nightowl',
     \ 'active': { 'left': [[ 'mode', 'paste' ],
     \                      [ 'gitbranch', 'readonly', 'filename', 'modified' ]] },
     \ 'component_function': {
     \   'gitbranch': 'FugitiveHead'
     \ }
     \ }
-
-let g:dashboard_default_executive ='fzf'
-let g:dashboard_default_header ='skull'
-
-" TrailerTrash
-autocmd BufWritePre * TrailerTrim
-
-" nvim-tree
-let g:nvim_tree_side = 'right'
-nnoremap <leader>t :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
