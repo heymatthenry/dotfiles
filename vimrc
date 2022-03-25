@@ -93,7 +93,7 @@ nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
 
 " Fugitive
-nmap <c-g> :Gstatus<cr>|                              " open git status window, ala VSCode
+nmap <c-g> :Git<cr>|                              " open git status window, ala VSCode
 
 lua << END
 require('lualine').setup()
