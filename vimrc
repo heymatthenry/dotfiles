@@ -98,3 +98,17 @@ nmap <c-g> :Git<cr>|                              " open git status window, ala 
 lua << END
 require('lualine').setup()
 END
+
+" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+
+" nvim-tree 
+nnoremap <leader>t :NvimTreeToggle<CR>
+lua << END
+require'nvim-tree'.setup {
+    hijack_netrw = false,
+    view = {
+        side = "right"
+    }
+}
+END
