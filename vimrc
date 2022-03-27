@@ -112,3 +112,25 @@ require'nvim-tree'.setup {
     }
 }
 END
+
+" null-ls — formatting, linting, code actions
+lua << END
+require("null-ls").setup({
+    sources = {
+        require("null-ls").builtins.formatting.tidy,
+        require("null-ls").builtins.formatting.prettier,
+        require("null-ls").builtins.diagnostics.eslint,
+        require("null-ls").builtins.code_actions.eslint,
+    },
+    on_attach = function(client)
+        if client.resolved_capabilities.document_formatting then
+            vim.cmd([[
+            augroup LspFormatting
+                autocmd! * <buffer>
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+            augroup END
+            ]])
+        end
+    end
+})
+END
