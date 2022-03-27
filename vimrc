@@ -118,10 +118,10 @@ END
 lua << END
 require("null-ls").setup({
     sources = {
-        require("null-ls").builtins.formatting.tidy,
-        require("null-ls").builtins.formatting.prettier,
-        require("null-ls").builtins.diagnostics.eslint,
-        require("null-ls").builtins.code_actions.eslint,
+        require("null-ls").builtins.formatting.tidy,        -- HTML
+        require("null-ls").builtins.formatting.prettier,    -- JS/TS
+        require("null-ls").builtins.diagnostics.eslint,     -- "
+        require("null-ls").builtins.code_actions.eslint,    -- "
     },
     on_attach = function(client)
         if client.resolved_capabilities.document_formatting then
