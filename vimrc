@@ -135,3 +135,8 @@ require("null-ls").setup({
     end
 })
 END
+
+" Trouble for project-level diagnostics
+lua << EOF
+  require("trouble").setup {}
+EOF
