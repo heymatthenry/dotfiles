@@ -119,6 +119,7 @@ lua << END
 require("null-ls").setup({
     sources = {
         require("null-ls").builtins.formatting.tidy,        -- HTML
+        require("null-ls").builtins.diagnostics.tsc,        -- TS
         require("null-ls").builtins.formatting.prettier,    -- JS/TS
         require("null-ls").builtins.diagnostics.eslint,     -- "
         require("null-ls").builtins.code_actions.eslint,    -- "
