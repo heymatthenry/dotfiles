@@ -52,6 +52,9 @@ nmap <silent><leader>, :set hlsearch!<CR>                   " toggle search high
 
 imap jj <Esc>                                               " double-j -> Esc
 
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')               " j and k should traverse soft wrapped lines, but still preserve counts
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')               " https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
+
 highlight SignColumn ctermbg=NONE guibg=NONE                " no bgcolor for signcolumn
 highlight LineNr ctermbg=NONE guibg=NONE                    " …or line number
 set signcolumn=yes                                          " always show signcolumn

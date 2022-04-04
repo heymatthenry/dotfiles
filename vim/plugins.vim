@@ -7,6 +7,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-rails'
 
+Plug 'vimwiki/vimwiki'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'mattn/emmet-vim'
