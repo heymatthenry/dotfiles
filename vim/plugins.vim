@@ -28,4 +28,5 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'folke/trouble.nvim'
+Plug 'junegunn/goyo.vim'
 call plug#end()
