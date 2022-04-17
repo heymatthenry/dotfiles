@@ -43,7 +43,7 @@ set cursorline                                              " highlight current 
 set number                                                  " Show current line number even with relativenumber
 set relativenumber                                          " Show line numbers relative to the cursor
 
-set laststatus=2                                            " Always show statusline
+set laststatus=3                                            " Always show statusline
 
 nmap <leader>l :set list!<CR>                               " Shortcut to rapidly toggle `set list`
 set listchars=tab:▸\ ,eol:¬                                 " Specify better Tab & EOL characters
@@ -98,8 +98,13 @@ nmap [h <Plug>(GitGutterPrevHunk)
 " Fugitive
 nmap <c-g> :Git<cr>|                              " open git status window, ala VSCode
 
+" lualine
 lua << END
-require('lualine').setup()
+require('lualine').setup {
+    options = {
+      disabled_filetypes = { 'NVimTree' }
+    }
+}
 END
 
 " Telescope
@@ -108,6 +113,8 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 
 " nvim-tree 
 nnoremap <leader>t :NvimTreeToggle<CR>
+hi NvimTreeStatusLineNC guibg=nvim_treebg guifg=nvim_treebg
+
 lua << END
 require'nvim-tree'.setup {
     hijack_netrw = false,
@@ -126,6 +133,8 @@ require("null-ls").setup({
         require("null-ls").builtins.formatting.prettier,    -- JS/TS
         require("null-ls").builtins.diagnostics.eslint,     -- "
         require("null-ls").builtins.code_actions.eslint,    -- "
+        require("null-ls").builtins.formatting.black,       -- Python
+        require("null-ls").builtins.diagnostics.flake8,     -- "
     },
     on_attach = function(client)
         if client.resolved_capabilities.document_formatting then
@@ -144,3 +153,7 @@ END
 lua << EOF
   require("trouble").setup {}
 EOF
+
+" vimwiki
+
+let g:vimwiki_list = [{'path': '~/Documents/Notes/', 'syntax': 'markdown', 'ext': '.md'}]
