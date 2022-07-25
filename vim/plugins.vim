@@ -29,4 +29,6 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'folke/trouble.nvim'
 Plug 'junegunn/goyo.vim'
+Plug 'mfussenegger/nvim-dap'
+Plug 'simrat39/rust-tools.nvim'
 call plug#end()

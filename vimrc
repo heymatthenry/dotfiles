@@ -129,6 +129,8 @@ lua << END
 require("null-ls").setup({
     sources = {
         require("null-ls").builtins.formatting.tidy,        -- HTML
+        require("null-ls").builtins.formatting.stylelint,   -- CSS
+        require("null-ls").builtins.diagnostics.stylelint,  -- "
         require("null-ls").builtins.diagnostics.tsc,        -- TS
         require("null-ls").builtins.formatting.prettier,    -- JS/TS
         require("null-ls").builtins.diagnostics.eslint,     -- "
@@ -148,6 +150,10 @@ require("null-ls").setup({
     end
 })
 END
+
+lua << EOF
+    require('rust-tools').setup {}
+EOF
 
 " Trouble for project-level diagnostics
 lua << EOF
