@@ -30,6 +30,7 @@ Plug 'folke/trouble.nvim'
 Plug 'junegunn/goyo.vim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'simrat39/rust-tools.nvim'
+Plug 's1n7ax/nvim-terminal'
 
 " Themes
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }

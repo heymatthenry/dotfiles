@@ -83,6 +83,7 @@ augroup myvimrc
     au BufWritePost .vimrc,vimrc so $MYVIMRC
 augroup END
 
+tnoremap <Esc><Esc> <C-\><C-n>
 " tmux
 "=========================================================================
 autocmd VimResized * :wincmd =                              " Resize splits when window is resized
@@ -164,6 +165,14 @@ lua << EOF
   require("trouble").setup {}
 EOF
 
+" nvim terminal
+lua << EOF
+vim.o.hidden = true
+require('nvim-terminal').setup()
+EOF
+
 " vimwiki
 
 let g:vimwiki_list = [{'path': '~/Documents/Notes/', 'syntax': 'markdown', 'ext': '.md'}]
+
+
