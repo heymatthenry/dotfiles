@@ -9,7 +9,6 @@ Plug 'tpope/vim-rails'
 
 Plug 'vimwiki/vimwiki'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'EdenEast/nightfox.nvim'
 Plug 'mattn/emmet-vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'airblade/vim-gitgutter'
@@ -31,4 +30,8 @@ Plug 'folke/trouble.nvim'
 Plug 'junegunn/goyo.vim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'simrat39/rust-tools.nvim'
+
+" Themes
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'EdenEast/nightfox.nvim'
 call plug#end()

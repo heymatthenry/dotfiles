@@ -32,7 +32,11 @@ set softtabstop=2                           " tab key inserts 4 spaces
 " theme
 set encoding=UTF-8                          " Set encoding to utf 8 (for devicons)
 
-colorscheme nightfox
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
+colorscheme tokyonight
+
 set termguicolors
 set t_Co=256
 set t_ut=

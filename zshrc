@@ -35,9 +35,11 @@ export PATH=$HOME/local/node/bin:$PATH
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 eval `/usr/libexec/path_helper -s`
 export PATH=/Users/matt/Code/scripts:$PATH
-export PATH=/usr/local/anaconda3/bin:$PATH
 export PATH=/Applications/Racket\ v7.9.0.17/bin:$PATH
 export PATH=/Users/matthewwhenry/.cargo/bin:$PATH
+export PATH=~/.ghcup/bin:$PATH
+export PATH=/opt/homebrew/opt/llvm/bin:$PATH
+
 fpath=(./zsh-completions $fpath)
 
 export PATH=$PATH:$HOME/.composer/vendor/bin
@@ -59,8 +61,15 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden'
 fi
 
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
 eval "$(starship init zsh)"
+eval "$(rbenv init - zsh)"
+eval "$(direnv hook zsh)"
+
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
