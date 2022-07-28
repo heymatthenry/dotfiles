@@ -32,6 +32,8 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'simrat39/rust-tools.nvim'
 Plug 's1n7ax/nvim-terminal'
 
+Plug 'nvim-orgmode/orgmode'
+
 " Themes
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'EdenEast/nightfox.nvim'
