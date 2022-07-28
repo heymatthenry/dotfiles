@@ -3,6 +3,7 @@ alias ls="ls -GF"
 alias ll="ls -lGF"
 alias la="ls -aGF"
 alias cask="brew cask"
+alias brew="arch -arm64 brew"
 alias brewx="arch -x86_64 brew"
 
 # Postgres

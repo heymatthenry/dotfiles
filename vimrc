@@ -1,47 +1,3 @@
-" A brief manifesto
-" ===================
-" Another day, another new text editor (except this one happens to be the one
-" I've used for a decade+). But why? Isn't VSCode good enough for you? What
-" about emacs/evil—you were all about that for a minute, right? Yes, me, I
-" was. First, re: VSCode, it's great, and I do enjoy using it. It's incredibly
-" helpful writing web code. BUT it's a lot. I don't generally care for
-" electron apps (please do not @ me), I don't especially want to be surveilled
-" by $MSFT while working, and generally I'm trying to cut out tools from the
-" big tech companies—even the open source ones (again, please do not @ me, and
-" no I haven't decided yet whether this means I ought to prefer Vue or Svelte
-" over React).
-"
-" As far as emacs goes, I briefly (and enthusiastically!) used emacs as my
-" main editor, and actually got it working pretty nicely. I was an emacs user
-" for a little bit before landing on vim, and it was fun going back. I *love*
-" org-mode, and I really enjoyed having a nice literate config that could
-" output to html, etc. I also love emacs-lisp. I love lisps! I don't love
-" vimscript! BUT, I'm also wary of emulation, and I knew eventually I was
-" going to run into something in evil that wasn't vimmy enough for my tastes,
-" or maybe just a vim plugin that didn't have an evil analogue. Also I've just
-" been living in vim for so long and learning the entire emacs ecosystem was
-" just a lot. I've been trying to rein in my learnign ambitions and focus
-" better on a smaller set of tools, and at the end of the day, that's what
-" probably tipped the scales in favor of returning to vim.
-"
-" All that in mind, here are some goals I'm trying to keep in mind while
-" rebuilding my vimrc from scratch:
-"
-"   1. Comment *every* line. Don't put anything in here that I don't
-"   understand and can't explain in a comment.
-"   2. Keep the number of plugins small but don't be a zealot about it. If I
-"   don't feel like becoming a netrw master, it's ok to use NERDtree.
-"   3. Keep it organized
-"
-" In my last go-round with vim before wandering in the editor desert for a
-" bit, I tried neovim. I may again, but for now the plan is to stick with
-" Vim8.
-"
-" Ok, that's a lot. Now, here is the stuff that makes vim into vim for me.
-" Much, much more TK. I'm trying to rebuild this slowly and thoughtfully,
-" rather than just pasting in configs from whatever vim article floated across
-" the transom at HN that day.
-
 " Basic settings:
 " These are essential to vim just working the way you'd expect vim to work
 "==========================================================================
@@ -76,7 +32,11 @@ set softtabstop=2                           " tab key inserts 4 spaces
 " theme
 set encoding=UTF-8                          " Set encoding to utf 8 (for devicons)
 
-colorscheme night-owl
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
+colorscheme tokyonight
+
 set termguicolors
 set t_Co=256
 set t_ut=
@@ -87,7 +47,7 @@ set cursorline                                              " highlight current 
 set number                                                  " Show current line number even with relativenumber
 set relativenumber                                          " Show line numbers relative to the cursor
 
-set laststatus=2                                            " Always show statusline
+set laststatus=3                                            " Always show statusline
 
 nmap <leader>l :set list!<CR>                               " Shortcut to rapidly toggle `set list`
 set listchars=tab:▸\ ,eol:¬                                 " Specify better Tab & EOL characters
@@ -95,6 +55,9 @@ set listchars=tab:▸\ ,eol:¬                                 " Specify better 
 nmap <silent><leader>, :set hlsearch!<CR>                   " toggle search highlighting
 
 imap jj <Esc>                                               " double-j -> Esc
+
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')               " j and k should traverse soft wrapped lines, but still preserve counts
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')               " https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
 
 highlight SignColumn ctermbg=NONE guibg=NONE                " no bgcolor for signcolumn
 highlight LineNr ctermbg=NONE guibg=NONE                    " …or line number
@@ -120,18 +83,13 @@ augroup myvimrc
     au BufWritePost .vimrc,vimrc so $MYVIMRC
 augroup END
 
+tnoremap <Esc><Esc> <C-\><C-n>
 " tmux
 "=========================================================================
 autocmd VimResized * :wincmd =                              " Resize splits when window is resized
 
 " Plugins
 "=========================================================================
-
-" CHADtree
-map <leader>t <cmd>CHADopen<CR>                           " Mapping to toggle project drawer
-let g:chadtree_settings = {
-    \ 'open_left': 0
-    \ }
 
 " Gitgutter
 highlight clear SignColumn
@@ -142,81 +100,79 @@ highlight GitGutterChangeDelete ctermfg=yellow
 nmap ]h <Plug>(GitGutterNextHunk)
 nmap [h <Plug>(GitGutterPrevHunk)
 
-" fzf
-set rtp+=/usr/local/opt/fzf
-nmap <c-p> :Files<cr>|                                " fuzzy find files in the working directory (where you launched Vim from)
-nmap <c-/> :BLines<cr>|                               " fuzzy find lines in the current file
-nmap <c-r> :Rg<cr>|                                       " fuzzy find text in the working directory
-nmap <leader>p :Commands<cr>|                             " fuzzy find Vim commands (like Ctrl-Shift-P in Sublime/Atom/VSC)
-
 " Fugitive
-nmap <c-g> :Gstatus<cr>|                              " open git status window, ala VSCode
+nmap <c-g> :Git<cr>|                              " open git status window, ala VSCode
 
-" CoC
+" lualine
+lua << END
+require('lualine').setup {
+    options = {
+      disabled_filetypes = { 'NVimTree' }
+    }
+}
+END
 
-" coc-prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
 
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-" Use Up/Down for trigger completion with characters ahead and navigate.
-inoremap <silent><expr> <Down>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><Up> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <TAB> to confirm completion, `<C-g>u` means break undo chain at current
-" position.
-if exists('*complete_info')
-  inoremap <expr> <TAB> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
-
-nmap <silent> gd <Plug>(coc-definition)               " jump to definition
-nmap <silent> gy <Plug>(coc-type-definition)          " jump to type definition
-nmap <silent> gi <Plug>(coc-implementation)           " jump to implementation
-nmap <silent> gr <Plug>(coc-references)               " jump to reference
-nmap <silent> rn <Plug>(coc-rename)                   " rename
-tnoremap <Esc> <C-\><C-n>
-
-nmap <silent> <Leader>j <Plug>(coc-diagnostic-next-error)
-nmap <silent> <Leader>k <Plug>(coc-diagnostic-prev-error)
-
-nnoremap <silent> ]y :call CocAction('runCommand', 'document.jumpToNextSymbol')<CR>
-nnoremap <silent> [y :call CocAction('runCommand', 'document.jumpToPrevSymbol')<CR>
-
-" lightline
-let g:lightline = {
-    \ 'colorscheme': 'nightowl',
-    \ 'active': { 'left': [[ 'mode', 'paste' ],
-    \                      [ 'gitbranch', 'readonly', 'filename', 'modified' ]] },
-    \ 'component_function': {
-    \   'gitbranch': 'FugitiveHead'
-    \ }
-    \ }
-
-let g:dashboard_default_executive ='fzf'
-let g:dashboard_default_header ='skull'
-
-" TrailerTrash
-autocmd BufWritePre * TrailerTrim
-
-" nvim-tree
-let g:nvim_tree_side = 'right'
+" nvim-tree 
 nnoremap <leader>t :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
+hi NvimTreeStatusLineNC guibg=nvim_treebg guifg=nvim_treebg
+
+lua << END
+require'nvim-tree'.setup {
+    hijack_netrw = false,
+    view = {
+        side = "right"
+    }
+}
+END
+
+" null-ls — formatting, linting, code actions
+lua << END
+require("null-ls").setup({
+    sources = {
+        require("null-ls").builtins.formatting.tidy,        -- HTML
+        require("null-ls").builtins.formatting.stylelint,   -- CSS
+        require("null-ls").builtins.diagnostics.stylelint,  -- "
+        require("null-ls").builtins.diagnostics.tsc,        -- TS
+        require("null-ls").builtins.formatting.prettier,    -- JS/TS
+        require("null-ls").builtins.diagnostics.eslint,     -- "
+        require("null-ls").builtins.code_actions.eslint,    -- "
+        require("null-ls").builtins.formatting.black,       -- Python
+        require("null-ls").builtins.diagnostics.flake8,     -- "
+    },
+    on_attach = function(client)
+        if client.resolved_capabilities.document_formatting then
+            vim.cmd([[
+            augroup LspFormatting
+                autocmd! * <buffer>
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+            augroup END
+            ]])
+        end
+    end
+})
+END
+
+lua << EOF
+    require('rust-tools').setup {}
+EOF
+
+" Trouble for project-level diagnostics
+lua << EOF
+  require("trouble").setup {}
+EOF
+
+" nvim terminal
+lua << EOF
+vim.o.hidden = true
+require('nvim-terminal').setup()
+EOF
+
+" vimwiki
+
+let g:vimwiki_list = [{'path': '~/Documents/Notes/', 'syntax': 'markdown', 'ext': '.md'}]
+
+

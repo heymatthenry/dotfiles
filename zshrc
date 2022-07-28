@@ -35,9 +35,11 @@ export PATH=$HOME/local/node/bin:$PATH
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 eval `/usr/libexec/path_helper -s`
 export PATH=/Users/matt/Code/scripts:$PATH
-export PATH=/usr/local/anaconda3/bin:$PATH
 export PATH=/Applications/Racket\ v7.9.0.17/bin:$PATH
 export PATH=/Users/matthewwhenry/.cargo/bin:$PATH
+export PATH=~/.ghcup/bin:$PATH
+export PATH=/opt/homebrew/opt/llvm/bin:$PATH
+
 fpath=(./zsh-completions $fpath)
 
 export PATH=$PATH:$HOME/.composer/vendor/bin
@@ -52,12 +54,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Required by chruby
-if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
-  source $HOMEBREW_PATH/share/chruby/chruby.sh
-  source $HOMEBREW_PATH/share/chruby/auto.sh
-fi
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fzf should hide anything in gitignore
@@ -65,24 +61,15 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden'
 fi
 
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
 eval "$(starship init zsh)"
+eval "$(rbenv init - zsh)"
+eval "$(direnv hook zsh)"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/local/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
