@@ -1,3 +1,6 @@
+set runtimepath^=~/.config/nvim runtimepath+=~/.config/nvim/pack/bundle/start 
+let &packpath = &runtimepath
+
 " Basic settings:
 " These are essential to vim just working the way you'd expect vim to work
 "==========================================================================
@@ -91,8 +94,6 @@ autocmd VimResized * :wincmd =                              " Resize splits when
 " Plugins
 "=========================================================================
 
-set runtimepath^=~/.config/nvim runtimepath+=~/.config/nvim/pack/bundle/start 
-let &packpath = &runtimepath
 
 " Gitgutter
 highlight clear SignColumn
