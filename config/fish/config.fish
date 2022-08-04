@@ -7,11 +7,8 @@ else
 end
 
 set -x NODE_HOME "$HOME/local/node/bin"
-# export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
-# eval `/usr/libexec/path_helper -s`
 set -x CARGO_HOME "$HOME/.cargo/bin"
 set -x LLVM_HOME "$HOMEBREW_PATH/opt/llvm/bin"
-
 
 set fish_greeting ""
 set -x EDITOR nvim
