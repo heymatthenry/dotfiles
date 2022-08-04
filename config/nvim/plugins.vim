@@ -31,8 +31,19 @@ Plug 'junegunn/goyo.vim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'simrat39/rust-tools.nvim'
 Plug 's1n7ax/nvim-terminal'
+Plug 'L3MON4D3/LuaSnip'
+
+Plug 'folke/which-key.nvim'
+
+" Completion stuff
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 
 Plug 'nvim-orgmode/orgmode'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " Themes
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }

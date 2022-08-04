@@ -83,10 +83,10 @@ set wildmenu                                                " Show all matches i
 " Source vimrc on save
 augroup myvimrc
     au!
-    au BufWritePost .vimrc,vimrc so $MYVIMRC
+    au BufWritePost .config/nvim/init.vim,config/nvim/init.vim so $MYVIMRC
 augroup END
 
-tnoremap <Esc><Esc> <C-\><C-n>
+tnoremap <Esc><Esc> <C-\><C-n>                              " Double ESC to jump out of nvim terminal
 " tmux
 "=========================================================================
 autocmd VimResized * :wincmd =                              " Resize splits when window is resized
@@ -177,7 +177,8 @@ EOF
 
 " vimwiki
 
-let g:vimwiki_list = [{'path': '~/Documents/Notes/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{ 'path': '~/Documents/Notes/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_diary_rel_path = 'Daily\ Notes/'
 
 " orgmode
 lua << EOF
@@ -201,3 +202,76 @@ require('orgmode').setup({
 })
 EOF
 
+" nvim-cmp
+lua << EOF
+local has_words_before = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
+local luasnip = require("luasnip")
+local cmp = require("cmp")
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+    end,
+  },
+
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'orgmode' }
+  },
+
+  mapping = {
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif has_words_before() then
+        cmp.complete()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+  },
+})
+EOF
+
+" which-key
+
+lua << EOF
+  require("which-key").setup {}
+  local wk = require("which-key")
+  wk.register({
+    ["<leader>"] = {
+        [";"] = "Toggle terminal",
+        ["1"] = "Open terminal #1",
+        ["2"] = "which_key_ignore",
+        ["3"] = "which_key_ignore",
+        ["4"] = "which_key_ignore",
+        ["5"] = "which_key_ignore",
+        ["+"] = "which_key_ignore",
+        ["-"] = "which_key_ignore",
+        f = {
+          name = "files and buffers",
+          f = { "<cmd>Telescope find_files<cr>", "Find File" },
+          r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+          n = { "<cmd>enew<cr>", "New File" },
+        },
+    },
+  })
+EOF
