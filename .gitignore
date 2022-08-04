@@ -46,3 +46,5 @@ config/gatsby
 config/hub
 config/devcert
 config/karabiner/automatic_backups
+config/gh/
+config/iterm2/
