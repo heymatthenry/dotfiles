@@ -252,7 +252,6 @@ cmp.setup({
 EOF
 
 " which-key
-
 lua << EOF
   require("which-key").setup {}
   local wk = require("which-key")
@@ -272,6 +271,8 @@ lua << EOF
           r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
           n = { "<cmd>enew<cr>", "New File" },
         },
+        o = { name = "nvim-org" },
+        w = { name = "vimwiki" }
     },
   })
 EOF
