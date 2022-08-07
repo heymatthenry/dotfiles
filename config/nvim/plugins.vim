@@ -43,6 +43,9 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
 Plug 'nvim-orgmode/orgmode'
+Plug 'akinsho/org-bullets.nvim'
+Plug 'lukas-reineke/headlines.nvim'
+
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " Themes

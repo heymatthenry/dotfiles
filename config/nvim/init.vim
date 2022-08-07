@@ -196,10 +196,27 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {'org'}, -- Or run :TSUpdate org
 }
 
+local org_dir = '~/org'
 require('orgmode').setup({
-  org_agenda_files = {'~/org/**/*'},
-  org_default_notes_file = '~/org/notes.org',
+    org_agenda_files = {org_dir .. '/**/*'},
+    org_default_notes_file = org_dir .. '/notes.org',
+    org_capture_templates = {
+        j = {
+            description = 'Journal',
+            template = '\n** %<%Y-%m-%d> %<%A>\n*** %U\n\n%?',
+            target = org_dir .. '/journal.org'
+        },
+    		e = {
+            description = 'Event',
+            template = '* %?\n  %T',
+            target = org_dir .. '/calendar.org',
+        },
+    }
 })
+
+
+require("headlines").setup()
+require('org-bullets').setup()
 EOF
 
 " nvim-cmp
