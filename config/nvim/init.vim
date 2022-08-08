@@ -337,3 +337,7 @@ require('gitsigns').setup{
   end
 }
 EOF
+
+lua << EOF
+require("indent_blankline").setup {}
+EOF

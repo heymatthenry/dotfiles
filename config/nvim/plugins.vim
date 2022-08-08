@@ -33,6 +33,7 @@ Plug 'simrat39/rust-tools.nvim'
 Plug 's1n7ax/nvim-terminal'
 Plug 'L3MON4D3/LuaSnip'
 
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'folke/which-key.nvim'
 
 " Completion stuff
