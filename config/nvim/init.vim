@@ -235,6 +235,8 @@ end
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 
+require("luasnip.loaders.from_vscode").lazy_load()
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -248,6 +250,8 @@ cmp.setup({
   },
 
   mapping = {
+    ["<CR>"] = cmp.mapping.confirm { select = true },
+
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()

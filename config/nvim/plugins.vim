@@ -41,7 +41,9 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'rafamadriz/friendly-snippets'
 
+" Org 
 Plug 'nvim-orgmode/orgmode'
 Plug 'akinsho/org-bullets.nvim'
 Plug 'lukas-reineke/headlines.nvim'
