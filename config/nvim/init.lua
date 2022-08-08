@@ -1,22 +1,22 @@
-lua << EOF
-    vim.cmd [[
-        set runtimepath^=~/.config/nvim runtimepath+=~/.config/nvim/pack/bundle/start
-        let &packpath = &runtimepath
-        " Basic settings:
-        " These are essential to vim just working the way you'd expect vim to work
-        "==========================================================================
+vim.cmd [[
+    set runtimepath^=~/.config/nvim runtimepath+=~/.config/nvim/pack/bundle/start
+    let &packpath = &runtimepath
+    " Basic settings:
+    " These are essential to vim just working the way you'd expect vim to work
+    "==========================================================================
 
-        syntax enable                               " enable syntax
-        filetype plugin indent on                   " enable autoloading plugin based on filetype
-    ]]
+    syntax enable                               " enable syntax
+    filetype plugin indent on                   " enable autoloading plugin based on filetype
+]]
 
-    vim.g.mapleader=" "                           --set leader key to SPC
+vim.g.mapleader=" "                             -- set leader key to SPC
 
-    vim.cmd [[
-      au CursorHold,CursorHoldI,FocusGained,BufEnter * :checktime " Check timestamp on files after certain events
-    ]]
+vim.cmd [[
+  au CursorHold,CursorHoldI,FocusGained,BufEnter * :checktime " Check timestamp on files after certain events
+]]
 
-vim.o.ttimeoutlen = 100                             --Shorten time vim will wait to complete an escape sequence, per https://superuser.com/questions/161178/why-does-vim-delay-for-a-second-whenever-i-use-the-o-command-open-a-new-line
+vim.o.ttimeoutlen = 100                             -- Shorten time vim will wait to complete an escape sequence, 
+                                                    -- per https://superuser.com/questions/161178/why-does-vim-delay-for-a-second-whenever-i-use-the-o-command-open-a-new-line
 vim.o.autoread = true                               -- reload files that change on disk outside the buffer https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
 vim.o.hidden = true                                 -- Allow leaving dirty buffers (including terminal buffers)
 
@@ -37,6 +37,7 @@ vim.cmd [[
 
 -- theme
 vim.o.encoding = 'UTF-8'                      -- Set encoding to utf 8 (for devicons)
+
 -- UI:
 --==========================================================================
 
@@ -97,44 +98,37 @@ vim.cmd [[
   set path+=**                                                " Traverse subdirectories recursively
   set wildmenu                                                " Show all matches in a menu
 ]]
-EOF
 
 
+-- Plugins
+--=========================================================================
 
-" Plugins
-"=========================================================================
 
-" Fugitive
-nmap <c-g> :Git<cr>|                              " open git status window, ala VSCode
-
-" lualine
-lua << END
+-- lualine
 require('lualine').setup {
     options = {
       disabled_filetypes = { 'NVimTree' }
     }
 }
-END
 
-" Telescope
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
+vim.cmd [[
+    " Telescope
+    nnoremap <leader>ff <cmd>Telescope find_files<cr>
+    nnoremap <leader>fb <cmd>Telescope buffers<cr>
 
-" nvim-tree 
-nnoremap <leader>t :NvimTreeToggle<CR>
-hi NvimTreeStatusLineNC guibg=nvim_treebg guifg=nvim_treebg
+    " nvim-tree 
+    nnoremap <leader>t :NvimTreeToggle<CR>
+    hi NvimTreeStatusLineNC guibg=nvim_treebg guifg=nvim_treebg
+]]
 
-lua << END
 require'nvim-tree'.setup {
     hijack_netrw = false,
     view = {
         side = "right"
     }
 }
-END
 
-" null-ls — formatting, linting, code actions
-lua << END
+-- null-ls — formatting, linting, code actions
 require("null-ls").setup({
     sources = {
         require("null-ls").builtins.formatting.tidy,        -- HTML
@@ -158,31 +152,24 @@ require("null-ls").setup({
         end
     end
 })
-END
 
-lua << EOF
-    require('rust-tools').setup {}
-EOF
+require('rust-tools').setup {}
 
-" Trouble for project-level diagnostics
-lua << EOF
-  require("trouble").setup {}
-EOF
+-- Trouble for project-level diagnostics
+require("trouble").setup {}
 
-" nvim terminal
-lua << EOF
+-- nvim terminal
 vim.o.hidden = true
 require('nvim-terminal').setup()
-EOF
 
-" vimwiki
+-- vimwiki
 
-let g:vimwiki_list = [{ 'path': '~/Documents/Notes/', 'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_diary_rel_path = 'Daily\ Notes/'
+vim.cmd [[
+    let g:vimwiki_list = [{ 'path': '~/Documents/Notes/', 'syntax': 'markdown', 'ext': '.md'}]
+    let g:vimwiki_diary_rel_path = 'Daily\ Notes/'
+]]
 
-" orgmode
-lua << EOF
-
+-- orgmode
 -- Load custom tree-sitter grammar for org filetype
 require('orgmode').setup_ts_grammar()
 
@@ -223,10 +210,8 @@ require('orgmode').setup({
 
 require("headlines").setup()
 require('org-bullets').setup()
-EOF
 
-" nvim-cmp
-lua << EOF
+-- nvim-cmp
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
@@ -276,10 +261,8 @@ cmp.setup({
 
   },
 })
-EOF
 
-" which-key
-lua << EOF
+-- which-key
   require("which-key").setup {}
   local wk = require("which-key")
   wk.register({
@@ -302,52 +285,7 @@ lua << EOF
         w = { name = "vimwiki" }
     },
   })
-EOF
 
-" gitsigns.nvim
-lua << EOF
-require('gitsigns').setup{
-  on_attach = function(bufnr)
-    local gs = package.loaded.gitsigns
+require('git')
 
-    local function map(mode, l, r, opts)
-      opts = opts or {}
-      opts.buffer = bufnr
-      vim.keymap.set(mode, l, r, opts)
-    end
-
-    -- Navigation
-    map('n', ']c', function()
-      if vim.wo.diff then return ']c' end
-      vim.schedule(function() gs.next_hunk() end)
-      return '<Ignore>'
-    end, {expr=true})
-
-    map('n', '[c', function()
-      if vim.wo.diff then return '[c' end
-      vim.schedule(function() gs.prev_hunk() end)
-      return '<Ignore>'
-    end, {expr=true})
-
-    -- Actions
-    map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
-    map({'n', 'v'}, '<leader>hr', ':Gitsigns reset_hunk<CR>')
-    map('n', '<leader>hS', gs.stage_buffer)
-    map('n', '<leader>hu', gs.undo_stage_hunk)
-    map('n', '<leader>hR', gs.reset_buffer)
-    map('n', '<leader>hp', gs.preview_hunk)
-    map('n', '<leader>hb', function() gs.blame_line{full=true} end)
-    map('n', '<leader>tb', gs.toggle_current_line_blame)
-    map('n', '<leader>hd', gs.diffthis)
-    map('n', '<leader>hD', function() gs.diffthis('~') end)
-    map('n', '<leader>td', gs.toggle_deleted)
-
-    -- Text object
-    map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
-  end
-}
-EOF
-
-lua << EOF
 require("indent_blankline").setup {}
-EOF
