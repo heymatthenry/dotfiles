@@ -1,95 +1,105 @@
-set runtimepath^=~/.config/nvim runtimepath+=~/.config/nvim/pack/bundle/start 
-let &packpath = &runtimepath
+lua << EOF
+    vim.cmd [[
+        set runtimepath^=~/.config/nvim runtimepath+=~/.config/nvim/pack/bundle/start
+        let &packpath = &runtimepath
+        " Basic settings:
+        " These are essential to vim just working the way you'd expect vim to work
+        "==========================================================================
 
-" Basic settings:
-" These are essential to vim just working the way you'd expect vim to work
-"==========================================================================
+        syntax enable                               " enable syntax
+        filetype plugin indent on                   " enable autoloading plugin based on filetype
+    ]]
 
-syntax enable                               " enable syntax
-filetype plugin indent on                   " enable autoloading plugin based on filetype
+    vim.g.mapleader=" "                           --set leader key to SPC
 
-let mapleader=" "                           " set leader key to SPC
+    vim.cmd [[
+      au CursorHold,CursorHoldI,FocusGained,BufEnter * :checktime " Check timestamp on files after certain events
+    ]]
 
-set ttimeoutlen=100                         " Shorten time vim will wait to complete an escape sequence, per https://superuser.com/questions/161178/why-does-vim-delay-for-a-second-whenever-i-use-the-o-command-open-a-new-line
+vim.o.ttimeoutlen = 100                             --Shorten time vim will wait to complete an escape sequence, per https://superuser.com/questions/161178/why-does-vim-delay-for-a-second-whenever-i-use-the-o-command-open-a-new-line
+vim.o.autoread = true                               -- reload files that change on disk outside the buffer https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+vim.o.hidden = true                                 -- Allow leaving dirty buffers (including terminal buffers)
 
-au CursorHold,CursorHoldI,FocusGained,BufEnter * :checktime " Check timestamp on files after certain events
-set autoread                                " reload files that change on disk outside the buffer https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
-set hidden                                  " Allow leaving dirty buffers (including terminal buffers)
+-- Text settings:
+--==========================================================================
 
-" Load plugins
-"==========================================================================
-runtime plugins.vim
+-- Tabs/Spaces --- retab! reformats a file according to tab settings
+vim.o.expandtab = true                        -- Use spaces instead of tabs
+vim.o.shiftwidth = 2                          -- In-/outdent by 4 columns
+vim.o.tabstop = 2                             -- literal tab should be 4 columns
+vim.o.softtabstop = 2                         -- tab key inserts 4 spaces
 
-" Text settings:
-"==========================================================================
+vim.cmd [[
+  " Load plugins
+  "==========================================================================
+  runtime plugins.vim
+]]
 
-" Tabs/Spaces --- retab! reformats a file according to tab settings
-set expandtab                               " Use spaces instead of tabs
-set shiftwidth=2                            " In-/outdent by 4 columns
-set tabstop=2                               " literal tab should be 4 columns
-set softtabstop=2                           " tab key inserts 4 spaces
+-- theme
+vim.o.encoding = 'UTF-8'                      -- Set encoding to utf 8 (for devicons)
+-- UI:
+--==========================================================================
 
-" UI:
-"==========================================================================
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_italic_functions = 1
+vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 
-" theme
-set encoding=UTF-8                          " Set encoding to utf 8 (for devicons)
+vim.cmd [[
+  colorscheme tokyonight
+  set termguicolors
+  set t_Co=256
+  set t_ut=
+]]
 
-let g:tokyonight_style = "night"
-let g:tokyonight_italic_functions = 1
-let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "packer" ]
-colorscheme tokyonight
+-- Higlight the current line, as I have grown soft in the embrace of VSCode
+vim.o.cursorline = true                                       -- highlight current line
 
-set termguicolors
-set t_Co=256
-set t_ut=
+vim.o.number = true                                                  -- Show current line number even with relativenumber
+vim.o.relativenumber = true                                          -- Show line numbers relative to the cursor
+vim.o.laststatus = 3                                            -- Always show statusline
 
-" Higlight the current line, as I have grown soft in the embrace of VSCode
-set cursorline                                              " highlight current line
+vim.keymap.set('n', '<leader>l', ':set list!<CR>')              -- Shortcut to rapidly toggle `set list`
+vim.opt.listchars = {eol = '↲', tab = '▸ ', trail = '·'}        -- Specify better Tab & EOL characters
+vim.keymap.set('n', '<silent><leader>', ':set hlsearch!<CR>')   -- toggle search highlighting
+vim.keymap.set('i', 'jj', '<Esc>')                              -- double-j -> Esc
 
-set number                                                  " Show current line number even with relativenumber
-set relativenumber                                          " Show line numbers relative to the cursor
+vim.cmd [[
+  nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')               " j and k should traverse soft wrapped lines, but still preserve counts
+  nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')               " https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
 
-set laststatus=3                                            " Always show statusline
+  highlight SignColumn ctermbg=NONE guibg=NONE                " no bgcolor for signcolumn
+  highlight LineNr ctermbg=NONE guibg=NONE                    " …or line number
 
-nmap <leader>l :set list!<CR>                               " Shortcut to rapidly toggle `set list`
-set listchars=tab:▸\ ,eol:¬                                 " Specify better Tab & EOL characters
+  " Source vimrc on save
+  augroup myvimrc
+      au!
+      au BufWritePost .config/nvim/init.vim,config/nvim/init.vim so $MYVIMRC
+  augroup END
 
-nmap <silent><leader>, :set hlsearch!<CR>                   " toggle search highlighting
+  tnoremap <Esc><Esc> <C-\><C-n>                              " Double ESC to jump out of nvim terminal
+  " tmux
+  "=========================================================================
+  autocmd VimResized * :wincmd =                              " Resize splits when window is resized
 
-imap jj <Esc>                                               " double-j -> Esc
+  set noshowcmd                                                 " Don't show last command run
+  set noshowmode                                                " Don't show mode since airline shows it
+]]
 
-nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')               " j and k should traverse soft wrapped lines, but still preserve counts
-nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')               " https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
+vim.o.signcolumn='yes'                                          -- always show signcolumn
+vim.o.updatetime=250                                            -- update sign column every .25s
+vim.o.mouse= 'a'                                                -- Yes I enabled mouse mode, sue me
 
-highlight SignColumn ctermbg=NONE guibg=NONE                " no bgcolor for signcolumn
-highlight LineNr ctermbg=NONE guibg=NONE                    " …or line number
-set signcolumn=yes                                          " always show signcolumn
+-- Utilities
+--=========================================================================
 
-set noshowcmd                                               " Don't show last command run
-set noshowmode                                              " Don't show mode since airline shows it
+-- Enable basic fuzzy search and show the results nicely
+vim.cmd [[
+  set path+=**                                                " Traverse subdirectories recursively
+  set wildmenu                                                " Show all matches in a menu
+]]
+EOF
 
-set updatetime=250                                          " update sign column every .25s
 
-set mouse=a                                                 " Yes I enabled mouse mode, sue me
-
-" Utilities
-"=========================================================================
-
-" Enable basic fuzzy search and show the results nicely
-set path+=**                                                " Traverse subdirectories recursively
-set wildmenu                                                " Show all matches in a menu
-
-" Source vimrc on save
-augroup myvimrc
-    au!
-    au BufWritePost .config/nvim/init.vim,config/nvim/init.vim so $MYVIMRC
-augroup END
-
-tnoremap <Esc><Esc> <C-\><C-n>                              " Double ESC to jump out of nvim terminal
-" tmux
-"=========================================================================
-autocmd VimResized * :wincmd =                              " Resize splits when window is resized
 
 " Plugins
 "=========================================================================
