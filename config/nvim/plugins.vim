@@ -11,7 +11,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'mattn/emmet-vim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'dunckr/js_alternate.vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
