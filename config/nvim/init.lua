@@ -77,6 +77,7 @@ vim.o.mouse = 'a' -- Yes I enabled mouse mode, sue me
 -- Plugins
 -- =========================================================================
 
+require('user.bufferline')
 require('user.cmp')
 require('user.formatting-and-linting')
 require('user.git')

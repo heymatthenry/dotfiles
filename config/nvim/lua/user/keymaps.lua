@@ -21,6 +21,12 @@ vim.cmd [[
   nnoremap <C-H> <C-W><C-H>
 ]]
 
+-- buffers
+
+keymap("n", "]b", ":BufferLineCycleNext<CR>")
+keymap("n", "[b", ":BufferLineCyclePrev<CR>")
+keymap("n", "<leader>bp", ":BufferLinePick<CR>")
+
 -- Telescope
 
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
