@@ -56,4 +56,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " Themes
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'EdenEast/nightfox.nvim'
+Plug 'Mofiqul/dracula.nvim'
+Plug 'LunarVim/darkplus.nvim'
 call plug#end()

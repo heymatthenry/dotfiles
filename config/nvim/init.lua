@@ -1,20 +1,19 @@
 vim.cmd [[
     set runtimepath^=~/.config/nvim runtimepath+=~/.config/nvim/pack/bundle/start
     let &packpath = &runtimepath
+    runtime plugins.vim
+
     " Basic settings:
     " These are essential to vim just working the way you'd expect vim to work
     "==========================================================================
 
     syntax enable                               " enable syntax
     filetype plugin indent on                   " enable autoloading plugin based on filetype
+
+    au CursorHold,CursorHoldI,FocusGained,BufEnter * :checktime " Check timestamp on files after certain events
 ]]
 
 vim.g.mapleader = " " -- set leader key to SPC
-
-vim.cmd [[
-  au CursorHold,CursorHoldI,FocusGained,BufEnter * :checktime " Check timestamp on files after certain events
-]]
-
 vim.o.ttimeoutlen = 100 -- Shorten time vim will wait to complete an escape sequence, 
 -- per https://superuser.com/questions/161178/why-does-vim-delay-for-a-second-whenever-i-use-the-o-command-open-a-new-line
 vim.o.autoread = true -- reload files that change on disk outside the buffer https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
@@ -29,12 +28,6 @@ vim.o.shiftwidth = 2 -- In-/outdent by 4 columns
 vim.o.tabstop = 2 -- literal tab should be 4 columns
 vim.o.softtabstop = 2 -- tab key inserts 4 spaces
 
-vim.cmd [[
-  " Load plugins
-  "==========================================================================
-  runtime plugins.vim
-]]
-
 -- theme
 vim.o.encoding = 'UTF-8' -- Set encoding to utf 8 (for devicons)
 
@@ -42,11 +35,9 @@ vim.o.encoding = 'UTF-8' -- Set encoding to utf 8 (for devicons)
 -- ==========================================================================
 
 vim.g.tokyonight_style = "night"
-vim.g.tokyonight_italic_functions = 1
-vim.g.tokyonight_sidebars = {"qf", "vista_kind", "terminal", "packer"}
 
 vim.cmd [[
-  colorscheme duskfox
+  colorscheme tokyonight
   set termguicolors
   set t_Co=256
   set t_ut=
