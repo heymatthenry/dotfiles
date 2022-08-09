@@ -9,25 +9,25 @@ vim.cmd [[
     filetype plugin indent on                   " enable autoloading plugin based on filetype
 ]]
 
-vim.g.mapleader=" "                             -- set leader key to SPC
+vim.g.mapleader = " " -- set leader key to SPC
 
 vim.cmd [[
   au CursorHold,CursorHoldI,FocusGained,BufEnter * :checktime " Check timestamp on files after certain events
 ]]
 
-vim.o.ttimeoutlen = 100                             -- Shorten time vim will wait to complete an escape sequence, 
-                                                    -- per https://superuser.com/questions/161178/why-does-vim-delay-for-a-second-whenever-i-use-the-o-command-open-a-new-line
-vim.o.autoread = true                               -- reload files that change on disk outside the buffer https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
-vim.o.hidden = true                                 -- Allow leaving dirty buffers (including terminal buffers)
+vim.o.ttimeoutlen = 100 -- Shorten time vim will wait to complete an escape sequence, 
+-- per https://superuser.com/questions/161178/why-does-vim-delay-for-a-second-whenever-i-use-the-o-command-open-a-new-line
+vim.o.autoread = true -- reload files that change on disk outside the buffer https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+vim.o.hidden = true -- Allow leaving dirty buffers (including terminal buffers)
 
 -- Text settings:
---==========================================================================
+-- ==========================================================================
 
 -- Tabs/Spaces --- retab! reformats a file according to tab settings
-vim.o.expandtab = true                        -- Use spaces instead of tabs
-vim.o.shiftwidth = 2                          -- In-/outdent by 4 columns
-vim.o.tabstop = 2                             -- literal tab should be 4 columns
-vim.o.softtabstop = 2                         -- tab key inserts 4 spaces
+vim.o.expandtab = true -- Use spaces instead of tabs
+vim.o.shiftwidth = 2 -- In-/outdent by 4 columns
+vim.o.tabstop = 2 -- literal tab should be 4 columns
+vim.o.softtabstop = 2 -- tab key inserts 4 spaces
 
 vim.cmd [[
   " Load plugins
@@ -36,48 +36,41 @@ vim.cmd [[
 ]]
 
 -- theme
-vim.o.encoding = 'UTF-8'                      -- Set encoding to utf 8 (for devicons)
+vim.o.encoding = 'UTF-8' -- Set encoding to utf 8 (for devicons)
 
 -- UI:
---==========================================================================
+-- ==========================================================================
 
 vim.g.tokyonight_style = "night"
 vim.g.tokyonight_italic_functions = 1
-vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+vim.g.tokyonight_sidebars = {"qf", "vista_kind", "terminal", "packer"}
 
 vim.cmd [[
-  colorscheme tokyonight
+  colorscheme duskfox
   set termguicolors
   set t_Co=256
   set t_ut=
 ]]
 
 -- Higlight the current line, as I have grown soft in the embrace of VSCode
-vim.o.cursorline = true                                       -- highlight current line
+vim.o.cursorline = true -- highlight current line
 
-vim.o.number = true                                                  -- Show current line number even with relativenumber
-vim.o.relativenumber = true                                          -- Show line numbers relative to the cursor
-vim.o.laststatus = 3                                            -- Always show statusline
+vim.o.number = true -- Show current line number even with relativenumber
+vim.o.relativenumber = true -- Show line numbers relative to the cursor
+vim.o.laststatus = 3 -- Always show statusline
 
-vim.keymap.set('n', '<leader>l', ':set list!<CR>')              -- Shortcut to rapidly toggle `set list`
-vim.opt.listchars = {eol = '↲', tab = '▸ ', trail = '·'}        -- Specify better Tab & EOL characters
-vim.keymap.set('n', '<silent><leader>', ':set hlsearch!<CR>')   -- toggle search highlighting
-vim.keymap.set('i', 'jj', '<Esc>')                              -- double-j -> Esc
+vim.opt.listchars = {eol = '↲', tab = '▸ ', trail = '·'} -- Specify better Tab & EOL characters
 
 vim.cmd [[
-  nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')               " j and k should traverse soft wrapped lines, but still preserve counts
-  nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')               " https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
-
   highlight SignColumn ctermbg=NONE guibg=NONE                " no bgcolor for signcolumn
   highlight LineNr ctermbg=NONE guibg=NONE                    " …or line number
 
   " Source vimrc on save
   augroup myvimrc
       au!
-      au BufWritePost .config/nvim/init.vim,config/nvim/init.vim so $MYVIMRC
+      au BufWritePost .config/nvim/init.lua,config/nvim/init.lua so $MYVIMRC
   augroup END
 
-  tnoremap <Esc><Esc> <C-\><C-n>                              " Double ESC to jump out of nvim terminal
   " tmux
   "=========================================================================
   autocmd VimResized * :wincmd =                              " Resize splits when window is resized
@@ -86,12 +79,12 @@ vim.cmd [[
   set noshowmode                                                " Don't show mode since airline shows it
 ]]
 
-vim.o.signcolumn='yes'                                          -- always show signcolumn
-vim.o.updatetime=250                                            -- update sign column every .25s
-vim.o.mouse= 'a'                                                -- Yes I enabled mouse mode, sue me
+vim.o.signcolumn = 'yes' -- always show signcolumn
+vim.o.updatetime = 250 -- update sign column every .25s
+vim.o.mouse = 'a' -- Yes I enabled mouse mode, sue me
 
 -- Utilities
---=========================================================================
+-- =========================================================================
 
 -- Enable basic fuzzy search and show the results nicely
 vim.cmd [[
@@ -99,193 +92,20 @@ vim.cmd [[
   set wildmenu                                                " Show all matches in a menu
 ]]
 
-
 -- Plugins
---=========================================================================
+-- =========================================================================
 
-
--- lualine
-require('lualine').setup {
-    options = {
-      disabled_filetypes = { 'NVimTree' }
-    }
-}
-
-vim.cmd [[
-    " Telescope
-    nnoremap <leader>ff <cmd>Telescope find_files<cr>
-    nnoremap <leader>fb <cmd>Telescope buffers<cr>
-
-    " nvim-tree 
-    nnoremap <leader>t :NvimTreeToggle<CR>
-    hi NvimTreeStatusLineNC guibg=nvim_treebg guifg=nvim_treebg
-]]
-
-require'nvim-tree'.setup {
-    hijack_netrw = false,
-    view = {
-        side = "right"
-    }
-}
-
--- null-ls — formatting, linting, code actions
-require("null-ls").setup({
-    sources = {
-        require("null-ls").builtins.formatting.tidy,        -- HTML
-        require("null-ls").builtins.formatting.stylelint,   -- CSS
-        require("null-ls").builtins.diagnostics.stylelint,  -- "
-        require("null-ls").builtins.diagnostics.tsc,        -- TS
-        require("null-ls").builtins.formatting.prettier,    -- JS/TS
-        require("null-ls").builtins.diagnostics.eslint,     -- "
-        require("null-ls").builtins.code_actions.eslint,    -- "
-        require("null-ls").builtins.formatting.black,       -- Python
-        require("null-ls").builtins.diagnostics.flake8,     -- "
-    },
-    on_attach = function(client)
-        if client.resolved_capabilities.document_formatting then
-            vim.cmd([[
-            augroup LspFormatting
-                autocmd! * <buffer>
-                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-            augroup END
-            ]])
-        end
-    end
-})
-
-require('rust-tools').setup {}
+require('user.cmp')
+require('user.formatting-and-linting')
+require('user.git')
+require('user.indent-blankline')
+require('user.keymaps')
+require('user.lualine')
+require('user.nvim-tree')
+require('user.org')
+require('user.terminal')
+require('user.treesitter')
+require('user.wiki')
 
 -- Trouble for project-level diagnostics
 require("trouble").setup {}
-
--- nvim terminal
-vim.o.hidden = true
-require('nvim-terminal').setup()
-
--- vimwiki
-
-vim.cmd [[
-    let g:vimwiki_list = [{ 'path': '~/Documents/Notes/', 'syntax': 'markdown', 'ext': '.md'}]
-    let g:vimwiki_diary_rel_path = 'Daily\ Notes/'
-]]
-
--- orgmode
--- Load custom tree-sitter grammar for org filetype
-require('orgmode').setup_ts_grammar()
-
--- Tree-sitter configuration
-require'nvim-treesitter.configs'.setup {
-    ensure_installed = "all", 
-    -- If TS highlights are not enabled at all, or disabled via `disable` prop, highlighting will fallback to default Vim syntax highlighting
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = {'org'}, -- Required for spellcheck, some LaTex highlights and code block highlights that do not have ts grammar
-    },
-    autopairs = {
-      enable = true
-    },
-    indent = {
-      enable = true
-    }
-}
-
-local org_dir = '~/org'
-require('orgmode').setup({
-    org_agenda_files = {org_dir .. '/**/*'},
-    org_default_notes_file = org_dir .. '/notes.org',
-    org_capture_templates = {
-        j = {
-            description = 'Journal',
-            template = '\n** %<%Y-%m-%d> %<%A>\n*** %U\n\n%?',
-            target = org_dir .. '/journal.org'
-        },
-    		e = {
-            description = 'Event',
-            template = '* %?\n  %T',
-            target = org_dir .. '/calendar.org',
-        },
-    }
-})
-
-
-require("headlines").setup()
-require('org-bullets').setup()
-
--- nvim-cmp
-local has_words_before = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
-
-local luasnip = require("luasnip")
-local cmp = require("cmp")
-
-require("luasnip.loaders.from_vscode").lazy_load()
-
-cmp.setup({
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-    end,
-  },
-
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'orgmode' }
-  },
-
-  mapping = {
-    ["<CR>"] = cmp.mapping.confirm { select = true },
-
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      elseif has_words_before() then
-        cmp.complete()
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-
-  },
-})
-
--- which-key
-  require("which-key").setup {}
-  local wk = require("which-key")
-  wk.register({
-    ["<leader>"] = {
-        [";"] = "Toggle terminal",
-        ["1"] = "Open terminal #1",
-        ["2"] = "which_key_ignore",
-        ["3"] = "which_key_ignore",
-        ["4"] = "which_key_ignore",
-        ["5"] = "which_key_ignore",
-        ["+"] = "which_key_ignore",
-        ["-"] = "which_key_ignore",
-        f = {
-          name = "files and buffers",
-          f = { "<cmd>Telescope find_files<cr>", "Find File" },
-          r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-          n = { "<cmd>enew<cr>", "New File" },
-        },
-        o = { name = "nvim-org" },
-        w = { name = "vimwiki" }
-    },
-  })
-
-require('git')
-
-require("indent_blankline").setup {}
