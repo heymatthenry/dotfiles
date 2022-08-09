@@ -13,6 +13,12 @@ vim.cmd [[
   nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')               " https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
   nmap <silent><leader>, :set hlsearch!<CR>                   " toggle search highlights
   tnoremap <Esc><Esc> <C-\><C-n>                              " Double ESC to jump out of nvim terminal
+  
+  " Better moving between splits
+  nnoremap <C-J> <C-W><C-J>
+  nnoremap <C-K> <C-W><C-K>
+  nnoremap <C-L> <C-W><C-L>
+  nnoremap <C-H> <C-W><C-H>
 ]]
 
 -- Telescope
