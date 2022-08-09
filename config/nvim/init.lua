@@ -83,15 +83,6 @@ vim.o.signcolumn = 'yes' -- always show signcolumn
 vim.o.updatetime = 250 -- update sign column every .25s
 vim.o.mouse = 'a' -- Yes I enabled mouse mode, sue me
 
--- Utilities
--- =========================================================================
-
--- Enable basic fuzzy search and show the results nicely
-vim.cmd [[
-  set path+=**                                                " Traverse subdirectories recursively
-  set wildmenu                                                " Show all matches in a menu
-]]
-
 -- Plugins
 -- =========================================================================
 
