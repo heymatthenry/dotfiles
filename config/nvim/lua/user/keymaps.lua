@@ -6,12 +6,12 @@ local opts = {silent = true}
 -- Basic editor behavior 
 
 keymap('n', '<leader>l', ':set list!<CR>') -- Shortcut to rapidly toggle `set list`
-keymap('n', '<silent><leader>,', '<cmd>nohlsearch<CR>') -- Shortcut to rapidly toggle `set list`
 keymap('i', 'jj', '<Esc>') -- double-j -> Esc
 
 vim.cmd [[
   nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')               " j and k should traverse soft wrapped lines, but still preserve counts
   nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')               " https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
+  nmap <silent><leader>, :set hlsearch!<CR>                   " toggle search highlights
   tnoremap <Esc><Esc> <C-\><C-n>                              " Double ESC to jump out of nvim terminal
 ]]
 
