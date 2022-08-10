@@ -10,7 +10,7 @@ vim.cmd [[
     " Source vimrc on save
     augroup myvimrc
         au!
-        au BufWritePost .config/nvim/init.lua, config/nvim/init.lua so $MYVIMRC
+        au BufWritePost config/nvim/plugins.vim, config/nvim/init.lua so $MYVIMRC
     augroup END
 ]]
 
@@ -19,6 +19,18 @@ vim.o.ttimeoutlen = 100 -- Shorten time vim will wait to complete an escape sequ
 -- per https://superuser.com/questions/161178/why-does-vim-delay-for-a-second-whenever-i-use-the-o-command-open-a-new-line
 vim.o.autoread = true -- reload files that change on disk outside the buffer https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
 vim.o.hidden = true -- Allow leaving dirty buffers (including terminal buffers)
+vim.o.scrolloff = 8 -- Show 8 lines above/below cursor when scrolling up/down
+vim.opt.smartcase = true -- smart case
+vim.opt.smartindent = true -- better indenting on new line
+vim.opt.splitbelow = true -- force all horizontal splits to go below current window
+vim.opt.splitright = true -- force all vertical splits to go to the right of current window
+vim.opt.backup = false -- creates a backup file
+vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
+vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
+vim.opt.completeopt = {"menuone", "noselect"} -- mostly just for cmp
+vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
+vim.opt.fileencoding = "utf-8" -- the encoding written to a file
+vim.opt.pumheight = 10 -- pop up menu height
 
 -- Text settings:
 ----------------------------------------------------------------------------
