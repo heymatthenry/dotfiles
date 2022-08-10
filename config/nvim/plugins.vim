@@ -32,6 +32,7 @@ Plug 'simrat39/rust-tools.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'L3MON4D3/LuaSnip'
 
+Plug 'ahmedkhalf/project.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'folke/which-key.nvim'

@@ -8,12 +8,10 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
     hijack_netrw = false,
-    update_focused_file = {enable = true, update_cwd = true},
+    sync_root_with_cwd = true,
+    respect_buf_cwd = true,
+    update_focused_file = {enable = true, update_root = true},
     renderer = {
-        sync_root_with_cwd = true,
-        respect_buf_cwd = true,
-        update_focused_file = {enable = true, update_root = true},
-        root_folder_modifier = ":t",
         icons = {
             glyphs = {
                 default = "",
