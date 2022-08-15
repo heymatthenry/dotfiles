@@ -59,6 +59,7 @@ vim.o.number = true -- Show curnent line number even with relativenumber
 vim.o.relativenumber = true -- Show line numbers relative to the cursor
 vim.o.laststatus = 3 -- Always show statusline
 vim.o.signcolumn = 'yes' -- always show signcolumn
+vim.o.numberwidth = 2 -- make number col narrower
 vim.o.updatetime = 250 -- update sign column every .25s
 vim.o.mouse = 'a' -- Yes I enabled mouse mode, sue me
 vim.opt.listchars = {eol = '↲', tab = '▸ ', trail = '·'} -- Specify better Tab & EOL characters
@@ -82,3 +83,4 @@ require('user.wiki')
 
 -- Trouble for project-level diagnostics
 require("trouble").setup {}
+require'treesitter-context'.setup {}
