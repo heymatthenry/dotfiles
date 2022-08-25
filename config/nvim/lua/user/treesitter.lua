@@ -11,3 +11,7 @@ require'nvim-treesitter.configs'.setup {
     autopairs = {enable = true},
     indent = {enable = true}
 }
+
+vim.cmd [[
+    autocmd BufRead,BufEnter *.astro set filetype=astro
+]]
