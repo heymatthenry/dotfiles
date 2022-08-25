@@ -10,7 +10,7 @@ vim.cmd [[
     " Source vimrc on save
     augroup myvimrc
         au!
-        au BufWritePost config/nvim/plugins.vim, config/nvim/init.lua so $MYVIMRC
+        au BufWritePost config/nvim/**/* so $MYVIMRC
     augroup END
 ]]
 
