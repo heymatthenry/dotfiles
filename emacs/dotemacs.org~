@@ -1,0 +1,83 @@
+#+title: Dotemacs
+#+PROPERTY: header-args:emacs-lisp :tangle ~/.emacs :mkdirp yes
+
+* Dotemacs
+** Package setup
+
+#+begin_src emacs-lisp
+  (require 'package)
+  (add-to-list 'package-archives
+	       '("melpa" . "https://melpa.org/packages/"))
+  (package-initialize)
+  (package-refresh-contents)
+
+  (unless (package-installed-p 'use-package)
+    (package-install 'use-package))
+
+  (require 'use-package)
+#+end_src
+
+** Literate config setup
+
+#+begin_src emacs-lisp
+  (org-babel-do-load-languages
+    'org-babel-load-languages
+    '((emacs-lisp . t)
+	(python . t)))
+
+  (push '("conf-unix" . conf-unix) org-src-lang-modes)
+
+  ;; Automatically tangle our Emacs.org config file when we save it
+  (defun efs/org-babel-tangle-config ()
+    (when (string-equal (buffer-file-name)
+			(expand-file-name "~/Code/dotfiles/emacs/dotemacs.org"))
+      ;; Dynamic scoping to the rescue
+      (let ((org-confirm-babel-evaluate nil))
+	(org-babel-tangle))))
+
+  (add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook #'efs/org-babel-tangle-config)))
+  (add-hook 'after-save-hook (lambda () (load-file (expand-file-name "~/.emacs"))))
+#+end_src
+
+** Evil 🤘
+
+#+begin_src emacs-lisp
+  (use-package evil
+    :ensure t)
+  (evil-mode 1)
+
+  (use-package evil-commentary
+    :ensure t)
+  (evil-commentary-mode 1)
+
+  (use-package simpleclip
+    :ensure t)
+  (simpleclip-mode 1)
+
+  ;; Make cmd-v work to paste from system clipboard
+  ;; https://github.com/rolandwalker/simpleclip/issues/1
+  (setq mac-option-modifier 'meta)
+  (setq mac-command-modifier 'super)
+  (setq mac-pass-command-to-system nil)
+#+end_src
+
+** UI & Theme
+
+TODO: Get ligatures working
+
+#+begin_src emacs-lisp
+  (set-frame-font "JuliaMono 14" nil t)
+
+  (use-package doom-themes
+    :ensure t
+    :config
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+	doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (load-theme 'doom-nord t)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config))
+#+end_src
