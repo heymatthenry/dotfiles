@@ -6,6 +6,7 @@ if status is-interactive
         set -x HOMEBREW_PATH /usr/local
     end
 
+    set -x MYVIMRC "$HOME/Code/dotfiles/config/nvim/init.lua"
     set -x NODE_HOME "$HOME/local/node/bin"
     set -x CARGO_HOME "$HOME/.cargo/bin"
     set -x LLVM_HOME "$HOMEBREW_PATH/opt/llvm/bin"
