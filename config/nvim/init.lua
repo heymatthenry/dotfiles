@@ -67,7 +67,6 @@ vim.opt.listchars = {eol = '↲', tab = '▸ ', trail = '·'} -- Specify better 
 -- Plugins
 ----------------------------------------------------------------------------
 
-require('user.bufferline')
 require('user.cmp')
 require('user.formatting-and-linting')
 require('user.git')
