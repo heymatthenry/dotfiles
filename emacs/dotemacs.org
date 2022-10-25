@@ -18,12 +18,10 @@ This bootstraps [[https://github.com/radian-software/straight.el][straight.el]] 
   (goto-char (point-max))
   (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
-
-  (unless (package-installed-p 'use-package)
-  (package-install 'use-package))
-
-  (require 'use-package)
+  
   (straight-use-package 'use-package)
+  (require 'use-package)
+
   (use-package
       straight
       :custom (straight-use-package-by-default t))
@@ -55,6 +53,7 @@ This bootstraps [[https://github.com/radian-software/straight.el][straight.el]] 
 
 #+begin_src emacs-lisp
   (use-package magit)
+  (use-package ghub)
 #+end_src
 
 ** Code formatting
@@ -70,6 +69,14 @@ This bootstraps [[https://github.com/radian-software/straight.el][straight.el]] 
 #+begin_src emacs-lisp
   (use-package web-mode :ensure t)
   (add-to-list 'auto-mode-alist '("\\.njk\\'" . web-mode))
+#+end_src
+
+** Org
+
+#+begin_src emacs-lisp
+  (global-set-key (kbd "C-c l") #'org-store-link)
+  (global-set-key (kbd "C-c a") #'org-agenda)
+  (global-set-key (kbd "C-c c") #'org-capture)
 #+end_src
 
 ** Evil 🤘
@@ -101,7 +108,15 @@ This bootstraps [[https://github.com/radian-software/straight.el][straight.el]] 
 
 ** UI & Theme
 
-TODO: Get ligatures working
+TODO Get ligatures working
+
+Turn off most UI chrome.
+
+#+begin_src emacs-lisp
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+#+end_src
 
 #+begin_src emacs-lisp
   (set-frame-font "JuliaMono 14" nil t)
@@ -111,8 +126,8 @@ TODO: Get ligatures working
     :config
     ;; Global settings (defaults)
     (setq doom-themes-enable-bold t ; if nil, bold is universally disabled
-	  doom-themes-enable-italic t) ; if nil, italics is universally disabled
-    (load-theme 'doom-nord t)
+    doom-themes-enable-italic t) ; if nil, italics is universally disabled
+    (load-theme 'doom-one t)
 
     ;; Enable flashing mode-line on errors
     (doom-themes-visual-bell-config)
@@ -131,51 +146,13 @@ TODO: Get ligatures working
 Org mode needs some extra attention to really shine. This adds fancy bullets.
 
 #+begin_src emacs-lisp
-  (setq org-hide-emphasis-markers t)
-
-  (use-package
-    org-bullets
-    :config (add-hook 'org-mode-hook (lambda ()
-				       (org-bullets-mode 1))))
-
-  (add-hook 'org-mode-hook 'visual-line-mode)
-
+  ;; wrap lines depending on window size
+  (add-hook 'org-mode-hook 'visual-line-mode) 
 #+end_src
 
 Also set custom faces and line heights for different levels of indentation. These settings are from [[https://zzamboni.org/post/beautifying-org-mode-in-emacs/][here]] but will probably change.
 
 #+begin_src emacs-lisp
-  (let* ((variable-tuple (cond ((x-list-fonts "ETBembo")
-				'(:font "ETBembo"))
-			       ((x-list-fonts "Source Sans Pro")
-				'(:font "Source Sans Pro"))
-			       ((x-list-fonts "Lucida Grande")
-				'(:font "Lucida Grande"))
-			       ((x-list-fonts "Verdana")
-				'(:font "Verdana"))
-			       ((x-family-fonts "Sans Serif")
-				'(:family "Sans Serif"))
-			       (nil
-				(warn
-				 "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
-
-	 (headline
-	  `(:inherit default
-		     :weight bold
-		     )))
-    (custom-theme-set-faces 'user `(org-level-8 ((t (,@headline ,@variable-tuple))))
-			    `(org-level-7 ((t (,@headline ,@variable-tuple))))
-			    `(org-level-6 ((t (,@headline ,@variable-tuple))))
-			    `(org-level-5 ((t (,@headline ,@variable-tuple))))
-			    `(org-level-4 ((t (,@headline ,@variable-tuple
-							  :height 1.1))))
-			    `(org-level-3 ((t (,@headline ,@variable-tuple
-							  :height 1.25))))
-			    `(org-level-2 ((t (,@headline ,@variable-tuple
-							  :height 1.5))))
-			    `(org-level-1 ((t (,@headline ,@variable-tuple
-							  :height 1.75))))
-			    `(org-document-title ((t (,@headline ,@variable-tuple
-								 :height 2.0
-								 :underline nil))))))
+  (use-package org-modern)
+  (global-org-modern-mode)
 #+end_src
