@@ -45,10 +45,9 @@ vim.o.softtabstop = 2 -- tab key inserts 4 spaces
 ----------------------------------------------------------------------------
 
 vim.o.encoding = 'UTF-8' -- Set encoding to utf 8 (for devicons)
-vim.g.tokyonight_style = "night"
 
 vim.cmd [[
-  colorscheme tokyonight
+  colorscheme doom-one
   set termguicolors
   set t_Co=256
   set t_ut=
@@ -79,6 +78,7 @@ require('user.project')
 require('user.terminal')
 require('user.treesitter')
 require('user.wiki')
+require('user.doom-one')
 
 -- Trouble for project-level diagnostics
 require("trouble").setup {}

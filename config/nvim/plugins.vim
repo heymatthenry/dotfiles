@@ -60,4 +60,6 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'EdenEast/nightfox.nvim'
 Plug 'Mofiqul/dracula.nvim'
 Plug 'LunarVim/darkplus.nvim'
+Plug 'NTBBloodbath/doom-one.nvim'
+
 call plug#end()
