@@ -35,10 +35,9 @@ Plug 'akinsho/toggleterm.nvim'
 Plug 'L3MON4D3/LuaSnip'
 
 Plug 'ahmedkhalf/project.nvim'
-Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'folke/which-key.nvim'
 
-" Completion stuff
+" LSP stuff
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-buffer'
@@ -47,6 +46,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'rafamadriz/friendly-snippets'
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 
 " Org 
 Plug 'nvim-orgmode/orgmode'
@@ -61,5 +61,9 @@ Plug 'EdenEast/nightfox.nvim'
 Plug 'Mofiqul/dracula.nvim'
 Plug 'LunarVim/darkplus.nvim'
 Plug 'NTBBloodbath/doom-one.nvim'
+
+" UI enhancements
+Plug 'RRethy/vim-illuminate'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 call plug#end()
