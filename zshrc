@@ -39,14 +39,12 @@ export PATH=/Applications/Racket\ v7.9.0.17/bin:$PATH
 export PATH=/Users/matthewwhenry/.cargo/bin:$PATH
 export PATH=~/.ghcup/bin:$PATH
 export PATH=/opt/homebrew/opt/llvm/bin:$PATH
+export PATH=/opt/homebrew/opt/openjdk/bin:$PATH
 
 fpath=(./zsh-completions $fpath)
 
 export PATH=$PATH:$HOME/.composer/vendor/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:/Users/matthewwhenry/.local/bin:$PATH"
 
 # source ~/.zsh/secret_keys
 
@@ -73,3 +71,6 @@ eval "$(rbenv init - zsh)"
 eval "$(direnv hook zsh)"
 
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+
+# Created by `pipx` on 2022-11-02 00:17:04
+export PATH="$PATH:/Users/matt/.local/bin"
