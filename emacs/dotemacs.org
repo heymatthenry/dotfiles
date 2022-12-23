@@ -63,6 +63,19 @@ This enables using this org-mode file to generate a =.emacs= config file.
 #+begin_src emacs-lisp
   (use-package cider
       :ensure t)
+
+  (use-package smartparens
+    :config
+    (setq sp-show-pair-from-inside nil)
+    (require 'smartparens-config)
+    (smartparens-global-mode 1)
+    )
+
+  (use-package clojure-mode
+    :ensure t)
+  
+  (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+  (add-hook 'org-mode-hook #'smartparens-strict-mode)
 #+end_src
 
 ** Code formatting
