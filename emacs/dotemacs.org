@@ -56,6 +56,13 @@ This bootstraps [[https://github.com/radian-software/straight.el][straight.el]] 
   (use-package ghub)
 #+end_src
 
+** LISP/REPL config
+
+#+begin_src emacs-lisp
+  (use-package cider
+      :ensure t)
+#+end_src
+
 ** Code formatting
 
 *** Elisp
@@ -74,9 +81,16 @@ This bootstraps [[https://github.com/radian-software/straight.el][straight.el]] 
 ** Org
 
 #+begin_src emacs-lisp
-  (global-set-key (kbd "C-c l") #'org-store-link)
-  (global-set-key (kbd "C-c a") #'org-agenda)
-  (global-set-key (kbd "C-c c") #'org-capture)
+  (setq org-capture-templates
+	      '(("t" "Todo" entry (file+headline "~/org/gtd.org" "Tasks")
+		 "* TODO %?\n  %i\n  %a")
+		  ("j" "Journal" entry (file+datetree "~/org/journal.org")
+			  "* %?\nEntered on %U\n  %i\n  %a")
+		  ("p" "Programming notes" entry (file+datetree "~/org/programming.org")
+			  "* %?\nEntered on %U\n  %i\n  %a")))
+    (global-set-key (kbd "C-c l") #'org-store-link)
+    (global-set-key (kbd "C-c a") #'org-agenda)
+    (global-set-key (kbd "C-c c") #'org-capture)
 #+end_src
 
 ** Evil 🤘
@@ -85,7 +99,10 @@ This bootstraps [[https://github.com/radian-software/straight.el][straight.el]] 
   (setq evil-want-keybinding nil)
   (use-package
     evil
-    :config (evil-mode 1))
+    :init
+    (setq evil-want-keybinding nil)
+    :config
+    (evil-mode 1))
   (use-package
     evil-commentary
     :ensure t)
@@ -93,6 +110,12 @@ This bootstraps [[https://github.com/radian-software/straight.el][straight.el]] 
   (use-package
     evil-surround
     :config (global-evil-surround-mode 1))
+  (use-package
+    evil-collection
+    :after evil
+    :config
+    (evil-collection-init))
+
   (use-package
     simpleclip)
   (simpleclip-mode 1)
@@ -102,8 +125,6 @@ This bootstraps [[https://github.com/radian-software/straight.el][straight.el]] 
   (setq mac-option-modifier 'meta)
   (setq mac-command-modifier 'super)
   (setq mac-pass-command-to-system nil)
-  (use-package
-    evil-collection)
 #+end_src
 
 ** UI & Theme
