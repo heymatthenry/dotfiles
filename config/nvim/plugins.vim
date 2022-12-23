@@ -31,6 +31,7 @@ Plug 'folke/trouble.nvim'
 Plug 'junegunn/goyo.vim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'simrat39/rust-tools.nvim'
+Plug 'MunifTanjim/prettier.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'L3MON4D3/LuaSnip'
 
@@ -46,11 +47,9 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'rafamadriz/friendly-snippets'
-Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
 
 " Org 
-Plug 'nvim-orgmode/orgmode'
-Plug 'akinsho/org-bullets.nvim'
+Plug 'nvim-neorg/neorg'
 Plug 'lukas-reineke/headlines.nvim'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
