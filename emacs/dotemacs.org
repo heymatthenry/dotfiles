@@ -18,7 +18,7 @@ This bootstraps [[https://github.com/radian-software/straight.el][straight.el]] 
   (goto-char (point-max))
   (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
-  
+
   (straight-use-package 'use-package)
   (require 'use-package)
 
@@ -56,6 +56,16 @@ This enables using this org-mode file to generate a =.emacs= config file.
 #+begin_src emacs-lisp
   (use-package magit)
   (use-package ghub)
+  (use-package git-gutter
+    :hook (prog-mode . git-gutter-mode)
+    :config
+    (setq git-gutter:update-interval 0.02))
+
+  (use-package git-gutter-fringe
+    :config
+    (define-fringe-bitmap 'git-gutter-fr:added [224] nil nil '(center repeated))
+    (define-fringe-bitmap 'git-gutter-fr:modified [224] nil nil '(center repeated))
+    (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240] nil nil 'bottom))
 #+end_src
 
 ** LISP/REPL config
@@ -165,6 +175,7 @@ Turn off most UI chrome.
   (menu-bar-mode -1)
   (tool-bar-mode -1)
   (scroll-bar-mode -1)
+  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 #+end_src
 
 #+begin_src emacs-lisp
