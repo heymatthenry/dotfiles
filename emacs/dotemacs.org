@@ -29,6 +29,8 @@ This bootstraps [[https://github.com/radian-software/straight.el][straight.el]] 
 
 ** Literate config setup
 
+This enables using this org-mode file to generate a =.emacs= config file.
+
 #+begin_src emacs-lisp
   (org-babel-do-load-languages 'org-babel-load-languages '((emacs-lisp . t)
 							   (python . t)))
@@ -95,27 +97,40 @@ This bootstraps [[https://github.com/radian-software/straight.el][straight.el]] 
 
 ** Evil 🤘
 
+I've been a vim guy for, like, 15 years at this point. It's hard enough switching over here,
+but giving up modal editing and the shortcuts that are a part of me by now is just too much.
+That's where evil comes in. In addition to installing evil-mode, we're adding a couple elisp
+ports of vim plugins I can't live without as well as evil-collection which makes evil mode
+play nicely with different kinds of buffers besides just text editing (magit, org, errors, &c.).
+
 #+begin_src emacs-lisp
-  (setq evil-want-keybinding nil)
   (use-package
     evil
     :init
     (setq evil-want-keybinding nil)
     :config
     (evil-mode 1))
+
   (use-package
     evil-commentary
-    :ensure t)
-  (evil-commentary-mode 1)
+    :ensure t
+    :config 
+    (evil-commentary-mode 1))
+
   (use-package
     evil-surround
     :config (global-evil-surround-mode 1))
+
   (use-package
     evil-collection
     :after evil
     :config
     (evil-collection-init))
+#+end_src
 
+** 🍎 Compatibility
+
+#+begin_src emacs-lisp
   (use-package
     simpleclip)
   (simpleclip-mode 1)
