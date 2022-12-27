@@ -153,6 +153,27 @@ play nicely with different kinds of buffers besides just text editing (magit, or
     (evil-collection-init))
 #+end_src
 
+* Projectile
+
+#+begin_src emacs-lisp
+  (use-package projectile
+    :config
+    (projectile-mode +1))
+
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+#+end_src
+
+* PDF
+
+#+begin_src emacs-lisp
+  (use-package pdf-tools
+    :load-path "site-lisp/pdf-tools/lisp"
+    :magic ("%PDF" . pdf-view-mode)
+    :config
+    (pdf-tools-install :no-query))
+#+end_src
+
 * 🍎 Compatibility
 
 #+begin_src emacs-lisp
