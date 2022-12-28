@@ -79,6 +79,7 @@ require('user.treesitter')
 require('user.org')
 require('user.wiki')
 require('user.doom-one')
+require('user.zen-mode')
 
 -- Trouble for project-level diagnostics
 require("trouble").setup {}
