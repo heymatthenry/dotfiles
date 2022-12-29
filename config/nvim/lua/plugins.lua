@@ -76,14 +76,6 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
     use 'rafamadriz/friendly-snippets'
 
-    -- Org 
-    use 'nvim-neorg/neorg'
-    use 'lukas-reineke/headlines.nvim'
-    use {
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end
-    }
-
     -- Themes
     use 'folke/tokyonight.nvim'
     use 'EdenEast/nightfox.nvim'
