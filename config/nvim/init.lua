@@ -1,10 +1,8 @@
 -- Basic settings:
 --------------------------------------------------------------------------
-vim.cmd [[
-    set runtimepath^=~/.config/nvim runtimepath+=~/.config/nvim/pack/bundle/start
-    let &packpath = &runtimepath
-    runtime plugins.vim
+require('plugins')
 
+vim.cmd [[
     au CursorHold,CursorHoldI,FocusGained,BufEnter * :checktime " Check timestamp on files after certain events
 
     " Source vimrc on save

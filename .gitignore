@@ -14,11 +14,9 @@ vim/tmp
 vim/undo
 config/nvim/bundle
 config/nvim/.netrwhist
+config/nvim/plugin
 tags
 tags-ja
-config/coc/snippets-mru
-config/nvim/plugged
-config/coc/snippets-mru
 
 # emacs ------------------------
 
