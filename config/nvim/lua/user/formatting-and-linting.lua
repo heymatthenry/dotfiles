@@ -1,4 +1,6 @@
 -- null-ls — formatting, linting, code actions
+local event = "BufWritePre" -- or "BufWritePost"
+
 require("null-ls").setup({
     sources = {
         require("null-ls").builtins.formatting.djhtml, -- Django HTML/Jinja/Nunjucks
@@ -12,17 +14,17 @@ require("null-ls").setup({
         require("null-ls").builtins.formatting.lua_format -- lua
     },
     on_attach = function(client, bufnr)
-        if client.server_capabilities.documentFormattingProvider then
-            vim.cmd(
-                "nnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.formatting()<CR>")
-
+        if client.supports_method("textDocument/formatting") then
             -- format on save
-            vim.cmd("autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting()")
-        end
-
-        if client.server_capabilities.documentRangeFormattingProvider then
-            vim.cmd(
-                "xnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.range_formatting({})<CR>")
+            vim.api.nvim_clear_autocmds({buffer = bufnr, group = group})
+            vim.api.nvim_create_autocmd(event, {
+                buffer = bufnr,
+                group = group,
+                callback = function()
+                    vim.lsp.buf.format({bufnr = bufnr, async = async})
+                end,
+                desc = "[lsp] format on save"
+            })
         end
     end
 })
