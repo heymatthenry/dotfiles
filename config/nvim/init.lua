@@ -13,7 +13,7 @@ vim.cmd [[
 ]]
 
 vim.g.mapleader = " " -- set leader key to SPC
-vim.o.ttimeoutlen = 100 -- Shorten time vim will wait to complete an escape sequence, 
+vim.o.ttimeoutlen = 100 -- Shorten time vim will wait to complete an escape sequence,
 -- per https://superuser.com/questions/161178/why-does-vim-delay-for-a-second-whenever-i-use-the-o-command-open-a-new-line
 vim.o.autoread = true -- reload files that change on disk outside the buffer https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
 vim.o.hidden = true -- Allow leaving dirty buffers (including terminal buffers)
@@ -25,7 +25,7 @@ vim.opt.splitright = true -- force all vertical splits to go to the right of cur
 vim.opt.backup = false -- creates a backup file
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
-vim.opt.completeopt = {"menuone", "noselect"} -- mostly just for cmp
+vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
 vim.opt.fileencoding = "utf-8" -- the encoding written to a file
 vim.opt.pumheight = 10 -- pop up menu height
@@ -59,7 +59,7 @@ vim.o.signcolumn = 'yes' -- always show signcolumn
 vim.o.numberwidth = 2 -- make number col narrower
 vim.o.updatetime = 250 -- update sign column every .25s
 vim.o.mouse = 'a' -- Yes I enabled mouse mode, sue me
-vim.opt.listchars = {eol = '↲', tab = '▸ ', trail = '·'} -- Specify better Tab & EOL characters
+vim.opt.listchars = { eol = '↲', tab = '▸ ', trail = '·' } -- Specify better Tab & EOL characters
 
 -- Plugins
 ----------------------------------------------------------------------------
@@ -82,4 +82,4 @@ require('user.obsidian')
 
 -- Trouble for project-level diagnostics
 require("trouble").setup {}
-require'treesitter-context'.setup {}
+require 'treesitter-context'.setup {}
