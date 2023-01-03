@@ -65,17 +65,18 @@ vim.opt.listchars = {eol = '↲', tab = '▸ ', trail = '·'} -- Specify better 
 ----------------------------------------------------------------------------
 
 require('user.cmp')
+require('user.doom-one')
 require('user.formatting-and-linting')
 require('user.git')
 require('user.indent-blankline')
 require('user.keymaps')
 require('user.lualine')
+require('user.mason')
 require('user.nvim-tree')
 require('user.project')
 require('user.terminal')
 require('user.treesitter')
 require('user.wiki')
-require('user.doom-one')
 require('user.zen-mode')
 require('user.obsidian')
 
