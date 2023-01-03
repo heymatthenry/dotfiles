@@ -54,7 +54,6 @@ return require('packer').startup(function(use)
 
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
-    use 'neovim/nvim-lspconfig'
     use 'jose-elias-alvarez/null-ls.nvim'
     use 'folke/trouble.nvim'
     use 'mfussenegger/nvim-dap'
@@ -75,6 +74,10 @@ return require('packer').startup(function(use)
     use 'hrsh7th/nvim-cmp'
     use 'saadparwaiz1/cmp_luasnip'
     use 'rafamadriz/friendly-snippets'
+    use {
+        "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim",
+        'neovim/nvim-lspconfig',
+    }
 
     -- Themes
     use 'folke/tokyonight.nvim'
