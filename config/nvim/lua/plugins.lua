@@ -64,6 +64,7 @@ return require('packer').startup(function(use)
 
     use 'ahmedkhalf/project.nvim'
     use 'folke/which-key.nvim'
+    use 'epwalsh/obsidian.nvim'
 
     -- LSP stuff
     use 'hrsh7th/cmp-nvim-lsp'
