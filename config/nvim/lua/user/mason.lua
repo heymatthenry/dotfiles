@@ -17,7 +17,14 @@ local opts = {}
 
 -- any server-specific configs can go here
 local conf_opts = {
-  sumneko_lua = { settings = { Lua = { diagnostics = { globals = { 'vim' } } } } }
+  sumneko_lua = {
+    settings = {
+      Lua = {
+        diagnostics = { globals = { 'vim' } },
+        telemetry = { enable = false }
+      }
+    }
+  }
 }
 
 for _, server in pairs(servers) do

@@ -45,7 +45,7 @@ vim.o.softtabstop = 2 -- tab key inserts 4 spaces
 vim.o.encoding = 'UTF-8' -- Set encoding to utf 8 (for devicons)
 
 vim.cmd [[
-  colorscheme doom-one
+  colorscheme tokyonight
   set termguicolors
   set t_Co=256
   set t_ut=
