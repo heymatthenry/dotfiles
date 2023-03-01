@@ -13,6 +13,7 @@ vim.cmd [[
 ]]
 
 vim.g.mapleader = " " -- set leader key to SPC
+vim.g.maplocalleader = "," -- set localleader key to ,
 vim.o.ttimeoutlen = 100 -- Shorten time vim will wait to complete an escape sequence,
 -- per https://superuser.com/questions/161178/why-does-vim-delay-for-a-second-whenever-i-use-the-o-command-open-a-new-line
 vim.o.autoread = true -- reload files that change on disk outside the buffer https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
@@ -64,6 +65,7 @@ vim.opt.listchars = { eol = '↲', tab = '▸ ', trail = '·' } -- Specify bette
 -- Plugins
 ----------------------------------------------------------------------------
 
+require('user.conjure')
 require('user.cmp')
 require('user.doom-one')
 require('user.formatting-and-linting')
