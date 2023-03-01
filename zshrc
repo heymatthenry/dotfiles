@@ -35,7 +35,7 @@ export PATH=$HOME/local/node/bin:$PATH
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 eval `/usr/libexec/path_helper -s`
 export PATH=/Users/matt/Code/scripts:$PATH
-export PATH=/Applications/Racket\ v7.9.0.17/bin:$PATH
+export PATH=/Applications/Racket\ v8.8/bin:$PATH
 export PATH=/Users/matthewwhenry/.cargo/bin:$PATH
 export PATH=~/.ghcup/bin:$PATH
 export PATH=/opt/homebrew/opt/llvm/bin:$PATH
