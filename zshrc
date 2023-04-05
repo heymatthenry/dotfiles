@@ -23,14 +23,9 @@ setopt inc_append_history
 setopt share_history
 
 export PATH=/opt/local/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export HOMEBREW_PATH="/opt/homebrew/bin"
 
-# Homebrew >= 3.0 has different paths depending on whether it's an M1 Mac
-if [ $(uname -m) = "arm64" ]; then
-  export HOMEBREW_PATH="/opt/homebrew"
-else
-  export HOMEBREW_PATH="/usr/local"
-fi
-
+export PATH=$HOME/local/node/bin:$HOMEBREW_PATH
 export PATH=$HOME/local/node/bin:$PATH
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 eval `/usr/libexec/path_helper -s`
@@ -49,8 +44,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # source ~/.zsh/secret_keys
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
