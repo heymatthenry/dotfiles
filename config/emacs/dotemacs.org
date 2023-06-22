@@ -48,6 +48,8 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
   (elpaca `(,@elpaca-order))
 #+end_src
 
+** Configure elpaca to use ~use-package~
+
 #+begin_src emacs-lisp
   ;; Install use-package support
 (elpaca elpaca-use-package
@@ -128,6 +130,7 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
     :init (doom-modeline-mode 1))
 #+end_src
 
+** TODO remove UI cruft
 * Put the Mac in emacs
 
 #+begin_src emacs-lisp
@@ -136,3 +139,11 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier nil)
 #+end_src
+
+* Keybindings
+** TODO Add general
+
+* TODO Add yasnippet
+* TODO Add projectile
+* TODO Add lsp
+* TODO Configure org
