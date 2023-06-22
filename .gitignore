@@ -20,8 +20,13 @@ tags-ja
 
 # emacs ------------------------
 
+\#*\#
+.\#*
+config/emacs/eln-cache/
+config/emacs/elpaca/
+config/emacs/transient/
 emacs.d/abbrev_defs
-emacs.d/dotemacs.el
+dotemacs.el
 emacs.d/dotemacs.html
 emacs.d/dotemacs.odt
 emacs.d/elpa/
