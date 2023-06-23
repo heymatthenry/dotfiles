@@ -195,6 +195,10 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
     (interactive)
     (find-file user-emacs-directory))
 
+  (defun reload-user-config ()
+    (interactive)
+    (load-file (concat user-emacs-directory "init.el")))
+
   (use-package general
     :config
     (general-evil-setup)
@@ -217,6 +221,7 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
       "f" '(:ignore t :wk "find")
       "ff" '(helm-find-files :wk "Find file")
       "fp" '(find-in-config-dir :wk "Open personal config")
+      "fr" '(reload-user-config :wk "Reload personal config")
 
       "g" '(:ignore t :wk "git")
       "gg" '(magit-status :wk "Magit status")
