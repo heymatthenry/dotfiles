@@ -161,7 +161,14 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
     :init (doom-modeline-mode 1))
 #+end_src
 
-** TODO remove UI cruft
+** Remove UI cruft
+
+#+begin_src emacs-lisp
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (scroll-bar-mode -1)
+#+end_src
+
 * Put the Mac in emacs
 
 #+begin_src emacs-lisp
