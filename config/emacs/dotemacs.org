@@ -215,13 +215,23 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
       "br" '(revert-buffer :wk "Reload buffer")
 
       "f" '(:ignore t :wk "find")
-      "ff" '(find-file :wk "Find file")
+      "ff" '(helm-find-files :wk "Find file")
       "fp" '(find-in-config-dir :wk "Open personal config")
 
       "g" '(:ignore t :wk "git")
       "gg" '(magit-status :wk "Magit status")
+
+      "p" '(:ignore t :wk "projectile")
+      "pp" '(helm-projectile-switch-project :wk "Switch to project")
+      "pf" '(helm-projectile-find-file :wk "Find file in project")
       )
   )
+#+end_src
+
+** Vanilla keybinds
+
+#+begin_src emacs-lisp
+(global-set-key (kbd "M-x") 'helm-M-x)
 #+end_src
 
 * Snippets and autocomplete
@@ -245,12 +255,22 @@ yasnippet has the snippets that company mode uses to autocomplete stuff.
 
 #+end_src
 
+#+begin_src emacs-lisp
+  (use-package helm
+    :config
+    (helm-mode 1))
+#+end_src
+
 * TODO Add projectile
 
 #+begin_src emacs-lisp
   (use-package projectile
     :config
     (projectile-mode +1))
+
+  (use-package helm-projectile
+    :config
+    (helm-projectile-on))
 #+end_src
 
 * TODO Add lsp
