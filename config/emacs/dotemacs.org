@@ -122,6 +122,37 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
     (doom-themes-org-config))
 #+end_src
 
+** Pretty icons
+
+#+begin_src emacs-lisp
+(use-package all-the-icons
+  :if (display-graphic-p))
+#+end_src
+
+** File drawer
+
+#+begin_src emacs-lisp
+  (use-package treemacs
+    :ensure t
+    :defer t
+    :config
+    (progn
+      (setq treemacs-position 'right)))
+
+  (use-package treemacs-evil
+    :after (treemacs evil))
+
+  ;; (use-package treemacs-projectile
+  ;;   :after (treemacs projectile)
+  ;;   :ensure t)
+
+  (use-package treemacs-icons-dired
+    :hook (dired-mode . treemacs-icons-dired-enable-once))
+
+  (use-package treemacs-magit
+    :after (treemacs magit))
+#+end_src
+
 ** Modeline
 
 #+begin_src emacs-lisp
@@ -141,13 +172,16 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
 #+end_src
 
 * Keybindings
-** TODO Add general
+
+** Which-Key
 
 #+begin_src emacs-lisp
   (use-package which-key
     :config
     (which-key-mode))
 #+end_src
+
+** General
 
 #+begin_src emacs-lisp
   (defun find-in-config-dir ()
@@ -177,12 +211,29 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
       "ff" '(find-file :wk "Find file")
       "fp" '(find-in-config-dir :wk "Open personal config")
 
-      "g" '(magit-status :wk "Magit status")
+      "g" '(:ignore t :wk "git")
+      "gg" '(magit-status :wk "Magit status")
       )
   )
 #+end_src
 
 * TODO Add yasnippet
+
+#+begin_src emacs-lisp
+  (use-package company
+    :config
+    (global-company-mode))
+#+end_src
+
+#+begin_src emacs-lisp
+  (use-package yasnippet
+    :config
+    (yas-global-mode 1))
+  (use-package yasnippet-snippets)
+  (use-package auto-yasnippet)
+
+#+end_src
+
 * TODO Add projectile
 * TODO Add lsp
 * TODO Configure org
