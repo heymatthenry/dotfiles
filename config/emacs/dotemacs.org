@@ -217,13 +217,17 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
   )
 #+end_src
 
-* TODO Add yasnippet
+* Snippets and autocomplete
+
+Company is the popup/autocomplete library.
 
 #+begin_src emacs-lisp
   (use-package company
     :config
     (global-company-mode))
 #+end_src
+
+yasnippet has the snippets that company mode uses to autocomplete stuff.
 
 #+begin_src emacs-lisp
   (use-package yasnippet
