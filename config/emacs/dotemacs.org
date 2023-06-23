@@ -79,8 +79,23 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
   (use-package evil-tutor)
 #+end_src
 
+** VCS
+
+Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/posts/emacs-git-gutter/][this blog post]]
+
 #+begin_src emacs-lisp
   (use-package magit)
+
+  (use-package git-gutter
+      :hook (prog-mode . git-gutter-mode)
+      :config
+      (setq git-gutter:update-interval 0.02))
+
+  (use-package git-gutter-fringe
+      :config
+      (define-fringe-bitmap 'git-gutter-fr:added [224] nil nil '(center repeated))
+      (define-fringe-bitmap 'git-gutter-fr:modified [224] nil nil '(center repeated))
+      (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240] nil nil 'bottom))
 #+end_src
 
 * UI 💅
@@ -227,6 +242,11 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
 
       "g" '(:ignore t :wk "git")
       "gg" '(magit-status :wk "Magit status")
+      "gn" '(git-gutter:next-hunk :wk "Next hunk")
+      "gp" '(git-gutter:previous-hunk :wk "Previous hunk")
+      "gh" '(:ignore t :wk "git hunk")
+      "ghs" '(git-gutter:stage-hunk :wk "Next hunk")
+      "ghr" '(git-gutter:revert-hunk :wk "Revert hunk")
 
       "p" '(:ignore t :wk "projectile")
       "pp" '(helm-projectile-switch-project :wk "Switch to project")
