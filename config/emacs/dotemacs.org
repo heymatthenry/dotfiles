@@ -142,9 +142,9 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
   (use-package treemacs-evil
     :after (treemacs evil))
 
-  ;; (use-package treemacs-projectile
-  ;;   :after (treemacs projectile)
-  ;;   :ensure t)
+  (use-package treemacs-projectile
+    :after (treemacs projectile)
+    :ensure t)
 
   (use-package treemacs-icons-dired
     :hook (dired-mode . treemacs-icons-dired-enable-once))
@@ -239,5 +239,12 @@ yasnippet has the snippets that company mode uses to autocomplete stuff.
 #+end_src
 
 * TODO Add projectile
+
+#+begin_src emacs-lisp
+  (use-package projectile
+    :config
+    (projectile-mode +1))
+#+end_src
+
 * TODO Add lsp
 * TODO Configure org
