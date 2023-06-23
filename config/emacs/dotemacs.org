@@ -71,6 +71,8 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
     (setq evil-want-keybinding nil)
     (setq evil-vsplit-window-right t)
     (setq evil-split-window-below t)
+    (setq evil-want-minibuffer t)
+
     (evil-mode))
   (use-package evil-collection
     :after evil
