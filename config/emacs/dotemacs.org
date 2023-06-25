@@ -255,6 +255,10 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
       "pf" '(helm-projectile-find-file :wk "Find file in project")
       "pt" '(treemacs :wk "Open project drawer")
       )
+
+    (mh/leader-keys
+      'normal org-mode-map
+      "te" (toggle-emphasis-markers :wk "Toggle display of emphasis markers"))
   )
 #+end_src
 
@@ -330,3 +334,20 @@ yasnippet has the snippets that company mode uses to autocomplete stuff.
 #+end_src
 
 * TODO Configure org
+
+Hide /emphasis/ *markers*. Or =verbatim=. ~Code~. Or +forget the whole thing+
+
+#+begin_src emacs-lisp
+  (defun toggle-emphasis-markers ()
+      (interactive)
+      (setq org-hide-emphasis-markers (not org-hide-emphasis-markers))
+      (font-lock-update))
+#+end_src
+
+#+begin_src emacs-lisp
+  (use-package org-bullets
+    :config
+    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+
+  (setq org-hide-emphasis-markers t)
+#+end_src
