@@ -81,13 +81,22 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
   (use-package evil-tutor)
 #+end_src
 
+#+begin_src emacs-lisp
+(use-package evil-surround
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
+#+end_src
+
 ** VCS
 
 Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/posts/emacs-git-gutter/][this blog post]]
 
 #+begin_src emacs-lisp
   (use-package magit)
+#+end_src
 
+#+begin_src emacs-lisp
   (use-package git-gutter
       :hook (prog-mode . git-gutter-mode)
       :config
@@ -105,18 +114,20 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 ** Fonts
 
 #+begin_src emacs-lisp
-(set-face-attribute 'default nil
-:font "JuliaMono"
-    :height 140
-    :weight 'medium)
-    (set-face-attribute 'variable-pitch nil
-    :font "Source Sans Pro"
-    :height 160
-    :weight 'medium)
-    (set-face-attribute 'fixed-pitch nil
-    :font "JuliaMono"
-    :height 140
-    :weight 'medium)
+  (set-face-attribute 'default nil
+      :font "JuliaMono"
+      :height 140
+      :weight 'medium)
+
+  (set-face-attribute 'variable-pitch nil
+      :font "Source Sans Pro"
+      :height 160
+      :weight 'medium)
+
+  (set-face-attribute 'fixed-pitch nil
+      :font "JuliaMono"
+      :height 140
+      :weight 'medium)
 #+end_src
 
 ** Theme
@@ -188,6 +199,18 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
   (scroll-bar-mode -1)
 #+end_src
 
+** Add frame borders and window dividers
+
+#+begin_src emacs-lisp
+  ;; (dolist (face '(window-divider
+  ;; 		window-divider-first-pixel
+  ;; 		window-divider-last-pixel))
+  ;;   (face-spec-reset-face face)
+  ;;   (set-face-foreground face (face-attribute 'default :background)))
+
+  ;; (set-face-background 'fringe (face-attribute 'default :background))
+#+end_src
+
 * Put the Mac in emacs
 
 #+begin_src emacs-lisp
@@ -210,89 +233,99 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 ** General
 
 #+begin_src emacs-lisp
-  (defun find-in-config-dir ()
-    (interactive)
-    (find-file user-emacs-directory))
+    (defun find-in-config-dir ()
+      (interactive)
+      (find-file user-emacs-directory))
 
-  (defun reload-user-config ()
-    (interactive)
-    (load-file (concat user-emacs-directory "init.el")))
+    (defun reload-user-config ()
+      (interactive)
+      (load-file user-init-file)
+      (load-file user-init-file))
 
-  (use-package general
-    :config
-    (general-evil-setup)
+    (use-package general
+      :config
+      (general-evil-setup)
 
-    ;; set up 'SPC' as the global leader key
-    (general-create-definer mh/leader-keys
-      :states '(normal insert visual emacs)
-      :keymaps 'override
-      :prefix "SPC" ;; set leader
-      :global-prefix "M-SPC") ;; access leader in insert mode
+      ;; set up 'SPC' as the global leader key
+      (general-create-definer mh/leader-keys
+	:states '(normal insert visual emacs)
+	:keymaps 'override
+	:prefix "SPC" ;; set leader
+	:global-prefix "M-SPC") ;; access leader in insert mode
 
-    (mh/leader-keys
-      "b" '(:ignore t :wk "buffer")
-      "bb" '(switch-to-buffer :wk "Switch buffer")
-      "bk" '(kill-this-buffer :wk "Kill this buffer")
-      "bn" '(next-buffer :wk "Next buffer")
-      "bp" '(previous-buffer :wk "Previous buffer")
-      "br" '(revert-buffer :wk "Reload buffer")
+      (mh/leader-keys
+	"b" '(:ignore t :wk "buffer")
+	"bb" '(switch-to-buffer :wk "Switch buffer")
+	"bk" '(kill-this-buffer :wk "Kill this buffer")
+	"bn" '(next-buffer :wk "Next buffer")
+	"bp" '(previous-buffer :wk "Previous buffer")
+	"br" '(revert-buffer :wk "Reload buffer")
 
-      "f" '(:ignore t :wk "find")
-      "ff" '(helm-find-files :wk "Find file")
-      "fp" '(find-in-config-dir :wk "Open personal config")
-      "fr" '(reload-user-config :wk "Reload personal config")
+	"f" '(:ignore t :wk "find")
+	"ff" '(find-file :wk "Find file")
+	"fp" '(find-in-config-dir :wk "Open personal config")
+	"fr" '(reload-user-config :wk "Reload personal config")
 
-      "g" '(:ignore t :wk "git")
-      "gg" '(magit-status :wk "Magit status")
-      "gn" '(git-gutter:next-hunk :wk "Next hunk")
-      "gp" '(git-gutter:previous-hunk :wk "Previous hunk")
-      "gh" '(:ignore t :wk "git hunk")
-      "ghs" '(git-gutter:stage-hunk :wk "Next hunk")
-      "ghr" '(git-gutter:revert-hunk :wk "Revert hunk")
+	"g" '(:ignore t :wk "git")
+	"gg" '(magit-status :wk "Magit status")
+	"gn" '(git-gutter:next-hunk :wk "Next hunk")
+	"gp" '(git-gutter:previous-hunk :wk "Previous hunk")
+	"gh" '(:ignore t :wk "git hunk")
+	"ghs" '(git-gutter:stage-hunk :wk "Stage hunk")
+	"ghr" '(git-gutter:revert-hunk :wk "Revert hunk")
 
-      "p" '(:ignore t :wk "projectile")
-      "pp" '(helm-projectile-switch-project :wk "Switch to project")
-      "pf" '(helm-projectile-find-file :wk "Find file in project")
-      "pt" '(treemacs :wk "Open project drawer")
-      )
+	"p" '(:ignore t :wk "projectile")
+	"pp" '(projectile-switch-project :wk "Switch to project")
+	"pf" '(projectile-find-file :wk "Find file in project")
+	"pt" '(treemacs :wk "Open project drawer")
+	)
 
-    (mh/leader-keys
-      'normal org-mode-map
-      "te" (toggle-emphasis-markers :wk "Toggle display of emphasis markers"))
-  )
+      (mh/leader-keys
+	'normal org-mode-map
+	"te" '(toggle-emphasis-markers :wk "Toggle display of emphasis markers"))
+    )
 #+end_src
 
 ** Vanilla keybinds
 
-#+begin_src emacs-lisp
-(global-set-key (kbd "M-x") 'helm-M-x)
-#+end_src
-
 * Snippets and autocomplete
 
-Company is the popup/autocomplete library.
+- Ivy is a completion framework
+- counsel wraps emacs commands in Ivy goodness
+- ivy-rich enables rich descriptions of commands in the minibuffer
 
 #+begin_src emacs-lisp
-  (use-package company
-    :config
-    (global-company-mode))
-#+end_src
+(use-package counsel
+  :after ivy
+  :config (counsel-mode))
 
-yasnippet has the snippets that company mode uses to autocomplete stuff.
+(use-package ivy
+  :bind
+  ;; ivy-resume resumes the last Ivy-based completion.
+  (("C-c C-r" . ivy-resume)
+   ("C-x B" . ivy-switch-buffer-other-window))
+  :custom
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) ")
+  (setq enable-recursive-minibuffers t)
+  :config
+  (ivy-mode))
 
-#+begin_src emacs-lisp
-  (use-package yasnippet
-    :config
-    (yas-global-mode 1))
-  (use-package yasnippet-snippets)
-  (use-package auto-yasnippet)
+(use-package all-the-icons-ivy-rich
+  :ensure t
+  :init (all-the-icons-ivy-rich-mode 1))
 
-#+end_src
-
-#+begin_src emacs-lisp
-  (use-package helm
-    :config
-    (helm-mode 1))
+(use-package ivy-rich
+  :after ivy
+  :ensure t
+  :init (ivy-rich-mode 1) ;; this gets us descriptions in M-x.
+  :custom
+  (ivy-virtual-abbreviate 'full
+   ivy-rich-switch-buffer-align-virtual-buffer t
+   ivy-rich-path-style 'abbrev)
+  :config
+  (ivy-set-display-transformer 'ivy-switch-buffer
+                               'ivy-switch-buffer-transformer))
 #+end_src
 
 * TODO Add projectile
@@ -301,10 +334,6 @@ yasnippet has the snippets that company mode uses to autocomplete stuff.
   (use-package projectile
     :config
     (projectile-mode +1))
-
-  (use-package helm-projectile
-    :config
-    (helm-projectile-on))
 #+end_src
 
 * TODO Add lsp
@@ -329,7 +358,6 @@ yasnippet has the snippets that company mode uses to autocomplete stuff.
     :commands lsp)
 
   (use-package lsp-ui :commands lsp-ui-mode)
-  (use-package helm-lsp :commands helm-lsp-workspace-symbol)
   (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 #+end_src
 
@@ -338,16 +366,42 @@ yasnippet has the snippets that company mode uses to autocomplete stuff.
 Hide /emphasis/ *markers*. Or =verbatim=. ~Code~. Or +forget the whole thing+
 
 #+begin_src emacs-lisp
-  (defun toggle-emphasis-markers ()
-      (interactive)
-      (setq org-hide-emphasis-markers (not org-hide-emphasis-markers))
-      (font-lock-update))
+(electric-indent-mode -1)
 #+end_src
 
 #+begin_src emacs-lisp
-  (use-package org-bullets
-    :config
-    (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
+  (defun toggle-emphasis-markers ()
+    (interactive)
+    (setq org-hide-emphasis-markers (not org-hide-emphasis-markers))
+    (font-lock-update))
+#+end_src
 
-  (setq org-hide-emphasis-markers t)
+#+begin_src emacs-lisp
+  (use-package org-modern
+    :config
+ [[file:~/Code/dotfiles/config/emacs/dotemacs.org::*Configure org][Configure org]]   (global-org-modern-mode))
+
+  (setq
+   ;; Edit settings
+   org-auto-align-tags nil
+   org-tags-column 0
+   org-catch-invisible-edits 'show-and-error
+   org-special-ctrl-a/e t
+   org-insert-heading-respect-content t
+
+   ;; Org styling, hide markup etc.
+   org-hide-emphasis-markers t
+   org-pretty-entities t
+   org-ellipsis "…"
+
+   ;; Agenda styling
+   org-agenda-tags-column 0
+   org-agenda-block-separator ?─
+   org-agenda-time-grid
+   '((daily today require-timed)
+     (800 1000 1200 1400 1600 1800 2000)
+     " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
+   org-agenda-current-time-string
+   "⭠ now ─────────────────────────────────────────────────")
+  
 #+end_src
