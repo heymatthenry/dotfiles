@@ -3,6 +3,32 @@
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 
+* Contents :TOC:
+- [[#mission-critical][Mission critical]]
+  - [[#load-elpaca-for-package-management][Load elpaca for package management]]
+  - [[#configure-elpaca-to-use-use-package][Configure elpaca to use ~use-package~]]
+  - [[#evil-][Evil 🤘]]
+  - [[#vcs][VCS]]
+- [[#ui-][UI 💅]]
+  - [[#fonts][Fonts]]
+  - [[#theme][Theme]]
+  - [[#pretty-icons][Pretty icons]]
+  - [[#file-drawer][File drawer]]
+  - [[#modeline][Modeline]]
+  - [[#remove-ui-cruft][Remove UI cruft]]
+  - [[#add-frame-borders-and-window-dividers][Add frame borders and window dividers]]
+- [[#put-the-mac-in-emacs][Put the Mac in emacs]]
+- [[#keybindings][Keybindings]]
+  - [[#which-key][Which-Key]]
+  - [[#general][General]]
+  - [[#vanilla-keybinds][Vanilla keybinds]]
+- [[#snippets-and-autocomplete][Snippets and autocomplete]]
+- [[#add-projectile][Add projectile]]
+- [[#add-lsp][Add lsp]]
+  - [[#language-configuration][Language configuration]]
+  - [[#lsp][LSP]]
+- [[#configure-org][Configure org]]
+
 * Mission critical
 
 ** Load elpaca for package management
@@ -375,6 +401,16 @@ Hide /emphasis/ *markers*. Or =verbatim=. ~Code~. Or +forget the whole thing+
     (setq org-hide-emphasis-markers (not org-hide-emphasis-markers))
     (font-lock-update))
 #+end_src
+
+*** Enable TOC 
+
+#+begin_src emacs-lisp
+(use-package toc-org
+    :commands toc-org-enable
+    :init (add-hook 'org-mode-hook 'toc-org-enable)) 
+#+end_src
+
+*** Add ~org-modern~ and associated styles
 
 #+begin_src emacs-lisp
   (use-package org-modern
