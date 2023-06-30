@@ -415,7 +415,7 @@ Hide /emphasis/ *markers*. Or =verbatim=. ~Code~. Or +forget the whole thing+
 #+begin_src emacs-lisp
   (use-package org-modern
     :config
- [[file:~/Code/dotfiles/config/emacs/dotemacs.org::*Configure org][Configure org]]   (global-org-modern-mode))
+    (global-org-modern-mode))
 
   (setq
    ;; Edit settings
