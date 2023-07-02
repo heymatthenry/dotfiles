@@ -91,20 +91,27 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
 ** Evil 🤘
 
 #+begin_src emacs-lisp
-  (use-package evil
-    :init      ;; tweak evil's configuration before loading it
-    (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
-    (setq evil-want-keybinding nil)
-    (setq evil-vsplit-window-right t)
-    (setq evil-split-window-below t)
-    (setq evil-want-minibuffer t)
+(use-package evil
+  :init      ;; tweak evil's configuration before loading it
+  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+  (setq evil-want-keybinding nil)
+  (setq evil-vsplit-window-right t)
+  (setq evil-split-window-below t)
+  (setq evil-want-minibuffer t)
 
-    (evil-mode))
-  (use-package evil-collection
-    :after evil
-    :config
-    (evil-collection-init))
-  (use-package evil-tutor)
+  (with-eval-after-load 'evil-maps
+(define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line))
+
+  (evil-mode))
+
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init))
+(use-package evil-tutor)
 #+end_src
 
 #+begin_src emacs-lisp
