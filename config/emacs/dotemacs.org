@@ -316,8 +316,18 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
       (mh/leader-keys
 	'normal org-mode-map
 	"te" '(toggle-emphasis-markers :wk "Toggle display of emphasis markers"))
-    )
+
+      (general-define-key
+	 "M-C-f" 'toggle-frame-fullscreen)
+  )
 #+end_src
+
+#+begin_src emacs-lisp
+(with-eval-after-load 'evil-maps
+  (define-key evil-motion-state-map (kbd "SPC") nil)
+  (define-key evil-motion-state-map (kbd "RET") nil)
+  (define-key evil-motion-state-map (kbd "TAB") nil))
+#+end_src 
 
 ** Vanilla keybinds
 
