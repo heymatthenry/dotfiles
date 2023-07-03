@@ -16,7 +16,6 @@
   - [[#file-drawer][File drawer]]
   - [[#modeline][Modeline]]
   - [[#remove-ui-cruft][Remove UI cruft]]
-  - [[#add-frame-borders-and-window-dividers][Add frame borders and window dividers]]
 - [[#put-the-mac-in-emacs][Put the Mac in emacs]]
 - [[#keybindings][Keybindings]]
   - [[#which-key][Which-Key]]
@@ -28,6 +27,7 @@
   - [[#language-configuration][Language configuration]]
   - [[#lsp][LSP]]
 - [[#configure-org][Configure org]]
+  - [[#directory-setup][Directory setup]]
 
 * Mission critical
 
@@ -364,7 +364,7 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
                                'ivy-switch-buffer-transformer))
 #+end_src
 
-* TODO Add projectile
+* Add projectile
 
 #+begin_src emacs-lisp
   (use-package projectile
@@ -414,6 +414,11 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 #+begin_src emacs-lisp
 (electric-indent-mode -1)
 #+end_src
+
+*** Hide emphasis markers
+
+This is just a utility function to toggle empasis markers. It can be nice to look at an org file with the markers hidden, but also kind of a pain to edit them.
+Hide /emphasis/ *markers*. Or =verbatim=. ~Code~. Or +forget the whole thing+
 
 #+begin_src emacs-lisp
   (defun toggle-emphasis-markers ()
