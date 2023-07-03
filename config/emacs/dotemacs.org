@@ -399,7 +399,17 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 
 * TODO Configure org
 
-Hide /emphasis/ *markers*. Or =verbatim=. ~Code~. Or +forget the whole thing+
+** Directory setup
+
+#+begin_src emacs-lisp
+  (setq org-directory "~/org")
+  (setq org-agenda-files (list org-directory))
+  (setq org-default-notes-file (concat org-directory "/notes.org"))
+ #+end_src
+
+  #+begin_src emacs-lisp
+  (setq org-return-follows-link t)
+#+end_src
 
 #+begin_src emacs-lisp
 (electric-indent-mode -1)
