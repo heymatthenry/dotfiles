@@ -285,7 +285,8 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 	"f" '(:ignore t :wk "find")
 	"ff" '(find-file :wk "Find file")
 	"fp" '(find-in-config-dir :wk "Open personal config")
-	"fr" '(reload-user-config :wk "Reload personal config")
+	"fc" '(reload-user-config :wk "Reload personal config")
+	"fr" '(counsel-recentf :wk "Find recent files")
 
 	"g" '(:ignore t :wk "git")
 	"gg" '(magit-status :wk "Magit status")
@@ -294,6 +295,10 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 	"gh" '(:ignore t :wk "git hunk")
 	"ghs" '(git-gutter:stage-hunk :wk "Stage hunk")
 	"ghr" '(git-gutter:revert-hunk :wk "Revert hunk")
+
+	"o" '(:ignore o :wk "Org mode")
+	"oo" '((lambda () (interactive) (find-file "~/org/notes.org")) :wk "Org mode")
+	"ot" '(org-todo :wk "Change todo item state")
 
 	"p" '(:ignore t :wk "projectile")
 	"pp" '(projectile-switch-project :wk "Switch to project")
