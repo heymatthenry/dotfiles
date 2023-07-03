@@ -232,18 +232,6 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
   (scroll-bar-mode -1)
 #+end_src
 
-** Add frame borders and window dividers
-
-#+begin_src emacs-lisp
-  ;; (dolist (face '(window-divider
-  ;; 		window-divider-first-pixel
-  ;; 		window-divider-last-pixel))
-  ;;   (face-spec-reset-face face)
-  ;;   (set-face-foreground face (face-attribute 'default :background)))
-
-  ;; (set-face-background 'fringe (face-attribute 'default :background))
-#+end_src
-
 * Put the Mac in emacs
 
 #+begin_src emacs-lisp
