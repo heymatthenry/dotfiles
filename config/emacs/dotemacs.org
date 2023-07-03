@@ -459,5 +459,13 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
      " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
    org-agenda-current-time-string
    "⭠ now ─────────────────────────────────────────────────")
-  
+
+#+end_src
+
+#+begin_src emacs-lisp
+  (global-display-line-numbers-mode 1)
+  (global-visual-line-mode t)
+
+  (add-hook 'treemacs-mode-hook (lambda() (display-line-numbers-mode -1)))
+  (add-hook 'org-mode-hook (lambda() (display-line-numbers-mode -1)))
 #+end_src
