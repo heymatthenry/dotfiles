@@ -22,12 +22,16 @@
   - [[#general][General]]
   - [[#vanilla-keybinds][Vanilla keybinds]]
 - [[#snippets-and-autocomplete][Snippets and autocomplete]]
-- [[#add-projectile][Add projectile]]
-- [[#add-lsp][Add lsp]]
+- [[#projectile][Projectile]]
+- [[#ide-features][IDE Features]]
   - [[#language-configuration][Language configuration]]
+  - [[#treesitter][Treesitter]]
   - [[#lsp][LSP]]
-- [[#configure-org][Configure org]]
+  - [[#configure-formatters-eslint-etc][Configure formatters (eslint, etc.)]]
+  - [[#add-emmet][Add emmet]]
+- [[#org-mode][Org Mode]]
   - [[#directory-setup][Directory setup]]
+  - [[#appearance][Appearance]]
 
 * Mission critical
 
@@ -364,7 +368,8 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
                                'ivy-switch-buffer-transformer))
 #+end_src
 
-* Add projectile
+
+* Projectile
 
 #+begin_src emacs-lisp
   (use-package projectile
@@ -372,32 +377,73 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
     (projectile-mode +1))
 #+end_src
 
-* TODO Add lsp
+* IDE Features
 
 ** Language configuration
 
 #+begin_src emacs-lisp
   (use-package web-mode)
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+  (use-package typescript-mode
+    :ensure t
+    :hook (typescript-mode . lsp-deferred)
+    :config
+      (setq typescript-indent-level 2))
+
+
+  (use-package rust-mode
+    :config
+      (setq rust-indent-level 2))
+#+end_src
+
+** Treesitter
+
+#+begin_src emacs-lisp
+  (use-package tree-sitter-langs)
+  (use-package tree-sitter
+    :init
+    (global-tree-sitter-mode)
+    (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 #+end_src
 
 ** LSP
 
 #+begin_src emacs-lisp
-  (use-package lsp-mode
-    :init
-    (setq lsp-keymap-prefix "C-c l")
-    :hook ((python-mode . lsp)
-	   (web-mode . lsp)
-
-	   (lsp-mode . lsp-enable-which-key-integration))
-    :commands lsp)
-
-  (use-package lsp-ui :commands lsp-ui-mode)
-  (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+ (use-package flycheck
+    :ensure t
+    :init (global-flycheck-mode)) 
 #+end_src
 
-* TODO Configure org
+#+begin_src emacs-lisp
+    (use-package lsp-mode
+      :init
+      :hook ((python-mode . lsp)
+	     (web-mode . lsp)
+	     (js-mode . lsp)
+	     (js-jsx-mode . lsp)
+	     (javascript-mode . lsp)
+	     (typescript-mode . lsp)
+	     (rust-mode . lsp)
+	     (css-mode . lsp)
+	     (scss-mode . lsp)
+
+	     (lsp-mode . lsp-enable-which-key-integration))
+      :commands lsp)
+
+    (use-package lsp-ui
+      :commands lsp-ui-mode
+      :hook (lsp-mode . lsp-ui-mode))
+
+    (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+    (use-package lsp-ivy)
+#+end_src
+
+** TODO Configure formatters (eslint, etc.)
+
+** TODO Add emmet
+
+* Org Mode
 
 ** Directory setup
 
@@ -414,6 +460,8 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 #+begin_src emacs-lisp
 (electric-indent-mode -1)
 #+end_src
+
+** Appearance
 
 *** Hide emphasis markers
 
@@ -470,7 +518,7 @@ Hide /emphasis/ *markers*. Or =verbatim=. ~Code~. Or +forget the whole thing+
 #+begin_src emacs-lisp
   (global-display-line-numbers-mode 1)
   (global-visual-line-mode t)
-
+  
   (add-hook 'treemacs-mode-hook (lambda() (display-line-numbers-mode -1)))
   (add-hook 'org-mode-hook (lambda() (display-line-numbers-mode -1)))
 #+end_src
