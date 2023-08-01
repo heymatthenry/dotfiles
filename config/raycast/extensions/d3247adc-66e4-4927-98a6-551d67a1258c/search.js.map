@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/search.tsx", "../src/utils.ts"],
+  "sourcesContent": ["import { open } from \"@raycast/api\";\nimport { BASE_URL } from \"./utils\";\n\nexport default async function Main() {\n  await open(BASE_URL + \"search\");\n}\n", "export const BASE_URL = \"https://read.readwise.io/\";\n"],
+  "mappings": "yaAAA,IAAAA,EAAA,GAAAC,EAAAD,EAAA,aAAAE,IAAA,eAAAC,EAAAH,GAAA,IAAAI,EAAqB,wBCAd,IAAMC,EAAW,4BDGxB,eAAOC,GAA8B,CACnC,QAAM,QAAKC,EAAW,QAAQ,CAChC",
+  "names": ["search_exports", "__export", "Main", "__toCommonJS", "import_api", "BASE_URL", "Main", "BASE_URL"]
+}

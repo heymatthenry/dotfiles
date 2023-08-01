@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/open-archive.tsx", "../src/utils.ts"],
+  "sourcesContent": ["import { open } from \"@raycast/api\";\nimport { BASE_URL } from \"./utils\";\n\nexport default async function Archive() {\n  await open(BASE_URL + \"archive\");\n}\n", "export const BASE_URL = \"https://read.readwise.io/\";\n"],
+  "mappings": "yaAAA,IAAAA,EAAA,GAAAC,EAAAD,EAAA,aAAAE,IAAA,eAAAC,EAAAH,GAAA,IAAAI,EAAqB,wBCAd,IAAMC,EAAW,4BDGxB,eAAOC,GAAiC,CACtC,QAAM,QAAKC,EAAW,SAAS,CACjC",
+  "names": ["open_archive_exports", "__export", "Archive", "__toCommonJS", "import_api", "BASE_URL", "Archive", "BASE_URL"]
+}

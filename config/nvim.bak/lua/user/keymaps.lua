@@ -34,10 +34,6 @@ keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
--- NvimTree
-
-keymap("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
-
 -- which-key config
 require("which-key").setup {}
 local wk = require("which-key")

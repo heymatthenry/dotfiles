@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/open-later.tsx", "../src/utils.ts"],
+  "sourcesContent": ["import { open } from \"@raycast/api\";\nimport { BASE_URL } from \"./utils\";\n\nexport default async function Later() {\n  await open(BASE_URL + \"later\");\n}\n", "export const BASE_URL = \"https://read.readwise.io/\";\n"],
+  "mappings": "yaAAA,IAAAA,EAAA,GAAAC,EAAAD,EAAA,aAAAE,IAAA,eAAAC,EAAAH,GAAA,IAAAI,EAAqB,wBCAd,IAAMC,EAAW,4BDGxB,eAAOC,GAA+B,CACpC,QAAM,QAAKC,EAAW,OAAO,CAC/B",
+  "names": ["open_later_exports", "__export", "Later", "__toCommonJS", "import_api", "BASE_URL", "Later", "BASE_URL"]
+}

@@ -1,0 +1,1 @@
+("~/Code/dotfiles/" "~/Code/18F/FAC/" "~/Code/learning/rust/fem-rust/" "~/Code/18F/FAC-transition-site/" "~/Code/learning/ts-in-50-lessons/" "~/Code/learning/rust/rustlings/" "~/Code/learning/python-for-ds/" "~/Code/projects/muzzel/" "~/Code/learning/epic-react/advanced-react-hooks/" "/opt/homebrew/")
