@@ -548,6 +548,8 @@ Hide /emphasis/ *markers*. Or =verbatim=. ~Code~. Or +forget the whole thing+
 #+end_src
 
 #+begin_src emacs-lisp
-    (server-start)
-    (require 'org-protocol)
+  (require 'server)
+    (or (server-running-p)
+  (server-start))
+  (require 'org-protocol)
 #+end_src
