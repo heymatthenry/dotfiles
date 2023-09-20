@@ -114,9 +114,9 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
       (define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
       (define-key evil-normal-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
       (define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
-      (define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line))
+      (define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
 
-      (define-key evil-normal-state-map "P" 'counsel-yank-pop)
+      (define-key evil-normal-state-map "P" 'counsel-yank-pop))
 
     (evil-mode))
 
