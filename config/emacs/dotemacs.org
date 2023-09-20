@@ -32,6 +32,7 @@
 - [[#org-mode][Org Mode]]
   - [[#directory-setup][Directory setup]]
   - [[#appearance][Appearance]]
+- [[#terminal-support][Terminal support]]
 
 * Mission critical
 
@@ -316,6 +317,9 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 	"pp" '(projectile-switch-project :wk "Switch to project")
 	"pf" '(projectile-find-file :wk "Find file in project")
 	"pt" '(treemacs :wk "Open project drawer")
+
+	"t" '(:ignore t :wk "terminal")
+	"tt" '(multi-vterm-dedicated-toggle :wk "Toggle terminal")
 	)
 
       (mh/leader-keys
@@ -552,4 +556,49 @@ Hide /emphasis/ *markers*. Or =verbatim=. ~Code~. Or +forget the whole thing+
     (or (server-running-p)
   (server-start))
   (require 'org-protocol)
+#+end_src
+
+* Terminal support
+
+If one of the supposed benefits of emacs is that I don't have to context-switch out of it for most things, I'm going to need some way of easily working with terminals. I haven't loved the built-in options for doing that so I'll try vterm.
+
+#+begin_src emacs-lisp
+  (use-package vterm)
+
+  (use-package multi-vterm
+
+	  :config
+	  (add-hook 'vterm-mode-hook
+			  (lambda ()
+			  (setq-local evil-insert-state-cursor 'box)
+			  (evil-insert-state)))
+	  (define-key vterm-mode-map [return]                      #'vterm-send-return)
+
+	  (setq vterm-keymap-exceptions nil)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-e")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-f")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-a")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-v")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-b")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-w")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-u")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-d")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-n")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-m")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-p")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-j")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-k")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-r")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-t")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-g")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-c")      #'vterm--self-insert)
+	  (evil-define-key 'insert vterm-mode-map (kbd "C-SPC")    #'vterm--self-insert)
+	  (evil-define-key 'normal vterm-mode-map (kbd "C-d")      #'vterm--self-insert)
+	  (evil-define-key 'normal vterm-mode-map (kbd ",c")       #'multi-vterm)
+	  (evil-define-key 'normal vterm-mode-map (kbd ",n")       #'multi-vterm-next)
+	  (evil-define-key 'normal vterm-mode-map (kbd ",p")       #'multi-vterm-prev)
+	  (evil-define-key 'normal vterm-mode-map (kbd "i")        #'evil-insert-resume)
+	  (evil-define-key 'normal vterm-mode-map (kbd "o")        #'evil-insert-resume)
+	  (evil-define-key 'normal vterm-mode-map (kbd "<return>") #'evil-insert-resume))
+
 #+end_src
