@@ -124,6 +124,7 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
     :after evil
     :config
     (evil-collection-init))
+
   (use-package evil-tutor)
 #+end_src
 
@@ -208,25 +209,26 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 ** File drawer
 
 #+begin_src emacs-lisp
-  (use-package treemacs
-    :ensure t
-    :defer t
-    :config
-    (progn
-      (setq treemacs-position 'right)))
+    (use-package treemacs
+      :ensure t
+      :defer t
+      :config
 
-  (use-package treemacs-evil
-    :after (treemacs evil))
+      (progn
+	(setq treemacs-position 'right)))
 
-  (use-package treemacs-projectile
-    :after (treemacs projectile)
-    :ensure t)
+    (use-package treemacs-evil
+      :after (treemacs evil))
 
-  (use-package treemacs-icons-dired
-    :hook (dired-mode . treemacs-icons-dired-enable-once))
+    (use-package treemacs-projectile
+      :after (treemacs projectile)
+      :ensure t)
 
-  (use-package treemacs-magit
-    :after (treemacs magit))
+    (use-package treemacs-icons-dired
+      :hook (dired-mode . treemacs-icons-dired-enable-once))
+
+    (use-package treemacs-magit
+      :after (treemacs magit))
 #+end_src
 
 ** Modeline
