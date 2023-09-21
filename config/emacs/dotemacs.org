@@ -10,6 +10,7 @@
   - [[#evil-][Evil 🤘]]
   - [[#vcs][VCS]]
 - [[#ui-][UI 💅]]
+  - [[#startup-screen][Startup screen]]
   - [[#fonts][Fonts]]
   - [[#theme][Theme]]
   - [[#pretty-icons][Pretty icons]]
@@ -157,6 +158,29 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 #+end_src
 
 * UI 💅
+
+** Startup screen
+
+#+begin_src emacs-lisp
+  (use-package dashboard
+    :config
+    (dashboard-setup-startup-hook))
+
+  (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
+  (setq dashboard-items '((recents  . 5)
+			  (bookmarks . 5)
+			  (projects . 5)
+			  (agenda . 5)
+			  (registers . 5)))
+
+  (setq dashboard-icon-type 'all-the-icons)
+  (setq dashboard-set-heading-icons t)
+  (setq dashboard-set-file-icons t)
+
+  (setq dashboard-set-navigator t)
+
+  (setq dashboard-projects-switch-function 'counsel-projectile-switch-project-by-name)
+#+end_src
 
 ** Fonts
 
@@ -365,6 +389,8 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 (use-package counsel
   :after ivy
   :config (counsel-mode))
+
+(use-package counsel-projectile)
 
 (use-package ivy
   :bind
