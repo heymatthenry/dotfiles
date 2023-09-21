@@ -130,10 +130,13 @@ This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github 
 #+end_src
 
 #+begin_src emacs-lisp
-(use-package evil-surround
-  :ensure t
-  :config
-  (global-evil-surround-mode 1))
+  (use-package evil-surround
+    :config
+    (global-evil-surround-mode 1))
+
+  (use-package evil-commentary
+    :config
+    (evil-commentary-mode))
 #+end_src
 
 ** VCS
