@@ -34,6 +34,7 @@
   - [[#directory-setup][Directory setup]]
   - [[#appearance][Appearance]]
 - [[#terminal-support][Terminal support]]
+- [[#pdfs][PDFs]]
 
 * Mission critical
 
@@ -614,4 +615,10 @@ If one of the supposed benefits of emacs is that I don't have to context-switch 
 	  (define-key vterm-mode-map [return] #'vterm-send-return)
 	  (setq multi-vterm-dedicated-window-height 15)
 	  (setq vterm-keymap-exceptions nil))
+#+end_src
+
+* PDFs
+
+#+begin_src emacs-lisp
+  (use-package pdf-tools)
 #+end_src
