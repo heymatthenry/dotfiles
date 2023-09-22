@@ -541,6 +541,8 @@ Hide /emphasis/ *markers*. Or =verbatim=. ~Code~. Or +forget the whole thing+
   
   (add-hook 'treemacs-mode-hook (lambda() (display-line-numbers-mode -1)))
   (add-hook 'org-mode-hook (lambda() (display-line-numbers-mode -1)))
+  (add-hook 'vterm-mode-hook (lambda() (display-line-numbers-mode -1)))
+  (add-hook 'pdf-view-mode-hook (lambda() (display-line-numbers-mode -1)))
 #+end_src
 
 #+begin_src emacs-lisp
