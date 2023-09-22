@@ -6,7 +6,7 @@
 * Contents :TOC:
 - [[#mission-critical][Mission critical]]
   - [[#load-elpaca-for-package-management][Load elpaca for package management]]
-  - [[#configure-elpaca-to-use-use-package][Configure elpaca to use ~use-package~]]
+  - [[#load-path][Load ~$PATH~]]
   - [[#evil-][Evil 🤘]]
   - [[#vcs][VCS]]
 - [[#ui-][UI 💅]]
@@ -38,62 +38,18 @@
 
 * Mission critical
 
+#+begin_src emacs-lisp
+  (add-to-list 'load-path
+	       (expand-file-name "lib" user-emacs-directory)) 
+#+end_src
+
 ** Load elpaca for package management
 
-This comes directly from [[https://github.com/progfolio/elpaca][Elpaca's github repo]]
-
 #+begin_src emacs-lisp
-  (defvar elpaca-installer-version 0.4)
-  (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
-  (defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
-  (defvar elpaca-repos-directory (expand-file-name "repos/" elpaca-directory))
-  (defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git"
-				 :ref nil
-				 :files (:defaults (:exclude "extensions"))
-				 :build (:not elpaca--activate-package)))
-  (let* ((repo  (expand-file-name "elpaca/" elpaca-repos-directory))
-	  (build (expand-file-name "elpaca/" elpaca-builds-directory))
-	  (order (cdr elpaca-order))
-	  (default-directory repo))
-    (add-to-list 'load-path (if (file-exists-p build) build repo))
-    (unless (file-exists-p repo)
-      (make-directory repo t)
-      (when (< emacs-major-version 28) (require 'subr-x))
-      (condition-case-unless-debug err
-	   (if-let ((buffer (pop-to-buffer-same-window "*elpaca-bootstrap*"))
-		    ((zerop (call-process "git" nil buffer t "clone"
-					  (plist-get order :repo) repo)))
-		    ((zerop (call-process "git" nil buffer t "checkout"
-					  (or (plist-get order :ref) "--"))))
-		    (emacs (concat invocation-directory invocation-name))
-		    ((zerop (call-process emacs nil buffer nil "-Q" "-L" "." "--batch"
-					  "--eval" "(byte-recompile-directory \".\" 0 'force)")))
-		    ((require 'elpaca))
-		    ((elpaca-generate-autoloads "elpaca" repo)))
-	       (kill-buffer buffer)
-	     (error "%s" (with-current-buffer buffer (buffer-string))))
-	 ((error) (warn "%s" err) (delete-directory repo 'recursive))))
-    (unless (require 'elpaca-autoloads nil t)
-      (require 'elpaca)
-      (elpaca-generate-autoloads "elpaca" repo)
-      (load "./elpaca-autoloads")))
-  (add-hook 'after-init-hook #'elpaca-process-queues)
-  (elpaca `(,@elpaca-order))
+(require 'load-and-configure-elpaca)
 #+end_src
 
-** Configure elpaca to use ~use-package~
-
-#+begin_src emacs-lisp
-  ;; Install use-package support
-(elpaca elpaca-use-package
-  ;; Enable :elpaca use-package keyword.
-  (elpaca-use-package-mode)
-  ;; Assume :elpaca t unless otherwise specified.
-  (setq elpaca-use-package-by-default t))
-
-;; Block until current queue processed.
-(elpaca-wait)
-#+end_src
+** Load ~$PATH~
 
 #+begin_src emacs-lisp
   (use-package exec-path-from-shell
