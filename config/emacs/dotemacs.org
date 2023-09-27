@@ -401,14 +401,42 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 ** Language configuration
 
 #+begin_src emacs-lisp
-  (use-package web-mode)
-  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+    (use-package web-mode)
+    (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
-  (use-package typescript-mode
-    :ensure t
-    :hook (typescript-mode . lsp-deferred)
-    :config
+    (use-package typescript-mode
+      :ensure t
+      :hook (typescript-mode . lsp-deferred)
+      :config
       (setq typescript-indent-level 2))
+
+    (use-package racket-mode
+      :hook (racket-mode . racket-xp-mode))
+
+    (use-package rainbow-delimiters
+      :hook
+      ((racket-mode . rainbow-delimiters-mode)
+       (racket-repl-mode . rainbow-delimiters-mode))
+       (emacs-lisp-mode . rainbow-delimiters-mode))
+
+    (use-package paredit
+      :hook
+      ((racket-mode . paredit-mode)
+       (racket-repl-mode . paredit-mode)))
+
+    (add-hook 'racket-repl-mode-hook
+	    (lambda ()
+	      (define-key racket-repl-mode-map (kbd "M-RET") 'racket-repl-submit)))
+
+    ;; (use-package astro-ts-mode
+    ;;   :pin melpa)
+
+    ;; (setq treesit-language-source-alist
+    ;;       '((astro "https://github.com/virchau13/tree-sitter-astro")
+    ;; 	(css "https://github.com/tree-sitter/tree-sitter-css")
+    ;; 	(tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")))
+
+    ;; (mapc #'treesit-install-language-grammar '(astro css tsx))
 #+end_src
 
 ** Treesitter
@@ -430,27 +458,47 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 #+end_src
 
 #+begin_src emacs-lisp
-    (use-package lsp-mode
-      :init
-      :hook ((python-mode . lsp)
-	     (web-mode . lsp)
-	     (js-mode . lsp)
-	     (js-jsx-mode . lsp)
-	     (javascript-mode . lsp)
-	     (typescript-mode . lsp)
-	     (rust-mode . lsp)
-	     (css-mode . lsp)
-	     (scss-mode . lsp)
+  (use-package lsp-mode
+    :init
+    :hook ((python-mode . lsp)
+	   (web-mode . lsp)
+	   (js-mode . lsp)
+	   (js-jsx-mode . lsp)
+	   (javascript-mode . lsp)
+	   (typescript-mode . lsp)
+	   (rust-mode . lsp)
+	   (css-mode . lsp)
+	   (scss-mode . lsp)
+	   (racket-mode . lsp)
 
-	     (lsp-mode . lsp-enable-which-key-integration))
-      :commands lsp)
+	   (lsp-mode . lsp-enable-which-key-integration))
+    :commands lsp)
 
-    (use-package lsp-ui
-      :commands lsp-ui-mode
-      :hook (lsp-mode . lsp-ui-mode))
+  (use-package lsp-ui
+    :commands lsp-ui-mode
+    :hook (lsp-mode . lsp-ui-mode))
 
-    (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
-    (use-package lsp-ivy)
+  (use-package lsp-treemacs 
+    :after lsp 
+    :commands lsp-treemacs-errors-list)
+
+  (use-package lsp-ivy)
+#+end_src
+
+#+begin_src emacs-lisp
+(use-package company
+  :after lsp-mode
+  :hook (prog-mode . company-mode)
+  :bind (:map company-active-map
+         ("<tab>" . company-complete-selection))
+        (:map lsp-mode-map
+         ("<tab>" . company-indent-or-complete-common))
+  :custom
+  (company-minimum-prefix-length 1)
+  (company-idle-delay 0.0))
+
+(use-package company-box
+  :hook (company-mode . company-box-mode))
 #+end_src
 
 #+begin_src emacs-lisp
