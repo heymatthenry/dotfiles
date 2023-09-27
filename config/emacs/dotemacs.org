@@ -264,71 +264,71 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 ** General
 
 #+begin_src emacs-lisp
-    (defun find-in-config-dir ()
-      (interactive)
-      (find-file user-emacs-directory))
+  (defun open-user-config ()
+    (interactive)
+    (load-file (concat user-emacs-directory "dotemacs.org")))
 
-    (defun reload-user-config ()
-      (interactive)
-      (load-file user-init-file)
-      (load-file user-init-file))
+  (defun reload-user-config ()
+    (interactive)
+    (load-file user-init-file)
+    (load-file user-init-file))
 
-    (use-package general
-      :config
-      (general-evil-setup)
+  (use-package general
+    :config
+    (general-evil-setup)
 
-      ;; set up 'SPC' as the global leader key
-      (general-create-definer mh/leader-keys
-	:states '(normal insert visual emacs)
-	:keymaps 'override
-	:prefix "SPC" ;; set leader
-	:global-prefix "M-SPC") ;; access leader in insert mode
+    ;; set up 'SPC' as the global leader key
+    (general-create-definer mh/leader-keys
+      :states '(normal insert visual emacs)
+      :keymaps 'override
+      :prefix "SPC" ;; set leader
+      :global-prefix "M-SPC") ;; access leader in insert mode
 
-      (mh/leader-keys
-	"b" '(:ignore t :wk "buffer")
-	"bb" '(switch-to-buffer :wk "Switch buffer")
-	"bd" '(kill-this-buffer :wk "Kill this buffer")
-	"bn" '(next-buffer :wk "Next buffer")
-	"bp" '(previous-buffer :wk "Previous buffer")
-	"br" '(revert-buffer :wk "Reload buffer")
+    (mh/leader-keys
+      "b" '(:ignore t :wk "buffer")
+      "bb" '(switch-to-buffer :wk "Switch buffer")
+      "bd" '(kill-this-buffer :wk "Kill this buffer")
+      "bn" '(next-buffer :wk "Next buffer")
+      "bp" '(previous-buffer :wk "Previous buffer")
+      "br" '(revert-buffer :wk "Reload buffer")
 
-	"f" '(:ignore t :wk "find")
-	"ff" '(find-file :wk "Find file")
-	"fj" '(counsel-file-jump :wk "Find file recursively")
-	"fp" '(find-in-config-dir :wk "Open personal config")
-	"fc" '(reload-user-config :wk "Reload personal config")
-	"fr" '(counsel-recentf :wk "Find recent files")
-	"fg" '(counsel-rg :wk "Search for text (ripgrep)")
+      "f" '(:ignore t :wk "find")
+      "ff" '(find-file :wk "Find file")
+      "fj" '(counsel-file-jump :wk "Find file recursively")
+      "fp" '(open-user-config :wk "Open personal config")
+      "fc" '(reload-user-config :wk "Reload personal config")
+      "fr" '(counsel-recentf :wk "Find recent files")
+      "fg" '(counsel-rg :wk "Search for text (ripgrep)")
 
-	"g" '(:ignore t :wk "git")
-	"gg" '(magit-status :wk "Magit status")
-	"gn" '(git-gutter:next-hunk :wk "Next hunk")
-	"gp" '(git-gutter:previous-hunk :wk "Previous hunk")
-	"gh" '(:ignore t :wk "git hunk")
-	"ghs" '(git-gutter:stage-hunk :wk "Stage hunk")
-	"ghr" '(git-gutter:revert-hunk :wk "Revert hunk")
+      "g" '(:ignore t :wk "git")
+      "gg" '(magit-status :wk "Magit status")
+      "gn" '(git-gutter:next-hunk :wk "Next hunk")
+      "gp" '(git-gutter:previous-hunk :wk "Previous hunk")
+      "gh" '(:ignore t :wk "git hunk")
+      "ghs" '(git-gutter:stage-hunk :wk "Stage hunk")
+      "ghr" '(git-gutter:revert-hunk :wk "Revert hunk")
 
-	"o" '(:ignore o :wk "Org mode")
-	"oo" '((lambda () (interactive) (find-file "~/org/notes.org")) :wk "Org mode")
-	"ot" '(org-todo :wk "Change todo item state")
+      "o" '(:ignore o :wk "Org mode")
+      "oo" '((lambda () (interactive) (find-file "~/org/notes.org")) :wk "Org mode")
+      "ot" '(org-todo :wk "Change todo item state")
 
-	"p" '(:ignore t :wk "projectile")
-	"pp" '(projectile-switch-project :wk "Switch to project")
-	"pf" '(projectile-find-file :wk "Find file in project")
-	"pt" '(treemacs :wk "Open project drawer")
+      "p" '(:ignore t :wk "projectile")
+      "pp" '(projectile-switch-project :wk "Switch to project")
+      "pf" '(projectile-find-file :wk "Find file in project")
+      "pt" '(treemacs :wk "Open project drawer")
 
-	"t" '(:ignore t :wk "terminal")
-	"tt" '(multi-vterm-dedicated-toggle :wk "Toggle terminal")
-	"tn" '(multi-vterm :wk "New terminal")
-	)
+      "t" '(:ignore t :wk "terminal")
+      "tt" '(multi-vterm-dedicated-toggle :wk "Toggle terminal")
+      "tn" '(multi-vterm :wk "New terminal")
+      )
 
-      (mh/leader-keys
-	'normal org-mode-map
-	"te" '(toggle-emphasis-markers :wk "Toggle display of emphasis markers"))
+    (mh/leader-keys
+      'normal org-mode-map
+      "te" '(toggle-emphasis-markers :wk "Toggle display of emphasis markers"))
 
-      (general-define-key
-	 "M-C-f" 'toggle-frame-fullscreen)
-  )
+    (general-define-key
+     "M-C-f" 'toggle-frame-fullscreen)
+    )
 #+end_src
 
 #+begin_src emacs-lisp
