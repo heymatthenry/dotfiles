@@ -341,7 +341,7 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 ** Vanilla keybinds
 
 #+begin_src emacs-lisp
-  (global-set-key (kbd "C-`") 'multi-vterm-dedicated-toggle)
+  (global-set-key (kbd "C-`") 'multi-vterm-project)
   (global-set-key (kbd "C-<tab>") 'treemacs)
 #+end_src
 
