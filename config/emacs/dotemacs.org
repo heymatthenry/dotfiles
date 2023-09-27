@@ -7,6 +7,7 @@
 - [[#mission-critical][Mission critical]]
   - [[#load-elpaca-for-package-management][Load elpaca for package management]]
   - [[#load-path][Load ~$PATH~]]
+  - [[#configure-core-emacs-functions][Configure core emacs functions]]
   - [[#evil-][Evil 🤘]]
   - [[#vcs][VCS]]
 - [[#ui-][UI 💅]]
@@ -55,6 +56,16 @@
   (use-package exec-path-from-shell
     :config
     (exec-path-from-shell-initialize))
+#+end_src
+
+** Configure core emacs functions
+
+Don't create backup files clutter and don't ask me about killing processes
+
+#+begin_src emacs-lisp
+  (setq confirm-kill-processes nil	
+	create-lockfiles nil ; don't create .# files (crashes 'npm start')
+	make-backup-files nil)
 #+end_src
 
 ** Evil 🤘
