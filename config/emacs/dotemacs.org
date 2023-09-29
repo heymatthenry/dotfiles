@@ -266,7 +266,7 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 #+begin_src emacs-lisp
   (defun open-user-config ()
     (interactive)
-    (load-file (concat user-emacs-directory "dotemacs.org")))
+    (find-file (concat user-emacs-directory "dotemacs.org")))
 
   (defun reload-user-config ()
     (interactive)
