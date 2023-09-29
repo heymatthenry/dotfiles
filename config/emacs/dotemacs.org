@@ -309,6 +309,7 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
       "ghr" '(git-gutter:revert-hunk :wk "Revert hunk")
 
       "o" '(:ignore o :wk "Org mode")
+      "oj" '(org-journal :wk "New org-journal entry")
       "oo" '((lambda () (interactive) (find-file "~/org/notes.org")) :wk "Org mode")
       "ot" '(org-todo :wk "Change todo item state")
 
@@ -565,10 +566,6 @@ Hide /emphasis/ *markers*. Or =verbatim=. ~Code~. Or +forget the whole thing+
 *** Add ~org-modern~ and associated styles
 
 #+begin_src emacs-lisp
-  (use-package org-modern
-    :config
-    (global-org-modern-mode))
-
   (setq
    ;; Edit settings
    org-auto-align-tags nil
@@ -592,7 +589,24 @@ Hide /emphasis/ *markers*. Or =verbatim=. ~Code~. Or +forget the whole thing+
    org-agenda-current-time-string
    "⭠ now ─────────────────────────────────────────────────")
 
+
+  (add-hook 'org-mode-hook 'org-indent-mode)
 #+end_src
+
+*** Org Journal
+
+#+begin_src emacs-lisp
+(use-package org-journal
+  :ensure t
+  :defer t
+  :init
+  ;; Change default prefix key; needs to be set before loading org-journal
+  (setq org-journal-prefix-key "C-c j ")
+  :config
+  (setq org-journal-dir "~/org/journal/"
+        org-journal-date-format "%A, %d %B %Y"))
+#+end_src
+
 
 Line numbers are good and helpful! Except when they're not!
 
