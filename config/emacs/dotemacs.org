@@ -35,7 +35,7 @@
   - [[#directory-setup][Directory setup]]
   - [[#appearance][Appearance]]
 - [[#terminal-support][Terminal support]]
-- [[#pdfs][PDFs]]
+- [[#pdfs-and-epubs][PDFs and epubs]]
 
 * Mission critical
 
@@ -646,8 +646,12 @@ If one of the supposed benefits of emacs is that I don't have to context-switch 
 	  (setq vterm-keymap-exceptions nil))
 #+end_src
 
-* PDFs
+* PDFs and epubs
 
 #+begin_src emacs-lisp
-  (use-package pdf-tools)
+  (use-package pdf-tools
+    :mode ("\\.pdf\\'" . pdf-view-mode))
+
+  (use-package nov
+    :mode ("\\.epub\\'" . nov-mode))
 #+end_src
