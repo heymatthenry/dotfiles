@@ -46,3 +46,4 @@ config/devcert
 config/karabiner
 config/gh/
 config/iterm2/
+config/emacs/init.el
