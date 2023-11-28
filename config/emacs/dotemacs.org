@@ -1,5 +1,6 @@
 #+TITLE: heymatthenry's emacs config
 #+AUTHOR: matt henry
+#+PROPERTY: header-args:emacs-lisp :exports code :results none :tangle init.el
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 
@@ -270,6 +271,7 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 
   (defun reload-user-config ()
     (interactive)
+    (org-babel-tangle)
     (load-file user-init-file)
     (load-file user-init-file))
 
