@@ -13,6 +13,7 @@
   - [[#vcs][VCS]]
 - [[#ui-][UI 💅]]
   - [[#startup-screen][Startup screen]]
+  - [[#zoom-window][Zoom window]]
   - [[#fonts][Fonts]]
   - [[#theme][Theme]]
   - [[#pretty-icons][Pretty icons]]
@@ -32,6 +33,7 @@
   - [[#lsp][LSP]]
   - [[#configure-formatters-eslint-etc][Configure formatters (eslint, etc.)]]
   - [[#add-emmet][Add emmet]]
+  - [[#docker][Docker]]
 - [[#org-mode][Org Mode]]
   - [[#directory-setup][Directory setup]]
   - [[#appearance][Appearance]]
@@ -52,6 +54,8 @@
 #+end_src
 
 ** Load ~$PATH~
+
+The ~exec-path-from-shell~ package just ensures that emacs knows about the login shell's ~$PATH~. This /shouldn't/ (?) be necessary with the Mac-friendly emacs versions available on homebrew, but either I just didn't know that and installed it when I was troubleshooting something, or the path magic didn't work. I honestly don't remember 🤷‍♂️.
 
 #+begin_src emacs-lisp
   (use-package exec-path-from-shell
@@ -98,6 +102,8 @@ Don't create backup files clutter and don't ask me about killing processes
   (use-package evil-tutor)
 #+end_src
 
+Some plugins from the tpope cinematic universe are in my fingers just as much as core vim commands so these ports are necessary:
+
 #+begin_src emacs-lisp
   (use-package evil-surround
     :config
@@ -110,11 +116,11 @@ Don't create backup files clutter and don't ask me about killing processes
 
 ** VCS
 
-Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/posts/emacs-git-gutter/][this blog post]]
-
 #+begin_src emacs-lisp
   (use-package magit)
 #+end_src
+
+Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/posts/emacs-git-gutter/][this blog post]]
 
 #+begin_src emacs-lisp
   (use-package git-gutter
@@ -154,11 +160,26 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
   (setq dashboard-projects-switch-function 'counsel-projectile-switch-project-by-name)
 #+end_src
 
+** Zoom window
+
+A thing I loved about my old vim+tmux setup was being able to temporarily make a window fullscreen and then return to the previous window configuration.
+
+
+#+begin_src emacs-lisp
+  (defun toggle-zoom-buffer () "Zoom buffer"
+    (interactive)
+    (if (= 1 (length (window-list)))
+        (jump-to-register '_) 
+      (progn
+        (window-configuration-to-register '_)
+        (delete-other-windows))))
+#+end_src
+
 ** Fonts
 
 #+begin_src emacs-lisp
   (set-face-attribute 'default nil
-      :font "JuliaMono"
+      :font "Menlo"
       :height 140
       :weight 'medium)
 
@@ -168,7 +189,7 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
       :weight 'medium)
 
   (set-face-attribute 'fixed-pitch nil
-      :font "JuliaMono"
+      :font "Menlo"
       :height 140
       :weight 'medium)
 #+end_src
@@ -181,14 +202,12 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
     :config
     ;; Global settings (defaults)
     (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-	  doom-themes-enable-italic t) ; if nil, italics is universally disabled
+          doom-themes-enable-italic t) ; if nil, italics is universally disabled
     (load-theme 'doom-moonlight t)
 
     ;; Enable flashing mode-line on errors
     (doom-themes-visual-bell-config)
-    ;; Enable custom neotree theme (all-the-icons must be installed!)
-    (doom-themes-neotree-config)
-    ;; or for treemacs users
+    ;; Enable treemacs theme
     (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
     (doom-themes-treemacs-config)
     ;; Corrects (and improves) org-mode's native fontification.
@@ -293,6 +312,7 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
       "bn" '(next-buffer :wk "Next buffer")
       "bp" '(previous-buffer :wk "Previous buffer")
       "br" '(revert-buffer :wk "Reload buffer")
+      "bz" '(toggle-zoom-buffer :wk "Toggle zoom buffer")
 
       "f" '(:ignore t :wk "find")
       "ff" '(find-file :wk "Find file")
@@ -311,7 +331,7 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
       "ghr" '(git-gutter:revert-hunk :wk "Revert hunk")
 
       "o" '(:ignore o :wk "Org mode")
-      "oj" '(org-journal :wk "New org-journal entry")
+      "oj" '(org-journal-new-entry :wk "New org-journal entry")
       "oo" '((lambda () (interactive) (find-file "~/org/notes.org")) :wk "Org mode")
       "ot" '(org-todo :wk "Change todo item state")
 
@@ -404,42 +424,48 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 ** Language configuration
 
 #+begin_src emacs-lisp
-    (use-package web-mode)
-    (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+  (use-package web-mode)
+  (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
-    (use-package typescript-mode
-      :ensure t
-      :hook (typescript-mode . lsp-deferred)
-      :config
-      (setq typescript-indent-level 2))
+  (use-package typescript-mode
+    :ensure t
+    :hook (typescript-mode . lsp-deferred)
+    :config
+    (setq typescript-indent-level 2))
 
-    (use-package racket-mode
-      :hook (racket-mode . racket-xp-mode))
+  (use-package julia-mode)
 
-    (use-package rainbow-delimiters
-      :hook
-      ((racket-mode . rainbow-delimiters-mode)
-       (racket-repl-mode . rainbow-delimiters-mode))
-       (emacs-lisp-mode . rainbow-delimiters-mode))
+  (use-package julia-snail
+    :hook
+    (julia-mode . julia-snail-mode))
 
-    (use-package paredit
-      :hook
-      ((racket-mode . paredit-mode)
-       (racket-repl-mode . paredit-mode)))
+  (use-package racket-mode
+    :hook (racket-mode . racket-xp-mode))
 
-    (add-hook 'racket-repl-mode-hook
-	    (lambda ()
-	      (define-key racket-repl-mode-map (kbd "M-RET") 'racket-repl-submit)))
+  (use-package rainbow-delimiters
+    :hook
+    ((racket-mode . rainbow-delimiters-mode)
+     (racket-repl-mode . rainbow-delimiters-mode))
+     (emacs-lisp-mode . rainbow-delimiters-mode))
 
-    ;; (use-package astro-ts-mode
-    ;;   :pin melpa)
+  (use-package paredit
+    :hook
+    ((racket-mode . paredit-mode)
+     (racket-repl-mode . paredit-mode)))
 
-    ;; (setq treesit-language-source-alist
-    ;;       '((astro "https://github.com/virchau13/tree-sitter-astro")
-    ;; 	(css "https://github.com/tree-sitter/tree-sitter-css")
-    ;; 	(tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")))
+  (add-hook 'racket-repl-mode-hook
+          (lambda ()
+            (define-key racket-repl-mode-map (kbd "M-RET") 'racket-repl-submit)))
 
-    ;; (mapc #'treesit-install-language-grammar '(astro css tsx))
+  ;; (use-package astro-ts-mode
+  ;;   :pin melpa)
+
+  ;; (setq treesit-language-source-alist
+  ;;       '((astro "https://github.com/virchau13/tree-sitter-astro")
+  ;; 	(css "https://github.com/tree-sitter/tree-sitter-css")
+  ;; 	(tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")))
+
+  ;; (mapc #'treesit-install-language-grammar '(astro css tsx))
 #+end_src
 
 ** Treesitter
@@ -455,9 +481,16 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 ** LSP
 
 #+begin_src emacs-lisp
- (use-package flycheck
-    :ensure t
-    :init (global-flycheck-mode)) 
+   (use-package flycheck
+      :ensure t
+      :init (global-flycheck-mode)) 
+
+   (add-hook
+      'python-mode-hook
+      '(lambda ()
+          (setq flycheck-enabled-checkers '(python-flake8))
+          (setq flycheck-disabled-checkers '(python-mypy))
+          (flycheck-select-checker 'python-flake8)))
 #+end_src
 
 #+begin_src emacs-lisp
@@ -468,6 +501,7 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 	   (js-mode . lsp)
 	   (js-jsx-mode . lsp)
 	   (javascript-mode . lsp)
+	   (julia-mode . lsp)
 	   (typescript-mode . lsp)
 	   (rust-mode . lsp)
 	   (css-mode . lsp)
@@ -522,8 +556,20 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
     (add-hook 'format-all-mode-hook 'format-all-ensure-formatter))
 #+end_src
 
+#+begin_src emacs-lisp
+  (use-package editorconfig
+    :config
+    (editorconfig-mode 1))
+#+end_src
+
 ** TODO Add emmet
 
+** Docker
+
+#+begin_src emacs-lisp
+  (use-package docker
+    :bind ("C-c d" . docker))
+#+end_src
 
 * Org Mode
 
@@ -537,10 +583,6 @@ Doom-style gitgutter config, cribbed entirely from [[https://ianyepan.github.io/
 
   #+begin_src emacs-lisp
   (setq org-return-follows-link t)
-#+end_src
-
-#+begin_src emacs-lisp
-(electric-indent-mode -1)
 #+end_src
 
 ** Appearance
