@@ -69,3 +69,11 @@ end
 
 # Created by `pipx` on 2022-10-27 00:31:26
 set PATH $PATH /Users/matt/.local/bin
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /Users/matt/anaconda3/bin/conda
+    eval /Users/matt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+end
+# <<< conda initialize <<<
+
