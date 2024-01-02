@@ -3,7 +3,9 @@ vim.opt.signcolumn = 'yes'
 
 require('lualine').setup {
   options = {
-    theme = 'tokyonight'
+    theme = 'catppuccin-mocha',
+    section_separators = '',
+    component_separators = ''
   }
 }
 -- require('mh.evilline') 
