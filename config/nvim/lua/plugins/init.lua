@@ -7,5 +7,6 @@ return {
   'tpope/vim-endwise',
   'tpope/vim-vinegar',
 
-  'sam4llis/nvim-lua-gf' -- make `gf` work in lua files
+  'sam4llis/nvim-lua-gf', -- make `gf` work in lua files
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 }
