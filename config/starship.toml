@@ -1,0 +1,2 @@
+[conda]
+format = '[$symbol$environment](dimmed green) '
