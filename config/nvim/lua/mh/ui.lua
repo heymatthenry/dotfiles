@@ -1,5 +1,6 @@
 vim.opt.cursorline = true
 vim.opt.signcolumn = 'yes'
+vim.opt.termguicolors = true
 
 require('lualine').setup {
   options = {
@@ -8,4 +9,3 @@ require('lualine').setup {
     component_separators = ''
   }
 }
--- require('mh.evilline') 
