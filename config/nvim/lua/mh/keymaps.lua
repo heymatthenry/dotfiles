@@ -12,5 +12,7 @@ wk.register({
   g = {
     name = "git",
     g = { '<Cmd>Git<CR>', "open fugitive"}
-  }
+  },
+
+  tt = { "<cmd>Neotree toggle<cr>", "Toggle file drawer" },
 }, { prefix = "<leader>" })
