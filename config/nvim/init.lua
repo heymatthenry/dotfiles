@@ -3,6 +3,8 @@ require('mh.load-plugin-manager')
 local o = vim.opt
 local g = vim.g
 
+vim.g.noswapfile = true
+
 -- Set the behavior of tab
 o.tabstop = 2
 o.shiftwidth = 2
