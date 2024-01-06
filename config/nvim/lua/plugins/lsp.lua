@@ -5,7 +5,6 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-
 local fmt_group = vim.api.nvim_create_augroup('autoformat_cmds', {clear = true})
 
 local function setup_autoformat(event)
@@ -119,6 +118,16 @@ return {
      -- your configuration comes here
      -- or leave it empty to use the default settings
      -- refer to the configuration section below
+    }
   },
-}
+  {
+    'nvimdev/lspsaga.nvim',
+    config = function()
+        require('lspsaga').setup({})
+    end,
+    dependencies = {
+        'nvim-treesitter/nvim-treesitter',
+        'nvim-tree/nvim-web-devicons'
+    }
+  },
 }
