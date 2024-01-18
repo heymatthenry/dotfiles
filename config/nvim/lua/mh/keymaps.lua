@@ -11,7 +11,12 @@ wk.register({
 
 	g = {
 		name = "git",
+		b = { "<Cmd>Gitsigns GitSigns toggle_current_line_blame<CR>", "Toggle blame on current line" },
 		g = { "<Cmd>Git<CR>", "open fugitive" },
+		hs = { "<Cmd>Gitsigns stage_hunk<CR>", "Stage hunk" },
+		hu = { "<Cmd>Gitsigns undo_stage_hunk<CR>", "Unstage hunk" },
+		hp = { "<Cmd>Gitsigns preview_hunk<CR>", "Preview hunk" },
+		hr = { "<Cmd>Gitsigns reset_hunk<CR>", "Reset hunk" },
 	},
 
 	t = {
@@ -32,3 +37,8 @@ wk.register({
 	["["] = { "<Cmd>BufferPrevious<CR>", "Previous Tab" },
 	["]"] = { "<Cmd>BufferPrevious<CR>", "Next Tab" },
 }, { prefix = "<leader>" })
+
+wk.register({
+	["[h"] = { "<Cmd>Gitsigns prev_hunk<CR>", "Jump to previous hunk" },
+	["]h"] = { "<Cmd>Gitsigns next_hunk<CR>", "Jump to next hunk" },
+})
