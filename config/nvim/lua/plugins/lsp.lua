@@ -150,7 +150,10 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				javascript = { { "prettierd", "prettier" } },
-				yaml = { { "prettierd", "prettier" } },
+				javascriptreact = { { "prettierd", "prettier" } },
+				typescript = { { "prettierd", "prettier" } },
+				typescriptreact = { { "prettierd", "prettier" } },
+				-- yaml = { { "prettierd", "prettier" } },
 				rust = { "rustfmt" },
 			},
 			-- Set up format-on-save
