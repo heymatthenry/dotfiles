@@ -53,4 +53,7 @@ wk.register({
 wk.register({
 	["[h"] = { "<Cmd>Gitsigns prev_hunk<CR>", "Jump to previous hunk" },
 	["]h"] = { "<Cmd>Gitsigns next_hunk<CR>", "Jump to next hunk" },
+
+	j = { "gj", "Next visual line" },
+	k = { "gk", "Previous visual line" },
 })
