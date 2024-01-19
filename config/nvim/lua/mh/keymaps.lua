@@ -11,12 +11,24 @@ wk.register({
 
 	g = {
 		name = "git",
-		b = { "<Cmd>Gitsigns GitSigns toggle_current_line_blame<CR>", "Toggle blame on current line" },
+		bl = { "<Cmd>Gitsigns GitSigns toggle_current_line_blame<CR>", "Toggle blame on current line" },
+		br = { "<Cmd>Telescope git_branches<CR>", "Show open branches on current repo" },
 		g = { "<Cmd>Git<CR>", "open fugitive" },
 		hs = { "<Cmd>Gitsigns stage_hunk<CR>", "Stage hunk" },
 		hu = { "<Cmd>Gitsigns undo_stage_hunk<CR>", "Unstage hunk" },
 		hp = { "<Cmd>Gitsigns preview_hunk<CR>", "Preview hunk" },
 		hr = { "<Cmd>Gitsigns reset_hunk<CR>", "Reset hunk" },
+	},
+
+	l = {
+		name = "LSP",
+		d = { "<Cmd>Telescope diagnostics<CR>", "List LSP diagnostics in buffer" },
+	},
+
+	n = {
+		name = "Notes",
+		n = { "<Cmd>ObsidianQuickSwitch<CR>", "Open Obsidian Quick Switcher" },
+		t = { "<Cmd>ObsidianToday<CR>", "Open Today's Daily Note" },
 	},
 
 	t = {
