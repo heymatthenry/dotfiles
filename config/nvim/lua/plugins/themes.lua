@@ -18,11 +18,26 @@ return {
 		priority = 1000,
 		opts = {
 			integrations = {
+				headlines = true,
 				indent_blankline = {
 					enabled = true,
-					scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
-					colored_indent_levels = false,
 				},
+				lsp_trouble = true,
+				mason = true,
+				markdown = true,
+				native_lsp = {
+					enabled = true,
+					underlines = {
+						errors = { "undercurl" },
+						hints = { "undercurl" },
+						warnings = { "undercurl" },
+						information = { "undercurl" },
+					},
+				},
+				telescope = true,
+				treesitter = true,
+				treesitter_context = true,
+				which_key = true,
 			},
 		},
 		config = function()
