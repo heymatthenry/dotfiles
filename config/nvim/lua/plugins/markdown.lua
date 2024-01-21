@@ -68,4 +68,10 @@ return {
 		dependencies = "nvim-treesitter/nvim-treesitter",
 		config = true,
 	},
+	{
+		"tadmccorkle/markdown.nvim",
+		event = "VeryLazy",
+		opts = {},
+	},
+	{ "dkarter/bullets.vim" },
 }
