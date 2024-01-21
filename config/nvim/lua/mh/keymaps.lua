@@ -23,6 +23,12 @@ wk.register({
 	l = {
 		name = "LSP",
 		d = { "<Cmd>Telescope diagnostics<CR>", "List LSP diagnostics in buffer" },
+		r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename all references to the symbol under the cursor" },
+		a = {
+			"<Cmd>lua vim.lsp.buf.code_action()<CR>",
+			"Invoke a code action available at the current cursor position",
+		},
+		gl = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Show diagnostics in a floating window" },
 	},
 
 	n = {
@@ -56,4 +62,18 @@ wk.register({
 
 	j = { "gj", "Next visual line" },
 	k = { "gk", "Previous visual line" },
+
+	K = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Show hover info about symbol under cursor" },
+	gd = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Jump to the definition" },
+	gD = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Jump to declaration" },
+	gi = {
+		"<cmd>lua vim.lsp.buf.implementation()<cr>",
+		"Lists all the implementations for the symbol under the cursor",
+	},
+	go = { "<cmd>lua vim.lsp.buf.type_definition()<cr>", "Jump to the definition of the type symbol" },
+	gr = { "<cmd>lua vim.lsp.buf.references()<cr>", "Lists all the references" },
+	gs = { "<cmd>lua vim.lsp.buf.signature_help()<cr>", "Displays a function's signature information" },
+
+	["[d"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Jump to previous diagnostic" },
+	["]d"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Jump to next diagnostic" },
 })
