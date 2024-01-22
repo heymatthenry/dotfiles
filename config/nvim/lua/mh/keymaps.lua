@@ -53,7 +53,7 @@ wk.register({
 	["<space>"] = { "<cmd>Telescope find_files<cr>", "Find File" },
 	["<tab>"] = { "<cmd>Neotree toggle<cr>", "Toggle file drawer" },
 	["["] = { "<Cmd>BufferPrevious<CR>", "Previous Tab" },
-	["]"] = { "<Cmd>BufferPrevious<CR>", "Next Tab" },
+	["]"] = { "<Cmd>BufferNext<CR>", "Next Tab" },
 }, { prefix = "<leader>" })
 
 wk.register({
