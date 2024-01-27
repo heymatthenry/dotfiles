@@ -29,6 +29,7 @@ wk.register({
 			"Invoke a code action available at the current cursor position",
 		},
 		gl = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Show diagnostics in a floating window" },
+		o = { "<cmd>Outline<CR>", "Toggle outline" },
 	},
 
 	n = {
@@ -63,6 +64,7 @@ wk.register({
 	j = { "gj", "Next visual line" },
 	k = { "gk", "Previous visual line" },
 
+	["@"] = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Show diagnostics in a floating window" },
 	K = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Show hover info about symbol under cursor" },
 	gd = { "<cmd>lua vim.lsp.buf.definition()<cr>", "Jump to the definition" },
 	gD = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Jump to declaration" },
@@ -76,4 +78,6 @@ wk.register({
 
 	["[d"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Jump to previous diagnostic" },
 	["]d"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Jump to next diagnostic" },
+
+	["<tab><tab>"] = { "<cmd>Outline<CR>", "Toggle outline" },
 })

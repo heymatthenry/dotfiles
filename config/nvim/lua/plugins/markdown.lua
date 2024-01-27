@@ -74,4 +74,16 @@ return {
 		opts = {},
 	},
 	{ "dkarter/bullets.vim" },
+	{
+		"folke/zen-mode.nvim",
+		opts = {
+			wezterm = {
+				enabled = false,
+			},
+		},
+	},
+	{
+		"folke/twilight.nvim",
+		opts = {},
+	},
 }

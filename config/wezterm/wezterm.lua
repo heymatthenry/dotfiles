@@ -9,8 +9,10 @@ end)
 return {
 	color_scheme = "Catppuccin Mocha",
 	default_prog = { "/opt/homebrew/bin/tmux" },
+	font = wezterm.font("Fira Code"),
 	font_size = 14,
 	hide_tab_bar_if_only_one_tab = true,
+	native_macos_fullscreen_mode = true,
 	send_composed_key_when_left_alt_is_pressed = false,
 	window_decorations = "RESIZE",
 	window_padding = {

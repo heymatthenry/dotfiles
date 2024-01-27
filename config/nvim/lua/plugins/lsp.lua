@@ -164,6 +164,8 @@ return {
 
 			-- mappings of lspconfig names to mason server names:
 			-- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
+			require("lspconfig").astro.setup({})
+			require("lspconfig").cssls.setup({})
 			require("lspconfig").html.setup({})
 			require("lspconfig").eslint.setup({})
 			require("lspconfig").pyright.setup({})
@@ -183,6 +185,17 @@ return {
 					},
 				},
 			})
+
+			vim.diagnostic.config({
+				signs = {
+					text = {
+						[vim.diagnostic.severity.ERROR] = " ",
+						[vim.diagnostic.severity.WARN] = " ",
+						[vim.diagnostic.severity.INFO] = " ",
+						[vim.diagnostic.severity.HINT] = " ",
+					},
+				},
+			})
 		end,
 	},
 	{
@@ -198,6 +211,7 @@ return {
 				"black",
 				"pyright",
 				-- web
+				"astro-language-server",
 				"eslint-lsp",
 				"html-lsp",
 				"json-lsp",
@@ -276,6 +290,7 @@ return {
 			-- your configuration comes here
 			-- or leave it empty to use the default settings
 			-- refer to the configuration section below
+			use_diagnostic_signs = true,
 		},
 	},
 	{
@@ -294,7 +309,6 @@ return {
 		cmd = { "ConformInfo" },
 		keys = {
 			{
-				-- Customize or remove this keymap to your liking
 				"<leader>lf",
 				function()
 					require("conform").format({ async = true, lsp_fallback = true })
@@ -303,9 +317,7 @@ return {
 				desc = "Format buffer",
 			},
 		},
-		-- Everything in opts will be passed to setup()
 		opts = {
-			-- Define your formatters
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "isort", "black" },
@@ -326,8 +338,17 @@ return {
 			},
 		},
 		init = function()
-			-- If you want the formatexpr, here is the place to set it
 			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 		end,
+	},
+	{
+		{
+			"hedyhli/outline.nvim",
+			lazy = true,
+			cmd = { "Outline", "OutlineOpen" },
+			opts = {
+				-- Your setup opts here
+			},
+		},
 	},
 }
