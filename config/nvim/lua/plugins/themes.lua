@@ -11,7 +11,6 @@ return {
 			-- vim.cmd([[colorscheme tokyonight]])
 		end,
 	},
-
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
@@ -34,6 +33,8 @@ return {
 						information = { "undercurl" },
 					},
 				},
+				noice = true,
+				notify = true,
 				telescope = true,
 				treesitter = true,
 				treesitter_context = true,
