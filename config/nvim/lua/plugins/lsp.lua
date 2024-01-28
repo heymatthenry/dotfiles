@@ -1,17 +1,3 @@
-vim.diagnostic.config({
-	virtual_text = false,
-	severity_sort = true,
-	float = {
-		border = "rounded",
-		source = "always",
-	},
-})
-
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
-
--- / End verbatim cribbing
-
 -- Configure diagnostic display
 
 local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
@@ -24,6 +10,10 @@ end
 return {
 	{
 		"hrsh7th/nvim-cmp",
+		dependencies = {
+			"roobert/tailwindcss-colorizer-cmp.nvim",
+			config = true,
+		},
 		config = function()
 			-- Cribbed more-or-less verbatim from:
 			-- https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/
@@ -48,6 +38,7 @@ return {
 					{ name = "luasnip", keyword_length = 2 },
 				},
 				window = {
+					completion = cmp.config.window.bordered(),
 					documentation = cmp.config.window.bordered(),
 				},
 				formatting = {
@@ -61,7 +52,8 @@ return {
 						}
 
 						item.menu = menu_icon[entry.source.name]
-						return item
+						-- Add in tailwind colors after other cmp configs so they don't clobber them
+						return require("tailwindcss-colorizer-cmp").formatter(entry, item)
 					end,
 				},
 				mapping = {
@@ -115,6 +107,21 @@ return {
 					end, { "i", "s" }),
 				},
 			})
+
+			vim.diagnostic.config({
+				virtual_text = false,
+				severity_sort = true,
+				float = {
+					border = "rounded",
+					source = "always",
+				},
+			})
+
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+			vim.lsp.handlers["textDocument/signatureHelp"] =
+				vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+			-- / End verbatim cribbing
+			--
 		end,
 	},
 	{
@@ -131,6 +138,7 @@ return {
 	},
 	{
 		"L3MON4D3/LuaSnip",
+		dependencies = { "rafamadriz/friendly-snippets" },
 		config = function()
 			require("luasnip.loaders.from_vscode").lazy_load()
 		end,
@@ -164,17 +172,33 @@ return {
 
 			-- mappings of lspconfig names to mason server names:
 			-- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
-			require("lspconfig").astro.setup({})
-			require("lspconfig").cssls.setup({})
-			require("lspconfig").html.setup({})
-			require("lspconfig").eslint.setup({})
-			require("lspconfig").pyright.setup({})
-			require("lspconfig").rust_analyzer.setup({})
-			require("lspconfig").tsserver.setup({})
-
 			local lspconfig = require("lspconfig")
 			local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+			lspconfig.astro.setup({
+				capabilities = lsp_capabilities,
+			})
+			lspconfig.cssls.setup({
+				capabilities = lsp_capabilities,
+			})
+			lspconfig.html.setup({
+				capabilities = lsp_capabilities,
+			})
+			lspconfig.eslint.setup({
+				capabilities = lsp_capabilities,
+			})
+			lspconfig.pyright.setup({
+				capabilities = lsp_capabilities,
+			})
+			lspconfig.rust_analyzer.setup({
+				capabilities = lsp_capabilities,
+			})
+			lspconfig.tsserver.setup({
+				capabilities = lsp_capabilities,
+			})
+			lspconfig.tailwindcss.setup({
+				capabilities = lsp_capabilities,
+			})
 			lspconfig.lua_ls.setup({
 				capabilities = lsp_capabilities,
 				settings = {
@@ -218,6 +242,7 @@ return {
 				"deno",
 				"css-lsp",
 				"prettier",
+				"tailwindcss-language-server",
 				-- rust
 				"rust-analyzer",
 				-- julia
