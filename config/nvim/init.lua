@@ -14,6 +14,8 @@ o.number = true
 
 g.mapleader = " "
 
+o.clipboard = "unnamedplus"
+
 -- Tell Lazy to load everything in the `plugins` dir
 require("lazy").setup("plugins")
 
