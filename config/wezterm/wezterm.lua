@@ -21,4 +21,5 @@ return {
 		top = 0,
 		bottom = 0,
 	},
+	harfbuzz_features = { "zero", "ss02", "ss03", "ss05" }, -- https://github.com/tonsky/FiraCode/wiki/How-to-enable-stylistic-sets
 }
