@@ -6,7 +6,7 @@ return {
 			config = true,
 		},
 		config = function()
-			-- Cribbed more-or-less verbatim from:
+			-- Inspired in large part by:
 			-- https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/
 
 			vim.opt.completeopt = { "menu", "menuone", "noselect" }
@@ -17,6 +17,9 @@ return {
 			local select_opts = { behavior = cmp.SelectBehavior.Select }
 
 			cmp.setup({
+				completion = {
+					completeopt = "menu,menuone,noinsert",
+				},
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)
@@ -150,5 +153,19 @@ return {
 		dependencies = {
 			"hrsh7th/nvim-cmp",
 		},
+	},
+	{
+		"altermo/ultimate-autopair.nvim",
+		event = { "InsertEnter", "CmdlineEnter" },
+		branch = "v0.6", --recomended as each new version will have breaking changes
+		opts = {
+			--Config goes here
+		},
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
 	},
 }
