@@ -55,6 +55,7 @@ wk.register({
 	["<tab>"] = { "<cmd>Neotree toggle<cr>", "Toggle file drawer" },
 	["["] = { "<Cmd>BufferPrevious<CR>", "Previous Tab" },
 	["]"] = { "<Cmd>BufferNext<CR>", "Next Tab" },
+	["/"] = { "<Cmd>noh<CR>", "Clear search highlighting" },
 }, { prefix = "<leader>" })
 
 wk.register({
