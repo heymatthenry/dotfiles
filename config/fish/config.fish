@@ -1,11 +1,5 @@
 if status is-interactive
-# Homebrew >= 3.0 has different paths depending on whether it's an M1 Mac
-    if [ $(uname -m) = arm64 ]
-        set -x HOMEBREW_PATH /opt/homebrew
-    else
-        set -x HOMEBREW_PATH /usr/local
-    end
-
+    set -x HOMEBREW_PATH /opt/homebrew
     set -x MYVIMRC "$HOME/Code/dotfiles/config/nvim/init.lua"
     set -x NODE_HOME "$HOME/local/node/bin"
     set -x CARGO_HOME "$HOME/.cargo/bin"
@@ -17,13 +11,18 @@ if status is-interactive
     set -x PATH "/opt/local/bin:/usr/local/bin:/usr/local/sbin:$PATH"
     set -gx PATH $HOME/bin $HOMEBREW_PATH/bin $CARGO_HOME/bin $NODE_HOME/bin $LLVM_HOME $PATH
 
+    atuin init fish | source
+    direnv export fish | source
+
+    set --universal nvm_default_version lts/*
+
 # Aliases
 
 # git aliases
     alias gc "git commit"
     alias ga "git add"
     alias gac "git commit -am"
-    alias gst "git status --ignore-submodules dirty"
+    alias gst "git status"
     alias push "git push"
     alias pull "git pull"
     alias gb "git branch"
@@ -63,17 +62,7 @@ if status is-interactive
     set -g fish_pager_color_prefix $cyan
     set -g fish_pager_color_completion $foreground
     set -g fish_pager_color_description $comment
-
-    starship init fish | source
 end
 
 # Created by `pipx` on 2022-10-27 00:31:26
 set PATH $PATH /Users/matt/.local/bin
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /Users/matt/anaconda3/bin/conda
-    eval /Users/matt/anaconda3/bin/conda "shell.fish" "hook" $argv | source
-end
-# <<< conda initialize <<<
-

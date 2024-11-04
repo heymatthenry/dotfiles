@@ -54,7 +54,7 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files --hidden'
 fi
 
-export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+# export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -70,18 +70,30 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 # Created by `pipx` on 2022-11-02 00:17:04
 export PATH="$PATH:/Users/matt/.local/bin"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/matt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/matt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/matt/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/matt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+autoload -U add-zsh-hook
 
+load-nvmrc() {
+  local nvmrc_path
+  nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version
+    nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+      nvm use
+    fi
+  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"

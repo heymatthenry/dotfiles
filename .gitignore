@@ -47,3 +47,8 @@ config/karabiner
 config/gh/
 config/iterm2/
 config/emacs/init.el
+config/fish/fish_variables
+config/fish/functions
+config/fish/conf.d
+config/op
+config/raycast

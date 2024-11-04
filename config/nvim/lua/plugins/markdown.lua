@@ -28,6 +28,9 @@ return {
 					opts = { noremap = false, expr = true, buffer = true },
 				},
 			},
+			note_id_func = function(title)
+				return title
+			end,
 			finder = "telescope.nvim",
 			ui = {
 				enable = true, -- set to false to disable all additional syntax features
