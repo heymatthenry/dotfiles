@@ -66,3 +66,7 @@ end
 
 # Created by `pipx` on 2022-10-27 00:31:26
 set PATH $PATH /Users/matt/.local/bin
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
