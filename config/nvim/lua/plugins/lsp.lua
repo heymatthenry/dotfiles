@@ -13,7 +13,9 @@ return {
 			-- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
 			local lspconfig = require("lspconfig")
 			local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-
+			lspconfig.angularls.setup({
+				capabilities = lsp_capabilities,
+			})
 			lspconfig.astro.setup({
 				capabilities = lsp_capabilities,
 			})
