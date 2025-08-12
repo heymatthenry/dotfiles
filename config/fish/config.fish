@@ -18,6 +18,9 @@ if status is-interactive
 
 # Aliases
 
+# use uv python as system python
+    alias python "uv run python"
+
 # git aliases
     alias gc "git commit"
     alias ga "git add"
@@ -70,3 +73,11 @@ set PATH $PATH /Users/matt/.local/bin
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/matt/.lmstudio/bin
+
+# Added by `rbenv init` on Wed Apr 23 15:47:50 EDT 2025
+status --is-interactive; and rbenv init - --no-rehash fish | source
+
+alias claude="/Users/matt/.claude/local/claude"

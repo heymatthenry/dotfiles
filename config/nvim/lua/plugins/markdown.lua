@@ -19,6 +19,10 @@ return {
 				folder = "Daily Notes",
 				date_format = "%Y-%m-%d",
 			},
+			follow_url_func = function(url)
+				-- Open the URL in the default web browser.
+				vim.fn.jobstart({ "open", url }) -- Mac OS
+			end,
 			mappings = {
 				-- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
 				["gf"] = {
@@ -28,6 +32,7 @@ return {
 					opts = { noremap = false, expr = true, buffer = true },
 				},
 			},
+
 			note_id_func = function(title)
 				return title
 			end,
@@ -67,10 +72,14 @@ return {
 		},
 	},
 	{
-		"lukas-reineke/headlines.nvim",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-		config = true,
+		"OXY2DEV/markview.nvim",
+		lazy = false,
 	},
+	-- {
+	-- 	"lukas-reineke/headlines.nvim",
+	-- 	dependencies = "nvim-treesitter/nvim-treesitter",
+	-- 	config = true,
+	-- },
 	{
 		"tadmccorkle/markdown.nvim",
 		event = "VeryLazy",
